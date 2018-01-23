@@ -11,12 +11,13 @@ class sameQue(object):
 
     def __init__(self, dataPath=None):
         if not dataPath:
-            dataPath = misc.cfg().get('data_path')
-        if not dataPath:
+            dataPaths = misc.cfg().get('data_path')
+        if not dataPaths:
             print('[Error] data path not found')
             sys.exit(1)
         logPath = './same-que.log'
-        self.show_same(dataPath, logPath)
+        for dataPath in dataPaths:
+            self.show_same(dataPath, logPath)
 
     def _init(self, inStr):
         inStr = str(inStr)
