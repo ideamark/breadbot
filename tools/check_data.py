@@ -9,6 +9,7 @@ def error(err, msg):
     print('\n[Error] %s' % msg)
     exit(1)
 
+
 if len(sys.argv) <= 1:
     error('', 'please enter file path')
 filePath = sys.argv[1]
@@ -16,7 +17,7 @@ if not os.path.exists(filePath):
     error('', 'wrong file path')
 
 with open(filePath, 'r') as f:
-    qas=yaml.load(f.read())['QA']
+    qas = yaml.load(f.read())['QA']
 
 for qa in qas:
     if not qa:

@@ -22,6 +22,7 @@ def expand_abbrev(inStr):
     inStr = re.sub("'ll", ' will', inStr)
     return inStr
 
+
 def show_help():
     return(
         '- d ....search baidu\n'
@@ -29,9 +30,11 @@ def show_help():
         '- s ....search dictionary\n'
         '- n ....show next message\n'
         '- t ....teach a dialogue\n')
-    
+
+
 def show_readme():
     return 'https://github.com/ideamark/breadbot/blob/master/README.md'
+
 
 def que_init(inStr):
     inStr = expand_abbrev(inStr)
