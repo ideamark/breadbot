@@ -3,7 +3,7 @@
 tag:
   - klg
 
-QA:
+qas:
 
 - que: 
   - install ubuntu dose not respond

@@ -1,7 +1,7 @@
 tag:
 - dia
 
-QA:
+qas:
 
 - que:
   - x x equal 2x
