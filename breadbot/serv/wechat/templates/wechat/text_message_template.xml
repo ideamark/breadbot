@@ -1,0 +1,9 @@
+<xml>
+<ToUserName><![CDATA[{{ toUser }}]]></ToUserName>
+<FromUserName><![CDATA[{{ fromUser }}]]></FromUserName>
+<CreateTime>{{ currentTime }}</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+{% autoescape off %}
+<Content><![CDATA[{{ content }}]]></Content>
+{% endautoescape %}
+</xml>

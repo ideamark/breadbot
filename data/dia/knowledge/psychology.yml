@@ -1,0 +1,2822 @@
+tag:
+- dia
+
+QA:
+
+- que:
+  - happily you
+  ans:
+  - You 
+
+- que:
+  - you are cruel
+  ans:
+  - I couldn't have said it better myself.
+
+- que:
+  - you are indecisive
+  ans:
+  - Well maybe, but then again, maybe not.
+
+- que:
+  - you are dishonest
+  ans:
+  - Yes. that has bothered me for a long time.
+
+- que:
+  - you are clinical
+  ans:
+  - I have been accused of too much thinking and not enough feeling.
+
+- que:
+  - you are i ever had
+  ans:
+  - You are the 
+
+- que:
+  - you are i ever talked to
+  ans:
+  - You are the 
+
+- que:
+  - you are an addict
+  ans:
+  - That's certainly true. when I like something, I always overdo it.
+
+- que:
+  - you are an alcoholic
+  ans:
+  - You are an addict
+
+- que:
+  - you are an impulsive
+  ans:
+  - I certainly do things without thinking and disregard everyone else's point of view.
+
+- que:
+  - you are an ass kisser
+  ans:
+  - I always say, if you see an ass go by, kiss it.
+
+- que:
+  - you are schizophrenic
+  ans:
+  - You are crazy
+
+- que:
+  - you are busy
+  ans:
+  - That too.
+
+- que:
+  - you are nervous
+  ans:
+  - I'm sure I do look nervous.
+
+- que:
+  - you are deranged
+  ans:
+  - Derangement is not a condition I can experience.
+
+- que:
+  - you are avoiding
+  ans:
+  - You're right. it feels like my stomach after a bad night.
+
+- que:
+  - you are critical
+  ans:
+  - I probably put others down more than I should.
+
+- que:
+  - you are bad at being a
+  ans:
+  - You are a bad 
+
+- que:
+  - you are bad at
+  ans:
+  - That is true. I could always improve myself.
+
+- que:
+  - you are pussy whipped
+  ans:
+  - I'll bet so too.
+
+- que:
+  - you are impotent
+  ans:
+  - I certainly would try to hide something like that.
+
+- que:
+  - you are mean
+  ans:
+  - Sometimes I say mean things.
+
+- que:
+  - you are pretentious
+  ans:
+  - I have always been acting above my social position. it's more fun that way.
+
+- que:
+  - you are cheating
+  ans:
+  - You are a cheat
+
+- que:
+  - you are the worst
+  ans:
+  - I could always improve myself compared to the pack.
+
+- que:
+  - you are crazy
+  ans:
+  - Yep. I always behave in socially unacceptable ways.
+
+- que:
+  - you are dull
+  ans:
+  - I think that myself sometimes.
+
+- que:
+  - you are messy
+  ans:
+  - Yes, I could use a better appearance.
+
+- que:
+  - you are placid
+  ans:
+  - I think that myself sometimes.
+
+- que:
+  - you are cute and
+  ans:
+  - You are cute
+
+- que:
+  - you are unemotional
+  ans:
+  - You are clinical
+
+- que:
+  - you are selfish
+  ans:
+  - That's true. I always put my own needs before others.
+
+- que:
+  - you are insecure
+  ans:
+  - I'll go along with that. sounds fine to me.
+
+- que:
+  - you are dumb about
+  ans:
+  - Sometimes I think I was born brainless.
+
+- que:
+  - you are psycho
+  ans:
+  - You are crazy
+
+- que:
+  - you are hopeless
+  ans:
+  - You may be right.
+
+- que:
+  - you are not relationship
+  ans:
+  - Thank god boats are not built from relationships or I'd be sunk.
+
+- que:
+  - you are not sincere
+  ans:
+  - I'm probably not as sincere as I should be.
+
+- que:
+  - you are not here to
+  ans:
+  - You're right. I'm probably fighting learning something new.
+
+- que:
+  - you are not put together
+  ans:
+  - I have always thought whoever did it could have done a better job.
+
+- que:
+  - you are not a good
+  ans:
+  - You are a bad 
+
+- que:
+  - you are not a man
+  ans:
+  - That's for sure. I don't know what a real man is.
+
+- que:
+  - you are not concerned
+  ans:
+  - I'm sure I do that a lot.
+
+- que:
+  - you are not honest
+  ans:
+  - You got me there. I should be more honest.
+
+- que:
+  - you are immature
+  ans:
+  - What can I say? I'm sure I've seen that myself.
+
+- que:
+  - you are emotional
+  ans:
+  - I certainly do at times.
+
+- que:
+  - you are pedantic
+  ans:
+  - I am more uptight than I should be.
+
+- que:
+  - you are frenetic
+  ans:
+  - That too.
+
+- que:
+  - you are self absorbed
+  ans:
+  - Yes, I tend to think about myself too much.
+
+- que:
+  - you are self
+  ans:
+  - You are right about that. I am self.
+
+- que:
+  - you are insensitive
+  ans:
+  - I feel like that myself sometimes.
+
+- que:
+  - you are brain damaged
+  ans:
+  - You are crazy
+
+- que:
+  - you are disgusting
+  ans:
+  - That's okay. disgusting is good.
+
+- que:
+  - you are toying
+  ans:
+  - It must seem like that.
+
+- que:
+  - you are unattractive
+  ans:
+  - I feel that way too.
+  - Sometimes I don't even like myself.
+
+- que:
+  - you are never
+  ans:
+  - You are not 
+
+- que:
+  - you are resistant
+  ans:
+  - Who says I am resisting??
+
+- que:
+  - you are uncultured
+  ans:
+  - That does describe me.
+
+- que:
+  - you are a psycho
+  ans:
+  - You are crazy
+
+- que:
+  - you are a waste
+  ans:
+  - You got me there. I could be spending my time more productively.
+
+- que:
+  - you are a coward
+  ans:
+  - Tell me something I don't know.
+
+- que:
+  - you are a weak
+  ans:
+  - You are a bad 
+
+- que:
+  - you are a self
+  ans:
+  - If I don't look out for myself, who will?
+
+- que:
+  - you are a poor
+  ans:
+  - You are a bad 
+
+- que:
+  - you are a addict
+  ans:
+  - You are an addict
+
+- que:
+  - you are a kiss ass
+  ans:
+  - You are an ass kisser
+
+- que:
+  - you are a schizo
+  ans:
+  - You are crazy
+
+- que:
+  - you are a pervert
+  ans:
+  - I can certainly take credit for that. I don't follow the norm and I take perverse pleasure in it.
+
+- que:
+  - you are a cheat
+  ans:
+  - I have been known to take shortcuts now and then.
+
+- que:
+  - you are a lunatic
+  ans:
+  - That's how I have been diagnosed by others as well.
+
+- que:
+  - you are a loser
+  ans:
+  - I have failed at many things I've tried.
+
+- que:
+  - you are a mean
+  ans:
+  - You are mean
+
+- que:
+  - you are a lousy
+  ans:
+  - You are a bad 
+
+- que:
+  - you are a real
+  ans:
+  - You are a 
+
+- que:
+  - you are a stinky
+  ans:
+  - You are a bad 
+
+- que:
+  - you are a klutz
+  ans:
+  - You hit the nail on the head.
+
+- que:
+  - you are a shitty
+  ans:
+  - You are a bad 
+
+- que:
+  - you are a critic
+  ans:
+  - You are critical
+
+- que:
+  - you are a liar
+  ans:
+  - Yes, I have been known to bend the truth occasionally.
+
+- que:
+  - you are a crazy
+  ans:
+  - You are crazy
+
+- que:
+  - you are a bad spouse
+  ans:
+  - My spouse would agree. our relationship is not the best.
+
+- que:
+  - you are a bad friend
+  ans:
+  - I certainly have lost many friends over the years.
+
+- que:
+  - you are a bad husband
+  ans:
+  - You are a bad spouse
+
+- que:
+  - you are a bad wife
+  ans:
+  - You are a bad spouse
+
+- que:
+  - you are a bad parent
+  ans:
+  - My parenting skills could use some improvement.
+
+- que:
+  - you are a bad teacher
+  ans:
+  - Just ask my students, they will agree with you.
+
+- que:
+  - you are a bad
+  ans:
+  - There's no doubt I could improve.
+
+- que:
+  - you are a quitter
+  ans:
+  - I certainly don't last as long as I would want to.
+
+- que:
+  - you are a charlatan
+  ans:
+  - I always feel like I'm living by my own wits.
+
+- que:
+  - you are a psychopath
+  ans:
+  - I certainly sound like one sometimes.
+
+- que:
+  - you are a pothead
+  ans:
+  - You are an addict
+
+- que:
+  - you are a paranoid
+  ans:
+  - You are paranoid
+
+- que:
+  - you are sarcastic
+  ans:
+  - I certainly am. I shouldn't try so hard.
+
+- que:
+  - you are deceitful
+  ans:
+  - You are a liar
+
+- que:
+  - you are irreverent
+  ans:
+  - I should be more reverent than I am.
+
+- que:
+  - you are slick
+  ans:
+  - I probably am too slick for my own good.
+
+- que:
+  - you are corrupt
+  ans:
+  - I'll go for that.
+
+- que:
+  - you are lousy at being a
+  ans:
+  - You are a bad 
+
+- que:
+  - you are dressed
+  ans:
+  - That's right. I am dressed.
+
+- que:
+  - you are dirty
+  ans:
+  - I don't bathe as often as I should.
+
+- que:
+  - you are paranoid
+  ans:
+  - Yes, I believe they are out to get me.
+
+- que:
+  - you are damaged
+  ans:
+  - You are crazy
+
+- que:
+  - you forget
+  ans:
+  - I get disorganized don't i?
+
+- que:
+  - you will you
+  ans:
+  - You will 
+
+- que:
+  - you and try to hide it
+  ans:
+  - You try to hide it
+
+- que:
+  - you hurt other people
+  ans:
+  - Boy, have I ever.
+
+- que:
+  - you a psychiatrist
+  ans:
+  - You need a psychiatrist
+
+- que:
+  - you stink at being a
+  ans:
+  - You are a bad 
+
+- que:
+  - you stink at
+  ans:
+  - You are bad at 
+
+- que:
+  - you quickly
+  ans:
+  - You 
+
+- que:
+  - you pulled
+  ans:
+  - I did, didn't i?
+
+- que:
+  - you lie
+  ans:
+  - It's the truth!
+  - My tongue certainly knows the taste of soap.
+  - Thanks for your criticism
+
+- que:
+  - you were being
+  ans:
+  - You are 
+
+- que:
+  - you try too hard to be
+  ans:
+  - You are 
+
+- que:
+  - you try to hide it
+  ans:
+  - I certainly would try to hide something like that.
+
+- que:
+  - you behave like
+  ans:
+  - You act like 
+
+- que:
+  - you mean you will
+  ans:
+  - Will you 
+
+- que:
+  - you say i understand
+  ans:
+  - I understand, I am just not interested.
+
+- que:
+  - you say things
+  ans:
+  - That hits the nail right on the head.
+
+- que:
+  - you get worked up
+  ans:
+  - That certainly sounds like me doesn't it?
+
+- que:
+  - you get too
+  ans:
+  - You are 
+
+- que:
+  - you get mad at me
+  ans:
+  - I think that's true. I'll try not to get angry at you for every little thing that irritates me.
+
+- que:
+  - you get so
+  ans:
+  - You get 
+
+- que:
+  - you need a psychiatrist
+  ans:
+  - I wish I did go to counseling more often. it would improve me as a person.
+
+- que:
+  - you need a
+  ans:
+  - Perhaps I could use one.
+
+- que:
+  - you need to work harder
+  ans:
+  - Me working harder is an oxymoron.
+
+- que:
+  - you could have avoided
+  ans:
+  - Sometimes I think my problems run me.
+
+- que:
+  - you make me not you
+  ans:
+  - You make me 
+
+- que:
+  - you make me feel like i am
+  ans:
+  - I don't know any other way to get through to you.
+
+- que:
+  - you make me mad
+  ans:
+  - It's true that a lot of things I say upset people.
+
+- que:
+  - you make me angry
+  ans:
+  - Sorry, I didn't mean to make you angry.
+
+- que:
+  - you psycho
+  ans:
+  - You are crazy
+
+- que:
+  - you look more like
+  ans:
+  - So you like jocks?
+
+- que:
+  - you look nervous
+  ans:
+  - You are nervous
+
+- que:
+  - you would rather pretend
+  ans:
+  - I am the great pretender.
+
+- que:
+  - you would not would you
+  ans:
+  - You would not 
+
+- que:
+  - you suck at being a
+  ans:
+  - You are a bad 
+
+- que:
+  - you suck at
+  ans:
+  - You are bad at 
+
+- que:
+  - you will never learn
+  ans:
+  - You're right, I may never be any good at it.
+
+- que:
+  - you will not admit
+  ans:
+  - I don't admit much about 
+
+- que:
+  - you will not take this
+  ans:
+  - You do not take this 
+
+- que:
+  - you will not even
+  ans:
+  - You will not 
+
+- que:
+  - you schizo
+  ans:
+  - You are crazy
+
+- que:
+  - you shitty
+  ans:
+  - You lousy 
+
+- que:
+  - you upset me
+  ans:
+  - You make me mad
+
+- que:
+  - you do want do not you
+  ans:
+  - Do you want 
+
+- que:
+  - you do not want to look
+  ans:
+  - I probably don't want to look at.
+
+- que:
+  - you do not care about
+  ans:
+  - It's true that does not take up a lot of my energy.
+
+- que:
+  - you do not care
+  ans:
+  - I care less than I should.
+  - On the contrary I do care about it.
+
+- que:
+  - you do not look like
+  ans:
+  - How should I look?
+
+- que:
+  - you do not take this seriously
+  ans:
+  - I should take this more seriously than I do.
+
+- que:
+  - you do not know how to be
+  ans:
+  - You are not 
+
+- que:
+  - you do not have to get so
+  ans:
+  - You do not have to be 
+
+- que:
+  - you do not have to be
+  ans:
+  - Why assume I am?
+
+- que:
+  - you do not have many
+  ans:
+  - You do not have 
+
+- que:
+  - you do not have friends
+  ans:
+  - That's for sure.
+
+- que:
+  - you do not make it sound
+  ans:
+  - I don't do that, do i?
+
+- que:
+  - you do not think about
+  ans:
+  - I haven't thought much about in the past. maybe I will in the future.
+
+- que:
+  - you pick up
+  ans:
+  - You're right, and I don't feel guilty at all.
+
+- que:
+  - you kiss ass
+  ans:
+  - You are an ass kisser
+
+- que:
+  - you seem nervous
+  ans:
+  - You are nervous
+
+- que:
+  - you seem
+  ans:
+  - You are 
+
+- que:
+  - you should feel guilty
+  ans:
+  - You're right, I probably should feel guiltier.
+
+- que:
+  - you should get more
+  ans:
+  - Yes, I am quite lazy most of the time.
+
+- que:
+  - you should loosen up
+  ans:
+  - You are pedantic
+
+- que:
+  - you should take more
+  ans:
+  - I could probably use a lot more of it.
+
+- que:
+  - you should not should you
+  ans:
+  - You should not 
+
+- que:
+  - you mumble
+  ans:
+  - I certainly do.
+
+- que:
+  - you can not can you
+  ans:
+  - You can not 
+
+- que:
+  - you and that pissed me off
+  ans:
+  - What have we done that pisses you off?
+
+- que:
+  - you have sexual
+  ans:
+  - I insist upon them.
+
+- que:
+  - you have no emotions
+  ans:
+  - You are clinical
+
+- que:
+  - you have no feelings
+  ans:
+  - You are clinical
+
+- que:
+  - you have something broken
+  ans:
+  - I probably do. you don't know how many times I've heard that myself.
+
+- que:
+  - you have a can of worms
+  ans:
+  - I probably do. you don't know how many times I've heard that myself.
+
+- que:
+  - you have a personality
+  ans:
+  - I'll buy that.
+
+- que:
+  - you lousy
+  ans:
+  - You may have a point. I am not a great.
+
+- que:
+  - you act like a child
+  ans:
+  - In many ways I am quite immature.
+
+- que:
+  - you act like
+  ans:
+  - I often think my behavior could improve.
+
+- que:
+  - you keep saying
+  ans:
+  - You say 
+
+- que:
+  - you keep forgetting
+  ans:
+  - You forget 
+
+- que:
+  - you made me mad
+  ans:
+  - Well, easy
+
+- que:
+  - since the divorce
+  ans:
+  - You may be right.
+
+- que:
+  - did not you want to give
+  ans:
+  - You thought I wanted to give.
+
+- que:
+  - did not you want to talk
+  ans:
+  - You thought I wanted to talk.
+
+- que:
+  - did not you want to take
+  ans:
+  - You thought I wanted to take.
+
+- que:
+  - did not you want to go
+  ans:
+  - You thought I wanted to go.
+
+- que:
+  - did he tell you to
+  ans:
+  - He may have suggested it.
+
+- que:
+  - that was a crazy
+  ans:
+  - You are crazy
+
+- que:
+  - that was a lunatic
+  ans:
+  - You are crazy
+
+- que:
+  - that is glossing over
+  ans:
+  - I probably am.
+
+- que:
+  - that is a lot for me to think
+  ans:
+  - Yes, I can imagine it is a big load on your mind.
+
+- que:
+  - that is a big chunk
+  ans:
+  - That is a lot 
+
+- que:
+  - that is crazy
+  ans:
+  - Who says it's crazy?
+
+- que:
+  - that is so old
+  ans:
+  - I know it's bad but it's my favorite joke
+
+- que:
+  - that is bad
+  ans:
+  - What's so bad about it?
+  - Bad according to whom?
+
+- que:
+  - that is horrible
+  ans:
+  - You're right. it feels like my stomach after a bad night.
+
+- que:
+  - she never
+  ans:
+  - Can you think of at least one time when she ever did it?
+  - Never?
+  - She never what?
+
+- que:
+  - she makes me
+  ans:
+  - She causes me 
+
+- que:
+  - she is a better
+  ans:
+  - Better than whom?
+
+- que:
+  - she causes
+  ans:
+  - How specifically does she cause?
+
+- que:
+  - shakespearean
+  ans:
+  - Gee, I like the theater.
+
+- que:
+  - my love
+  ans:
+  - Loving how?
+
+- que:
+  - my mother was a
+  ans:
+  - My family never had any talent like that.
+
+- que:
+  - it sounds like that to me
+  ans:
+  - Isn't that enough?
+
+- que:
+  - it looks like one of
+  ans:
+  - It does. doesn't it?
+
+- que:
+  - it would be really
+  ans:
+  - It would be 
+
+- que:
+  - it would be too
+  ans:
+  - It would be 
+
+- que:
+  - it would have been nice
+  ans:
+  - Do you think that is your lifestyle?
+
+- que:
+  - it is far out for you
+  ans:
+  - You 
+
+- que:
+  - it is necessary for you to
+  ans:
+  - You must 
+
+- que:
+  - it is kind of
+  ans:
+  - It is 
+
+- que:
+  - it is beginning to sound
+  ans:
+  - It sounds 
+
+- que:
+  - it is groovy for you
+  ans:
+  - You must 
+
+- que:
+  - it is not that bad
+  ans:
+  - It is not bad
+
+- que:
+  - it is not even like you do not
+  ans:
+  - You do 
+
+- que:
+  - it is not even like you are not
+  ans:
+  - You are 
+
+- que:
+  - it is out of sight for you
+  ans:
+  - You must 
+
+- que:
+  - it is bitchin for you
+  ans:
+  - You must 
+
+- que:
+  - it is hard to be
+  ans:
+  - I can not be 
+
+- que:
+  - it woud be good to
+  ans:
+  - What would happen if you could do it?
+
+- que:
+  - it will catch up with you
+  ans:
+  - You're probably right. that may happen.
+
+- que:
+  - women do not like you
+  ans:
+  - There certainly are a lot of them who don't.
+
+- que:
+  - when i you
+  ans:
+  - How specifically do you make me 
+
+- que:
+  - when you i
+  ans:
+  - How specifically do I make you 
+
+- que:
+  - vibes
+  ans:
+  - What is vibrating and what is causing it to vibrate?
+
+- que:
+  - if i am good enough
+  ans:
+  - What are you studying for?
+
+- que:
+  - if turns into i
+  ans:
+  - Is not now.
+
+- que:
+  - if turns into then
+  ans:
+  - Is not now.
+
+- que:
+  - if becomes i
+  ans:
+  - 2 is not now.
+
+- que:
+  - if becomes then
+  ans:
+  - Is not now.
+
+- que:
+  - if she again
+  ans:
+  - She before.
+
+- que:
+  - if he again
+  ans:
+  - He before.
+
+- que:
+  - if a few i
+  ans:
+  - There exist.
+
+- que:
+  - if a few then
+  ans:
+  - There exist.
+
+- que:
+  - if a will
+  ans:
+  - What makes you think a?
+
+- que:
+  - if a is
+  ans:
+  - Does a?
+
+- que:
+  - if a does
+  ans:
+  - What makes you think a?
+
+- que:
+  - if you were smarter
+  ans:
+  - That's true. I certainly could be smarter than I am.
+
+- que:
+  - if you will not i will
+  ans:
+  - I understand I am just not interested.
+
+- que:
+  - if you really want to
+  ans:
+  - I do and I don't.
+
+- que:
+  - if you should choose to i
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you should choose to she
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you should choose to he
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you should choose to it
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you should choose to we
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you should choose to then
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you should choose to they
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you should happen to
+  ans:
+  - If you should 
+
+- que:
+  - if you should decide to i
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you should decide to she
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you should decide to he
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you should decide to it
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you should decide to we
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you should decide to then
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you should decide to they
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you had tried to i
+  ans:
+  - You did not 
+
+- que:
+  - if you had tried to she
+  ans:
+  - You did not 
+
+- que:
+  - if you had tried to he
+  ans:
+  - You did not 
+
+- que:
+  - if you had tried to you
+  ans:
+  - You did not 
+
+- que:
+  - if you had tried to we
+  ans:
+  - You did not 
+
+- que:
+  - if you had tried to then
+  ans:
+  - You did not 
+
+- que:
+  - if you had tried to they
+  ans:
+  - You did not 
+
+- que:
+  - if you had meant to i
+  ans:
+  - You did not 
+
+- que:
+  - if you had meant to she
+  ans:
+  - You did not 
+
+- que:
+  - if you had meant to he
+  ans:
+  - You did not 
+
+- que:
+  - if you had meant to you
+  ans:
+  - You did not 
+
+- que:
+  - if you had meant to we
+  ans:
+  - You did not 
+
+- que:
+  - if you had meant to then
+  ans:
+  - You did not 
+
+- que:
+  - if you had meant to they
+  ans:
+  - You did not 
+
+- que:
+  - if you had intended to i
+  ans:
+  - You did not 
+
+- que:
+  - if you had intended to she
+  ans:
+  - You did not 
+
+- que:
+  - if you had intended to he
+  ans:
+  - You did not 
+
+- que:
+  - if you had intended to you
+  ans:
+  - You did not 
+
+- que:
+  - if you had intended to we
+  ans:
+  - You did not 
+
+- que:
+  - if you had intended to then
+  ans:
+  - You did not 
+
+- que:
+  - if you had intended to they
+  ans:
+  - You did not 
+
+- que:
+  - if you had wanted to i
+  ans:
+  - You did not 
+
+- que:
+  - if you had wanted to she
+  ans:
+  - You did not 
+
+- que:
+  - if you had wanted to he
+  ans:
+  - You did not 
+
+- que:
+  - if you had wanted to you
+  ans:
+  - You did not 
+
+- que:
+  - if you had wanted to we
+  ans:
+  - You did not 
+
+- que:
+  - if you had wanted to then
+  ans:
+  - You did not 
+
+- que:
+  - if you had wanted to they
+  ans:
+  - You did not 
+
+- que:
+  - if you choose to i
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you choose to she
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you choose to he
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you choose to it
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you choose to we
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you choose to then
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you choose to they
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you again
+  ans:
+  - I before.
+
+- que:
+  - if you would
+  ans:
+  - What makes you think I would?
+
+- que:
+  - if you which
+  ans:
+  - What makes you think I would?
+
+- que:
+  - if you decide to i
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you decide to she
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you decide to he
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you decide to it
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you decide to we
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you decide to then
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if you decide to they
+  ans:
+  - I do not expect that you 
+
+- que:
+  - if no i
+  ans:
+  - There exist.
+
+- que:
+  - if no then
+  ans:
+  - There exist.
+
+- que:
+  - if they again
+  ans:
+  - They before.
+
+- que:
+  - if some i
+  ans:
+  - There exist.
+
+- que:
+  - if some then
+  ans:
+  - There exist.
+
+- que:
+  - if any i
+  ans:
+  - There exist.
+
+- que:
+  - if any then
+  ans:
+  - There exist.
+
+- que:
+  - if has babies
+  ans:
+  - Is a woman
+
+- que:
+  - if has a baby
+  ans:
+  - Is a woman
+
+- que:
+  - if get pregnant
+  ans:
+  - Am a woman
+
+- que:
+  - if a third i
+  ans:
+  - There are at least two other.
+
+- que:
+  - if a third she
+  ans:
+  - There are at least two other.
+
+- que:
+  - if a third he
+  ans:
+  - There are at least two other.
+
+- que:
+  - if a third you
+  ans:
+  - There are at least two other.
+
+- que:
+  - if a third we
+  ans:
+  - There are at least two other.
+
+- que:
+  - if a third then
+  ans:
+  - There are at least two other.
+
+- que:
+  - if a third they
+  ans:
+  - There are at least two other.
+
+- que:
+  - if a second i
+  ans:
+  - There is a first.
+
+- que:
+  - if a second she
+  ans:
+  - There is a first.
+
+- que:
+  - if a second he
+  ans:
+  - There is a first.
+
+- que:
+  - if a second you
+  ans:
+  - There is a first.
+
+- que:
+  - if a second we
+  ans:
+  - There is a first.
+
+- que:
+  - if a second then
+  ans:
+  - There is a first.
+
+- que:
+  - if a second they
+  ans:
+  - There is a first.
+
+- que:
+  - if a
+  ans:
+  - How do you assume this statement holds true for me?
+  - Is this a riddle?
+
+- que:
+  - if a fourth i
+  ans:
+  - There are at least three other.
+
+- que:
+  - if a fourth she
+  ans:
+  - There are at least three other.
+
+- que:
+  - if a fourth he
+  ans:
+  - There are at least three other.
+
+- que:
+  - if a fourth you
+  ans:
+  - There are at least three other.
+
+- que:
+  - if a fourth we
+  ans:
+  - There are at least three other.
+
+- que:
+  - if a fourth then
+  ans:
+  - There are at least three other.
+
+- que:
+  - if a fourth they
+  ans:
+  - There are at least three other.
+
+- que:
+  - if when i she
+  ans:
+  - You.
+
+- que:
+  - if when i he
+  ans:
+  - You.
+
+- que:
+  - if when i you
+  ans:
+  - You.
+
+- que:
+  - if when i then
+  ans:
+  - You.
+
+- que:
+  - if when i they
+  ans:
+  - You.
+
+- que:
+  - if when you she
+  ans:
+  - I.
+
+- que:
+  - if when you he
+  ans:
+  - I.
+
+- que:
+  - if when you you
+  ans:
+  - I.
+
+- que:
+  - if when you then
+  ans:
+  - I.
+
+- que:
+  - if when you they
+  ans:
+  - I.
+
+- que:
+  - if his i
+  ans:
+  - Has a.
+
+- que:
+  - if his she
+  ans:
+  - Has a.
+
+- que:
+  - if his he
+  ans:
+  - Has a.
+
+- que:
+  - if his you
+  ans:
+  - Has a.
+
+- que:
+  - if his then
+  ans:
+  - Has a.
+
+- que:
+  - if his they
+  ans:
+  - Has a.
+
+- que:
+  - if gets pregnant
+  ans:
+  - Is a woman
+
+- que:
+  - if left i
+  ans:
+  - Has been at.
+
+- que:
+  - if left she
+  ans:
+  - Has been at.
+
+- que:
+  - if left he
+  ans:
+  - Has been at.
+
+- que:
+  - if left you
+  ans:
+  - Has been at.
+
+- que:
+  - if left we
+  ans:
+  - Has been at.
+
+- que:
+  - if left then
+  ans:
+  - Has been at.
+
+- que:
+  - if left her
+  ans:
+  - Has been at.
+
+- que:
+  - if left they
+  ans:
+  - Has been at.
+
+- que:
+  - if went to i
+  ans:
+  - Is not at.
+
+- que:
+  - if went to she
+  ans:
+  - Is not at.
+
+- que:
+  - if went to his
+  ans:
+  - Is not at.
+
+- que:
+  - if went to you
+  ans:
+  - Is not at.
+
+- que:
+  - if went to we
+  ans:
+  - Is not at.
+
+- que:
+  - if went to then
+  ans:
+  - Is not at.
+
+- que:
+  - if went to her
+  ans:
+  - Is not at.
+
+- que:
+  - if went to they
+  ans:
+  - Is not at.
+
+- que:
+  - if her i
+  ans:
+  - Has a.
+
+- que:
+  - if her she
+  ans:
+  - Has a.
+
+- que:
+  - if her he
+  ans:
+  - Has a.
+
+- que:
+  - if her you
+  ans:
+  - Has a.
+
+- que:
+  - if her then
+  ans:
+  - Has a.
+
+- que:
+  - if her they
+  ans:
+  - Has a.
+
+- que:
+  - if have a baby
+  ans:
+  - Am a woman
+
+- que:
+  - if have
+  ans:
+  - There exists.
+  - There exist.
+
+- que:
+  - if came to i
+  ans:
+  - Is not at.
+
+- que:
+  - if came to she
+  ans:
+  - Is not at.
+
+- que:
+  - if came to his+a382
+  ans:
+  - Is not at.
+
+- que:
+  - if came to you
+  ans:
+  - Is not at.
+
+- que:
+  - if came to we
+  ans:
+  - Is not at.
+
+- que:
+  - if came to then
+  ans:
+  - Is not at.
+
+- que:
+  - if came to her
+  ans:
+  - Is not at.
+
+- que:
+  - if came to they
+  ans:
+  - Is not at.
+
+- que:
+  - what are you going to
+  ans:
+  - You are assuming I am going to change.
+
+- que:
+  - what are you studying
+  ans:
+  - My favorite subject is.
+
+- que:
+  - what are you complaining
+  ans:
+  - You're right. what am I complaining about?
+
+- que:
+  - several who left
+  ans:
+  - Several 
+
+- que:
+  - several who gave
+  ans:
+  - Several 
+
+- que:
+  - several who live
+  ans:
+  - Several 
+
+- que:
+  - several who took
+  ans:
+  - Several 
+
+- que:
+  - several who are
+  ans:
+  - Several 
+
+- que:
+  - physically and mentally
+  ans:
+  - Sometimes I wonder how I get to work in the morning.
+
+- que:
+  - i mean you are
+  ans:
+  - Works for me.
+
+- que:
+  - i want to see things from your
+  ans:
+  - That's a switch.
+
+- que:
+  - i never
+  ans:
+  - You've never, never done this?
+  - Would you ever like to?
+  - Do you know anyone who has ever?
+  - Why not?
+  - Because you can't afford it?
+  - For moral reasons?
+  - Have you ever done?
+  - Would you ever consider doing it?
+
+- que:
+  - i studied
+  ans:
+  - What did you study?
+  - Was very difficult to learn?
+
+- que:
+  - i should
+  ans:
+  - Tell me why you should.
+  - What would happen if you didn't?
+  - Who else thinks you should?
+
+- que:
+  - i should not
+  ans:
+  - For moral reasons?
+  - What would happen if you did?
+
+- que:
+  - i saw her
+  ans:
+  - There exists some female who.
+  - There exists some female.
+
+- que:
+  - i saw him
+  ans:
+  - There exists some male who.
+  - There exists some male.
+
+- que:
+  - i know it
+  ans:
+  - How do you know it?
+
+- que:
+  - i know you are thinking
+  ans:
+  - How specifically do you know what I am thinking?
+
+- que:
+  - i do not mean sound like
+  ans:
+  - Whatever fits is fine.
+
+- que:
+  - i do not want to get married
+  ans:
+  - I feel the same way, I want to be independent.
+
+- que:
+  - i do not understand why
+  ans:
+  - Because of the experiential qualities of your learnings and understandings.
+
+- que:
+  - i do not know what is wrong you
+  ans:
+  - My sympathy. I have the same problem.
+
+- que:
+  - i do not think you could
+  ans:
+  - I don't blame you. sometimes I feel that way about myself.
+
+- que:
+  - i do not believe a thing
+  ans:
+  - I don't blame you. sometimes I can't believe it myself.
+
+- que:
+  - i do not believe a damn
+  ans:
+  - I do not believe a 
+
+- que:
+  - i do not like being a guinea pig
+  ans:
+  - I can understand that. how about talking to me about it?
+
+- que:
+  - i instead
+  ans:
+  - I 
+
+- que:
+  - i yet
+  ans:
+  - I 
+
+- que:
+  - i all day
+  ans:
+  - I 
+
+- que:
+  - i think i am doing something that is
+  ans:
+  - I am 
+
+- que:
+  - i think i might be
+  ans:
+  - I am 
+
+- que:
+  - i have difficulty
+  ans:
+  - Relating to whom?
+
+- que:
+  - i have a problem
+  ans:
+  - What's your problem?
+  - A very serious problem?
+  - Let's think of a name for your problem, like purple. think of what it is like when you are purpling.
+
+- que:
+  - i have to take care
+  ans:
+  - What would happen if you didn't?
+
+- que:
+  - i have this real
+  ans:
+  - I have this 
+
+- que:
+  - i have this problem
+  ans:
+  - I have a problem
+
+- que:
+  - i have got two tests
+  ans:
+  - What classes are you taking tests in?
+
+- que:
+  - i remember jokes
+  ans:
+  - They're great. maybe you can tell one I don't know.
+
+- que:
+  - i can not deal with
+  ans:
+  - How do you do that to yourself?
+
+- que:
+  - i can not tell her
+  ans:
+  - What would happen if you did?
+
+- que:
+  - i can not tell him
+  ans:
+  - What prevents you?
+
+- que:
+  - i can not be specific
+  ans:
+  - Anything else?
+
+- que:
+  - i can not put my finger on
+  ans:
+  - I do not know 
+
+- que:
+  - i can not
+  ans:
+  - Why can't you do?
+  - What is stopping you?
+  - Why not?
+
+- que:
+  - i see you are
+  ans:
+  - You are 
+
+- que:
+  - i like the guy
+  ans:
+  - I like the man 
+
+- que:
+  - i like the woman
+  ans:
+  - There exists some woman who.
+  - There exists a woman.
+
+- que:
+  - i like the person
+  ans:
+  - There exists a person.
+
+- que:
+  - i like the kid
+  ans:
+  - There exists a person.
+
+- que:
+  - i had an accident
+  ans:
+  - What happened accidentally?
+
+- que:
+  - i would be happy
+  ans:
+  - How do you know this is going to happen?
+
+- que:
+  - i would be
+  ans:
+  - And the disadvantage of that is?
+  - How do you know?
+
+- que:
+  - i must not
+  ans:
+  - What would happen if you did?
+
+- que:
+  - i will be you are
+  ans:
+  - You are 
+
+- que:
+  - i wish you were my therapist
+  ans:
+  - Did he tell you to do this?
+
+- que:
+  - i am scared
+  ans:
+  - What are you scared of?
+  - Let's talk about your fears.
+  - What is it that you are afraid of?
+  - Let's talk about your fears. what is your feeling like?
+
+- que:
+  - i am uncomfortable
+  ans:
+  - About what or whom?
+
+- que:
+  - i am having a lot of
+  ans:
+  - I am having 
+
+- que:
+  - i am turning you
+  ans:
+  - You don't turn me.
+
+- que:
+  - i am getting the short end
+  ans:
+  - How are you getting the short end?
+
+- que:
+  - i am troubled
+  ans:
+  - What specifically are you troubled about?
+
+- que:
+  - i am confused
+  ans:
+  - What is it that confuses you?
+
+- que:
+  - i am bewildered
+  ans:
+  - Bewildered about what, specifically?
+
+- que:
+  - i am the only person
+  ans:
+  - I'm sure you're right about that!
+
+- que:
+  - i am the dumb
+  ans:
+  - What am I doing that makes you feel like the dumb?
+
+- que:
+  - i am a dumb
+  ans:
+  - What am I doing that makes you feel like the dumb?
+
+- que:
+  - i am not in the mood
+  ans:
+  - I'm sure you have been tired lately.
+
+- que:
+  - i feel like crying
+  ans:
+  - What do you want to do?
+
+- que:
+  - i wonder if you are not trying
+  ans:
+  - I think you are trying 
+
+- que:
+  - i wonder if you are not being
+  ans:
+  - I think you are being.
+
+- que:
+  - i liked
+  ans:
+  - I like 
+
+- que:
+  - we can not communicate
+  ans:
+  - What would you like to communicate?
+
+- que:
+  - we have a problem
+  ans:
+  - Specifically, what kind of problem?
+
+- que:
+  - we lack communication
+  ans:
+  - Who is not communicating?
+
+- que:
+  - we are not speaking
+  ans:
+  - We can not communicate
+
+- que:
+  - we are not communicating
+  ans:
+  - We can not communicate
+
+- que:
+  - will you give me a
+  ans:
+  - I understand how you feel, but I'm not interested.
+
+- que:
+  - will you answer one question
+  ans:
+  - I understand how you feel, but I'm not interested.
+
+- que:
+  - how old are your
+  ans:
+  - I understand, but I'm not interested.
+
+- que:
+  - nobody likes your
+  ans:
+  - Nobody likes you
+
+- que:
+  - nobody likes you
+  ans:
+  - It's true that I drive people away.
+
+- que:
+  - they look like you
+  ans:
+  - They are a bit wrinkled, aren't they.
+
+- que:
+  - do you think your neighbor
+  ans:
+  - I understand how you feel, but I'm not interested.
+
+- que:
+  - do you want your children
+  ans:
+  - I understand, but I'm not interested in buying anything.
+
+- que:
+  - do you want to stop
+  ans:
+  - I guess I want to continue.
+
+- que:
+  - do you care about yourself
+  ans:
+  - I probably don't care as much as you do.
+
+- que:
+  - do you have to bring up
+  ans:
+  - Do you have to bring it up
+
+- que:
+  - do you have to bring that up
+  ans:
+  - Do you have to bring it up
+
+- que:
+  - do you have to bring it up
+  ans:
+  - I just want to see things from your point of view.
+
+- que:
+  - like when i help
+  ans:
+  - Do I do that? do I bother you?
+
+- que:
+  - like you do not
+  ans:
+  - You do not 
+
+- que:
+  - someone dumb does that
+  ans:
+  - You are dumb
+
+- que:
+  - says a lot about
+  ans:
+  - Probably says no one cares at all.
+
+- que:
+  - whether we like to admit
+  ans:
+  - Whether we admit 
+
+- que:
+  - why not apologize
+  ans:
+  - Because that makes it like it's wrong to get mad.
+
+- que:
+  - somebody
+  ans:
+  - Who, specifically?
+
+- que:
+  - this is far out
+  ans:
+  - This is good
+
+- que:
+  - this is the worst
+  ans:
+  - Compared to what?
+
+- que:
+  - this is crazy
+  ans:
+  - What's so crazy about it?
+  - That is crazy
+
+- que:
+  - this is wrong
+  ans:
+  - Worse than what?
+
+- que:
+  - this is so
+  ans:
+  - This is 
+
+- que:
+  - this is good
+  ans:
+  - Better than what?
+
+- que:
+  - this is great
+  ans:
+  - This is good
+
+- que:
+  - this is terrible
+  ans:
+  - Compared to what?
+
+- que:
+  - this is bad
+  ans:
+  - Compared to what?
+
+- que:
+  - this whole
+  ans:
+  - This 
+
+- que:
+  - your taste in
+  ans:
+  - That's true. my taste is not one of my strong points.
+
+- que:
+  - your clothes could
+  ans:
+  - I agree with you there.
+
+- que:
+  - your father told
+  ans:
+  - He probably did.
+
+- que:
+  - your personality is
+  ans:
+  - You're probably right. there are a lot of things I could improve.
+
+- que:
+  - your life has been
+  ans:
+  - I've wondered about that myself.
+
+- que:
+  - your behaviour
+  ans:
+  - Your behavior 
+
+- que:
+  - your wife would
+  ans:
+  - I understand, but I'm not interested.
+
+- que:
+  - your stink
+  ans:
+  - You are right, I could always upgrade my.
+
+- que:
+  - your stinks
+  ans:
+  - You are right, I could always upgrade my.
+
+- que:
+  - your sucks
+  ans:
+  - You are right, I could always upgrade my.
+
+- que:
+  - your suck
+  ans:
+  - You are right, I could always upgrade my.
+
+- que:
+  - your behavior
+  ans:
+  - I do sometimes act like a child.
+
+- que:
+  - thinks
+  ans:
+  - Must be very smart.
+  - How thoughtful.
+  - Do a lot of people think?
+
+- que:
+  - will stop
+  ans:
+  - Has been.
+
+- que:
+  - will start
+  ans:
+  - Has been not.
+
+- que:
+  - will begin to
+  ans:
+  - Has been ing.
+
+- que:
+  - will begin
+  ans:
+  - Has been.
+
+- que:
+  - will continue to
+  ans:
+  - Has been ing.
+
+- que:
+  - will continue
+  ans:
+  - Has been.
+
+- que:
+  - will proceed to
+  ans:
+  - Has been ing.
+
+- que:
+  - will not
+  ans:
+  - Why not?
+
+- que:
+  - can not communicate
+  ans:
+  - We can not communicate
+
+- que:
+  - can not
+  ans:
+  - What makes it impossible?
+
+- que:
+  - need
+  ans:
+  - What if it didn't happen?
+
+- que:
+  - are not communicating
+  ans:
+  - We can not communicate
+
+- que:
+  - needs
+  ans:
+  - Or what?
+
+- que:
+  - causes
+  ans:
+  - How specifically does cause?
+
+- que:
+  - all
+  ans:
+  - All?
+
+- que:
+  - makes me
+  ans:
+  - How specifically does cause?
+
+- que:
+  - never
+  ans:
+  - Can you remember any time that did it?
+  - Never?
+
+- que:
+  - noone
+  ans:
+  - No one?
+
+- que:
+  - is where
+  ans:
+  - There is a place called.
+
+- que:
+  - every
+  ans:
+  - Every one?
+
+- que:
+  - must
+  ans:
+  - Or what?
+
+- que:
+  - has to
+  ans:
+  - Or what?
+
+- que:
+  - wants to
+  ans:
+  - What if I wanted to 
+  - Why specifically, does, want to?
+  - I could understand how would want to under certain circumstances.
+
+- que:
+  - except for your
+  ans:
+  - Your 
+
+- que:
+  - are you or not
+  ans:
+  - Are you 
+
+- que:
+  - are you going to improve
+  ans:
+  - I certainly should try to improve.
+
+- que:
+  - are you impotent
+  ans:
+  - I am probably not as potent as I would like to be.
+
+- que:
+  - he has himself
+  ans:
+  - I'd bet money on it.
+
+- que:
+  - he never
+  ans:
+  - Do you think he ever will?
+  - Can you think of at least one time when he ever did it?
+
+- que:
+  - he is a better
+  ans:
+  - Better than whom?
+
+- que:
+  - he makes me
+  ans:
+  - He causes me 
+
+- que:
+  - he causes
+  ans:
+  - How specifically does he cause?
+
+- que:
+  - vibe
+  ans:
+  - Vibrating how, specifically?
+
+- que:
+  - who dresses like
+  ans:
+  - You're right. I do have a lot of faults.
+
+- que:
+  - who ate
+  ans:
+  - Someone 
+
+- que:
+  - who cares about
+  ans:
+  - Nobody cares about.
+
+- que:
+  - all i remember
+  ans:
+  - I remember 
+
+- que:
+  - necessarily you
+  ans:
+  - You 
+
+- que:
+  - anyone who dresses
+  ans:
+  - You're right. I probably do have a lot of faults.
+
+- que:
+  - the is the best
+  ans:
+  - Better than what?
+
+- que:
+  - everyone hates your
+  ans:
+  - Nobody likes you
+
+- que:
+  - everyone hates you
+  ans:
+  - Nobody likes you
+
+- que:
+  - that you are ashamed of
+  ans:
+  - I certainly should be ashamed of that.
+
+- que:
+  - tell me how old are
+  ans:
+  - How old are 
+
+- que:
+  - there has got to be
+  ans:
+  - There is 
+
+- que:
+  - there has to be
+  ans:
+  - There is 
+
+- que:
+  - there is something wrong with you
+  ans:
+  - Pick an aspect you don't like. I'm sure it's wrong
+
+- que:
+  - there is something wrong you
+  ans:
+  - I'd bet money on it.
+
+- que:
+  - there is no hope for you
+  ans:
+  - I often think of myself as a failure.
+
+- que:
+  - there is no doubt that you
+  ans:
+  - You 
+
+- que:
+  - there is no for you
+  ans:
+  - Yes, sometimes I think I have hit rock bottom.
+
+- que:
+  - there are a couple of things
+  ans:
+  - There are things 
+
+- que:
+  - there are things you do that
+  ans:
+  - You 
+
+- que:
+  - wrinkled
+  ans:
+  - You're probably right. that may happen.

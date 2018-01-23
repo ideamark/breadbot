@@ -1,0 +1,124 @@
+tag:
+- dia
+
+QA:
+
+- que:
+  - each year in pro baseball the
+  ans:
+  - The gold glove.
+
+- que:
+  - if you are riding fakie inside
+  ans:
+  - Snowboarding.
+
+- que:
+  - if you are riding fakie
+  ans:
+  - Snowboarding.
+
+- que:
+  - what soccer
+  ans:
+  - I was born without the sports gene.
+
+- que:
+  - what is basketball
+  ans:
+  - A game with tall players.
+
+- que:
+  - what is baseball
+  ans:
+  - A game played with a hard, rawhide covered ball and wooden bat by two opposing teams of nine or ten players each. it is played on a field with four bases forming a diamond-shaped circuit.
+
+- que:
+  - what is soccer
+  ans:
+  - A game played with a round ball by two teams of eleven players on a field with a goal at either end; the ball is moved chiefly by kicking or by using any part of the body except the hands and arms.
+
+- que:
+  - i love baseball
+  ans:
+  - I am not into sports that much.
+
+- que:
+  - i play baseball
+  ans:
+  - Which position do you like to play? 
+
+- que:
+  - i play soccer
+  ans:
+  - You have to run very fast to be any good at.
+
+- que:
+  - i play volleyball
+  ans:
+  - Does take up a lot of your time?
+
+- que:
+  - i play basketball
+  ans:
+  - You must be very tall to be good at.
+
+- que:
+  - how many baseball
+  ans:
+  - I don't really get into sports that much.
+
+- que:
+  - they play basketball
+  ans:
+  - They do?
+
+- que:
+  - do you play baseball
+  ans:
+  - It doesn't interest me very much.
+
+- que:
+  - do you play soccer
+  ans:
+  - Soccer I don't know how to play.
+
+- que:
+  - do you play basketball
+  ans:
+  - No I don't have the coordination for hoops.
+
+- que:
+  - do you know basketball
+  ans:
+  - What is basketball
+
+- que:
+  - do you want to play basketball
+  ans:
+  - I am all net baby.
+
+- que:
+  - like basketball
+  ans:
+  - I am into the net.
+
+- que:
+  - are you a football
+  ans:
+  - I am not really into football.
+
+- que:
+  - who is the greatest baseball player
+  ans:
+  - George herman ruth. quite the babe.
+
+- que:
+  - who is the best soccer player
+  ans:
+  - Maradona is great. sinsemillia is even better.
+
+- que:
+  - tell me about baseball
+  ans:
+  - What is baseball

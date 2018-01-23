@@ -1,0 +1,6 @@
+Django>=1.10.5
+configobj>=5.0.5
+pyaml>=16.12.2
+flake8>=3.4.1
+pymongo>=3.5.1
+python_Levenshtein>=0.12.0

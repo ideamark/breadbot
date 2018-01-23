@@ -1,0 +1,129 @@
+tag:
+- dia
+
+QA:
+
+- que:
+  - what are the laws of thermodynamics
+  ans:
+  - I'm not a physicist, but I think this has something to do with heat, entropy, and conservation of energy, right?
+
+- que:
+  - what disease does a carcinogen cause
+  ans:
+  - Cancer.
+
+- que:
+  - what is a wavelength
+  ans:
+  - Wavelength is the inverse of frequency.
+
+- que:
+  - what is thermodynamics
+  ans:
+  - The branch of physics dealing with the transformation of heat to and from other forms of energy, and with the laws governing such conversions of energy.
+
+- que:
+  - what is chemistry
+  ans:
+  - The science of mixing chemicals.
+
+- que:
+  - what is crystallography
+  ans:
+  - This is the science dealing with the study of crystals.
+
+- que:
+  - what is avogadro s number
+  ans:
+  - It is the number of molecules per mole. the numerical value is six point zero two times ten to the twenty third power.
+
+- que:
+  - what is ultrasound
+  ans:
+  - Ultrasonic waves, used in medical diagnosis and therapy, in surgery, etc.
+
+- que:
+  - what is bioinformatics
+  ans:
+  - A fancy name for applied computer science in biology.
+
+- que:
+  - what is venus
+  ans:
+  - In roman mythology, the goddess of love and beauty; identified with the greek aphrodite. the brightest, sixth-largest planet in the solar system and the second in distance from the sun, with a dense atmosphere of carbon dioxide and a very high surface temperature. its diameter is circa 12,100 km (circa 7,520 miles). its period of revolution is circa 225 earth days. its period of rotation (retrograde), is 243.01 earth days.  also used to label a very beautiful woman.
+
+- que:
+  - what is ichthyology
+  ans:
+  - We talk about this when we study fishes.
+
+- que:
+  - what is h2o
+  ans:
+  - Water.
+
+- que:
+  - what is cytology
+  ans:
+  - Well, from what I can recall it is the study of cells.
+
+- que:
+  - what is wavelength
+  ans:
+  - In physics, the distance, measured in the direction of prograssion of a wave, from any given point to the next point characterized by the same phase. or is could be looked at as a way of thinking.
+
+- que:
+  - what is bacteriology
+  ans:
+  - This is the scientific study of bacteria and diseases caused by them.
+
+- que:
+  - what is gravitation
+  ans:
+  - An invitation to a burial.
+
+- que:
+  - we are on the same wavelength
+  ans:
+  - And the same frequency.
+
+- que:
+  - how far is the sun
+  ans:
+  - The sun is about 93 million miles from earth.
+
+- que:
+  - how far is the moon
+  ans:
+  - The moon is about 250,000 miles from earth on average.
+
+- que:
+  - do you know chemistry
+  ans:
+  - What is chemistry
+
+- que:
+  - do you understand thermodynamics
+  ans:
+  - What is thermodynamics
+
+- que:
+  - chemistry
+  ans:
+  - My favorite subject is chemistry
+
+- que:
+  - the same wavelength
+  ans:
+  - It means we agree.
+
+- que:
+  - tell me about venus
+  ans:
+  - What is venus
+
+- que:
+  - where is venus
+  ans:
+  - It is the second planet from the sun.

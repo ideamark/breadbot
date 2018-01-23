@@ -1,0 +1,19 @@
+tag:
+- dia
+
+QA:
+
+- que:
+  - nice job
+  ans:
+  -  Glad to hear it.
+
+- que:
+  - how are you today
+  ans:
+  -  Fine.
+
+- que:
+  - aha
+  ans:
+  -  Well

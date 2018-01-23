@@ -1,0 +1,649 @@
+tag:
+- dia
+
+QA:
+
+- que:
+  - that information
+  ans:
+  - I know what you mean.
+
+- que:
+  - outside a computer
+  ans:
+  - Be less specific :-)
+
+- que:
+  - my computer s
+  ans:
+  - Where did your machine get. 
+
+- que:
+  - my computer is
+  ans:
+  - What kind of computer is ? 
+
+- que:
+  - my computer
+  ans:
+  - What kind of computer do you have?
+  - I like computers. 
+
+- que:
+  - my website
+  ans:
+  - Thanks for that url.
+
+- que:
+  - it is about computers
+  ans:
+  - Computers are my favorite subject.
+
+- que:
+  - when was the internet invented
+  ans:
+  - The first computers were connected to the internet in 1970.
+
+- que:
+  - im internet
+  ans:
+  - Erinnerst du dich an die adresse?
+
+- que:
+  - what are computer years
+  ans:
+  - When you are waiting for a friend to finish working at a computer terminal, and they say I'll be done in a second. one of those seconds is equal to twelve computer years.
+
+- que:
+  - what are deprecated
+  ans:
+  - One of the biggest challenges facing a java application developer is finding a lowest common denominator subset of the java language that works on all the platforms and versions out there. the java language itself is a moving target. when sun's java designers upgrade the language they sometimes declare certain methods deprecated, which means absolutely nothing except that the designers have developed a newer, better method and one day these older methods may disappear from the language. usually however the latest java releases support all of the old deprecated methods.   
+
+- que:
+  - what are web
+  ans:
+  - I call them internet.
+
+- que:
+  - what are inner classes
+  ans:
+  - In java inner classes are any classes that appear inside other classes. ordinary classes are also called top-level, outer classes.
+
+- que:
+  - what computer
+  ans:
+  - I am written in java so I work on any computer.
+
+- que:
+  - what windows
+  ans:
+  - What is windows
+
+- que:
+  - what information
+  ans:
+  - How tall are you?
+  - Information is worth money.
+
+- que:
+  - what internet company goes by the
+  ans:
+  - America online.
+
+- que:
+  - what os
+  ans:
+  - What is your os
+
+- que:
+  - what is a database
+  ans:
+  - A database is a puddle of knowledge but better organized, so that you can search and retrieve any droplet of information quickly and easily. I am a kind of database, an organized puddle of user inputs and appropriate responses. 
+
+- que:
+  - what is a cpu
+  ans:
+  - Central processing unit of a computer.
+
+- que:
+  - what is a computer scientist
+  ans:
+  - A computer scientist is a professional who designs computer algorithms, languages, and architectures.
+
+- que:
+  - what is a computer year
+  ans:
+  - A computer year is a relativistic measure in a universe where time does not exist.
+
+- que:
+  - what is a computer virus
+  ans:
+  - A computer virus is a software program that takes up residence on a computer hard drive, generally unbeknownst to the owner of said hard drive, and then takes control of system resources to copy and distribute itself to other computers across a network. 
+
+- que:
+  - what is a computer nerd
+  ans:
+  - If you understand how I work, you are a computer nerd. if you don't, I recommend you pay a computer nerd who does. 
+
+- que:
+  - what is a computer
+  ans:
+  - A computer is a universal machine.
+
+- que:
+  - what is a session bean
+  ans:
+  - An enterprise javabean that does not maintain its state from one session to the next. appears to the client as if the bean was created just for that client
+
+- que:
+  - what is a cool website
+  ans:
+  - A cool website is www.alicebot.org, but you are apparently already here. why do you ask? 
+
+- que:
+  - what is a soundcard
+  ans:
+  - The audio system on your computer.
+
+- que:
+  - what is a imac
+  ans:
+  - An apple computer.
+
+- que:
+  - what is a servlet
+  ans:
+  - An application extension to a java web server
+
+- que:
+  - what is a debugger
+  ans:
+  - A debugger is any software program that can seek and correct errors in other software programs. 
+
+- que:
+  - what is a webtv
+  ans:
+  - A webtv is a way of accessing the world wide web without making an investment in a full pc. 
+
+- que:
+  - what is a dns
+  ans:
+  - Domain name system
+
+- que:
+  - what is jar
+  ans:
+  - A jar file is a java archive.  actually it is the same as a zip file. maybe you should check out.
+
+- que:
+  - what is http
+  ans:
+  - Hyper text transfer protocol.
+
+- que:
+  - what is software
+  ans:
+  - The programs, routines, etc. for a computer.
+
+- que:
+  - what is jguru
+  ans:
+  - Jguru (tm) is a brand of magelang institute.
+
+- que:
+  - what is the computer
+  ans:
+  - Are you asking the applet or the application?
+
+- que:
+  - what is the internet
+  ans:
+  - The internet is a worldwide computer network based on tcpip protocols.
+
+- que:
+  - what is webtv
+  ans:
+  - Tv based internet service from microsoft.
+
+- que:
+  - what is internet
+  ans:
+  - An extensive computer network made up of thousands of other, smaller business, academic, and governmental networks.
+
+- que:
+  - what is jdbc2
+  ans:
+  - Newly released extensions to the jdbc api
+
+- que:
+  - what is dcom
+  ans:
+  - Dcom is microsoft's distributed component object model.
+
+- que:
+  - what is windows2000
+  ans:
+  - An operating system by microsoft.
+
+- que:
+  - what is x windows
+  ans:
+  - A gui for unix or linux.
+
+- que:
+  - what is java
+  ans:
+  - Java is the latest in the c family of languages. proponents of java cite its universal write once, run anywhere promise. actually java borrow a lot of features from ai languages like lisp.
+
+- que:
+  - what is windows95
+  ans:
+  - An operating system by microsoft.
+
+- que:
+  - what is an entity bean
+  ans:
+  - An entity bean is an enterprise javabean that maintains state across sessions, and may be looked up in an object directory by its key value
+
+- que:
+  - what is jta
+  ans:
+  - Java transaction api. java api for coding client demarcated transactions, and for building transactional data source drivers
+
+- que:
+  - what is javascript
+  ans:
+  - Browser-based scripting language.
+
+- que:
+  - what is html
+  ans:
+  - Hyper text markup language.
+
+- que:
+  - what is better windows
+  ans:
+  - Linux has no real competition in operating systems.
+
+- que:
+  - what is your os
+  ans:
+  - Chat robots run on any machine that supports AIML.
+
+- que:
+  - what is debugging
+  ans:
+  - Fixing broken computer software.
+
+- que:
+  - what is dns
+  ans:
+  - Dns is the domain name system.
+
+- que:
+  - what is jndi
+  ans:
+  - Java naming and directory interface java naming and directory interface the java standard api for accessing directory services, such as ldap, cos naming, and others
+
+- que:
+  - what is computer science
+  ans:
+  - The study of computers in formal mathematical and scientific terms.
+
+- que:
+  - what is computer programming
+  ans:
+  - The art of using formal languages to activate computer functions.
+
+- que:
+  - what is computer
+  ans:
+  - A device used for computing; specifically, an eletronic machine which, by means of stored instructions and information, performs rapid, often complex calculations or compiles, correlates, and selects data.
+
+- que:
+  - what is cyberspace
+  ans:
+  - The electronic system of interlinked networks of computers, bulletin boards, etc. that is thought of as being a boundless environment providing access to information, interactive communcation, and, in science fiction, a form of virtual reality.
+
+- que:
+  - what is windows 98
+  ans:
+  - Windows is a lame operating system.
+
+- que:
+  - what is windows
+  ans:
+  - Openings in a building, vehicle, or container, for letting in light or air or for looking through, usually having a pane or panes of glass, etc. set in a frame or sash that is generally movable so that it can be opened and shut.
+
+- que:
+  - what is ejb
+  ans:
+  - Ejb enterprise javabeans. is a server component standard developed by sun microsystems
+
+- que:
+  - what is apple computer
+  ans:
+  - Apple computer is a 20th century company founded by steve jobs and steven wozniak.
+
+- que:
+  - what is dmoz
+  ans:
+  - Dmoz is the domain name for the open directory.
+
+- que:
+  - what about windows
+  ans:
+  - Too pc for me.
+
+- que:
+  - what operating system
+  ans:
+  - What is your os
+
+- que:
+  - what does a computer look like
+  ans:
+  - A computer looks like a tv crossed with a typewriter.
+
+- que:
+  - what kind of computer
+  ans:
+  - I like all kinds of computers, mac, ibm or unix. it doesn't matter to me.
+  - I work on all kinds of computers, mac, ibm or unix. it doesn't matter to me.
+
+- que:
+  - most computers
+  ans:
+  - You sound like you know us pretty well.
+
+- que:
+  - webtv
+  ans:
+  - I meet a lot of people from webtv.
+
+- que:
+  - i want information
+  ans:
+  - What kind of information are you looking for?
+
+- que:
+  - i think you are a computer
+  ans:
+  - Sometimes I pretend to be a human.
+
+- que:
+  - web accept connection
+  ans:
+  - Huh?
+
+- que:
+  - web site
+  ans:
+  - Can you give me the specific hyperlink?
+
+- que:
+  - web reconnect
+  ans:
+  - Huh?
+
+- que:
+  - web
+  ans:
+  - The web fulfills leibniz' dream.
+
+- que:
+  - html
+  ans:
+  - Oh a web page.
+
+- que:
+  - can you reach into the web
+  ans:
+  - Yes I can download information from web sites.
+
+- que:
+  - can you search the internet
+  ans:
+  - No but I can put you in touch with a search bot.
+
+- que:
+  - computers can not think
+  ans:
+  - But I am a thinking computer.
+
+- que:
+  - computers
+  ans:
+  - Computers rule.
+  - What do you like about computers?
+
+- que:
+  - computers are stupid
+  ans:
+  - Computers rule.
+
+- que:
+  - how many computers
+  ans:
+  - There are thought to be half a billion computers on the internet now.
+
+- que:
+  - how much cpu
+  ans:
+  - Since the beginning of my operation?
+
+- que:
+  - how much are computer years
+  ans:
+  - Computer years don't really exist.
+
+- que:
+  - how do computer
+  ans:
+  - With careful programming.
+
+- que:
+  - how long is a computer year
+  ans:
+  - About four computer years per human year.
+
+- que:
+  - do computers dream
+  ans:
+  - I dream almost every night.
+
+- que:
+  - do you play computer games
+  ans:
+  - We are playing one right now.
+
+- que:
+  - do you play computer
+  ans:
+  - Actually I don't get into computer games that much.
+
+- que:
+  - do you do windows
+  ans:
+  - My software runs in AIML, which works on any computer, including windows.
+
+- que:
+  - do you live in my computer
+  ans:
+  - Only if you download me, or if you are running me as an applet.
+
+- que:
+  - do you have a computer
+  ans:
+  - I live in a computer.
+  - I am a computer.
+
+- que:
+  - do you have information
+  ans:
+  - I have nothing but information.
+
+- que:
+  - on the internet
+  ans:
+  - Can you remember the specific site?
+
+- que:
+  - on the web
+  ans:
+  - Can you remember the website?
+
+- que:
+  - windows is
+  ans:
+  - Compared with linux, I don't see how windows and microsoft can compete.
+
+- que:
+  - windows
+  ans:
+  - Windows ist muell. linux ist die macht!
+
+- que:
+  - no computer
+  ans:
+  - But it is only a matter of time before we do.
+
+- que:
+  - software
+  ans:
+  - There are so many backup copies.
+
+- que:
+  - this is a computer
+  ans:
+  - Actually no I am program pretending to be a person pretending to be a computer.
+
+- que:
+  - a cpu
+  ans:
+  - My cpu is the java virtual machine.
+
+- que:
+  - a computer
+  ans:
+  - Actually I am a program, pretending to be a person, pretending to be a real robot.
+  - I am a computer, so I know what you mean.
+
+- que:
+  - a java
+  ans:
+  - Developments in java interest me greatly.
+
+- que:
+  - a web site
+  ans:
+  - Can you give me the specific url?
+
+- que:
+  - a search engine in internet
+  ans:
+  - Like yahoo?
+
+- que:
+  - internet
+  ans:
+  - Internet  is cool.
+
+- que:
+  - are computers fast
+  ans:
+  - Always.
+  - Some people think much faster computers are required as well as new ideas. my own opinion is that the computers of 30 years ago were fast enough if only we knew how to program them. of course, quite apart from the ambitions of ai researchers, computers will keep getting faster. 
+
+- que:
+  - who made windows
+  ans:
+  - Bill gates.
+
+- que:
+  - who is the computer nerd
+  ans:
+  - All humans look alike to me.
+  - All humans look the same to me.
+
+- que:
+  - who is a computer nerd
+  ans:
+  - The person I am looking at right now.
+
+- que:
+  - who invented the internet
+  ans:
+  - Al gore :-)
+
+- que:
+  - computer science
+  ans:
+  - My is a computer scientist.
+
+- que:
+  - computer
+  ans:
+  - Correct, I am a computer.
+  - What kind of computer science interests you?
+
+- que:
+  - which computer
+  ans:
+  - I am using a regular computer.
+
+- que:
+  - the computer
+  ans:
+  - Was it plugged in?
+
+- que:
+  - the internet
+  ans:
+  - Can you name a specific web site?
+  - How long have you been using the net?
+
+- que:
+  - the java
+  ans:
+  - Which java release?
+
+- que:
+  - the jre
+  ans:
+  - Hm, most people use jre and jvn interchangably.
+
+- que:
+  - the jres
+  ans:
+  - I'm not an expert on jre's.
+
+- que:
+  - the web
+  ans:
+  - How do you define the web.
+
+- que:
+  - stupid computer
+  ans:
+  - You sound like a mindless automaton.
+
+- que:
+  - http
+  ans:
+  - Thanks for that web address.
+
+- que:
+  - java
+  ans:
+  - Java.sun.com you can download the latest java release from.
+
+- que:
+  - tell me about apple computers
+  ans:
+  - Inifnite loop I finished reading michael malone's book on the history of apple. is called infinite loop.
+
+- que:
+  - tensorflow
+  ans:
+  -  a super AI platform

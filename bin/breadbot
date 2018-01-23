@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+import sys
+import os
+
+from breadbot import core
+from breadbot import serv
+
+isSuper = True
+
+
+if os.geteuid():
+    args = [sys.executable] + sys.argv
+    os.execlp('sudo', 'sudo', *args)
+
+
+def show_help():
+    print(
+        '\n'
+        ' import:   import data\n'
+        ' drop:     drop database\n'
+        ' start:    start server\n'
+        ' Ctr+C:    stop server\n'
+        ' help:     display this help\n'
+        ' q:        exit this console\n'
+        )
+
+
+def active(cmd):
+    if cmd == 'help':
+        show_help()
+    elif cmd == 'import':
+        core.data.Data().import_data()
+    elif cmd == 'drop':
+        core.data.Data().drop_db()
+    elif cmd == 'start':
+        serv.start()
+    else:
+        print(core.chat().response('localuser', cmd))
+
+
+if __name__ == '__main__':
+
+    if len(sys.argv) > 1:
+        cmd = sys.argv[1]
+        active(cmd)
+        sys.exit(0)
+
+    while True:
+        cmd = input('>> ')
+        if cmd == 'q' or cmd == 'exit':
+            break
+        elif cmd == '':
+            continue
+        else:
+            active(cmd)
