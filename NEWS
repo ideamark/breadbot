@@ -151,6 +151,7 @@
 
 2018-01-26:
 - Version: 2.0.0
+- Happy New Year! This is a new version
 - Import jaro-winkler distance for question matching
 - Added large amount of corpus
-- Fixed a bug of setup.py
+- Fixed bugs of setup.py
