@@ -6,14 +6,21 @@ QA:
 - que:
   - nice job
   ans:
-  -  Glad to hear it.
+  - Glad to hear it.
 
 - que:
   - how are you today
   ans:
-  -  Fine.
+  - Fine.
 
 - que:
   - aha
   ans:
-  -  Well
+  - Well
+
+- que:
+  - haha
+  - hehe
+  ans:
+  - Glad for that.
+  - Great

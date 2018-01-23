@@ -11,9 +11,11 @@ SPLIT_SYMBLE = ' '
 
 class Data(object):
 
-    def __init__(self, dataPaths=None):
+    def __init__(self, dataPaths=[]):
+        self.all_flag = False
         if not dataPaths:
             dataPaths = misc.cfg().get('data_path')
+            self.all_flag = True
         self.dataPaths = dataPaths
         self.dataLogPath = self._get_data_log_path()
         self.db = self._open_db()
@@ -84,6 +86,8 @@ class Data(object):
     def _get_cur_list(self):
         curList = []
         for dataPath in self.dataPaths:
+            if not os.path.exists(dataPath):
+                continue
             for root, dirs, files in os.walk(dataPath):
                 dataList = self._get_data_list(root, files)
                 curList += dataList
@@ -98,6 +102,8 @@ class Data(object):
             return []
 
     def _get_changed_list(self):
+        if not self.all_flag:
+            return self.dataPaths
         curList = self._get_cur_list()
         oldList = self._get_old_list()
         changedList = []
