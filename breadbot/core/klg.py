@@ -13,11 +13,11 @@ def _get_qas(db, coll, isSuper=False):
         return
     reqs = db[coll].find_one()
     tags = reqs['tag']
-    if 'dia' in tags:
+    if 'klg' not in tags:
         return
     elif 'sec' in tags and not isSuper:
         return
-    qas = reqs['QA']
+    qas = reqs['qas']
     return qas
 
 

@@ -20,7 +20,7 @@ def response(db, user, inStr):
         tags = reqs['tag']
         if 'dia' not in tags:
             continue
-        qas = reqs['QA']
+        qas = reqs['qas']
         if not qas:
             continue
         random.shuffle(qas)

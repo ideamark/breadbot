@@ -16,20 +16,23 @@
 
 ## How to use
 * Run command "breadbot"
-* Then u can talk with bread:
+* Then u can talk with Bread
+  * Only English chatting.
+  * If return message is too long, type "n" to turn to the next page.
+  * Generally, Bread return the dia data result, But when you type the same words twice, Bread will return the klg data result.
+
+## Super user mode
+* Super user mode is set for developers.
+* If your ID is in bread.cfg super user list, u will get the functions below:
   * Type "help" for simple & quick help.
-  * Or, Type "readme" to display this web page.
-* Useful chatting:
+  * Type "readme" to display this web page.
   * Search Baidu: type "d xxx".
   * Search Wikipedia: type "w xxx".
   * Search dictionary: type "s xxx". (Need install sdcv first)
   * Teach dialogues: type "t question; answer" (Use ";" to split question and answer)
-  * If return message is too long, type "n" will turn to next page.
-  * Generally, Bread return the dia data result, But when you type the same words twice, Bread will return the klg data result.
 
-## Surpported Platform
-* WeChat Official Account
-  * How to connect: Write your token and ip on /etc/bread.cfg, then run command "breadbot start", it will soon connect to WeChat Official Account (https://mp.weixin.qq.com) and start working.
+## Connect to WeChat
+* Write your token and ip on /etc/bread.cfg, then run command "breadbot start", it will soon connect to WeChat Official Account (https://mp.weixin.qq.com) and start working.
 
 ## Seek more
 * Author: Mark Young

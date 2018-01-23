@@ -25,35 +25,38 @@ class chat(object):
 
     def response(self, user, inStr):
         inStr = misc.init_input(inStr)
+        res = ''
 
         if re.match('^(n|next)$', inStr):
             res = memory.longStr(user).read_mem()
-        elif re.match('^s .*$', inStr):
-            content = re.sub('^s ', '', inStr)
-            res = search.translate(content)
-        elif re.match('^d .*$', inStr):
-            content = re.sub('^d ', '', inStr)
-            res = search.baiduSearch(content)
-        elif re.match('^w .*$', inStr):
-            content = re.sub('^w ', '', inStr)
-            res = search.wikiSearch(content)
-        elif re.match('^help$', inStr.lower()):
-            res = misc.show_help()
-        elif re.match('^readme$', inStr.lower()):
-            res = misc.show_readme()
-        elif re.match('^t .*$', inStr):
-            content = re.sub('^t ', '', inStr)
-            res = teach.response(user, content)
-        elif re.search('[\u4e00-\u9fa5]', inStr):
-            if misc.is_super(user):
+
+        if misc.is_super(user):
+            if re.match('^s .*$', inStr):
+                content = re.sub('^s ', '', inStr)
+                res = search.translate(content)
+            elif re.match('^d .*$', inStr):
+                content = re.sub('^d ', '', inStr)
+                res = search.baiduSearch(content)
+            elif re.match('^w .*$', inStr):
+                content = re.sub('^w ', '', inStr)
+                res = search.wikiSearch(content)
+            elif re.match('^help$', inStr.lower()):
+                res = misc.show_help()
+            elif re.match('^readme$', inStr.lower()):
+                res = misc.show_readme()
+            elif re.match('^t .*$', inStr):
+                content = re.sub('^t ', '', inStr)
+                res = teach.response(user, content)
+            elif re.search('[\u4e00-\u9fa5]', inStr):
                 res = search.baiduSearch(inStr)
-            else:
+        else:
+            if re.search('[\u4e00-\u9fa5]', inStr):
                 resList = [
                     'I speak English only.',
                     'Speak English please.',
                     'English, please.']
                 return random.choice(resList)
-        else:
+        if not res:
             que = ''
             ans = ''
             lastDia = {}
