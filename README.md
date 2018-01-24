@@ -23,12 +23,12 @@
 ## Super user mode
 * Super user mode is set for developers.
 * If your ID is in bread.cfg super user list, u will get the functions below:
-  * Type "help" for simple & quick help.
-  * Type "readme" to display this web page.
-  * Search knowledge base: type "s xxx".
-  * Search wikipedia: type "w xxx".
-  * Search dictionary: type "d xxx". (Need install sdcv first)
-  * Teach dialogues: type "t question; answer" (Use ";" to split question and answer)
+  * Type "help": Simple & quick help.
+  * Type "readme": Display this web page.
+  * Type "d xxx": Search knowledge base and baidu.
+  * Type "w xxx": Search wikipedia.
+  * Type "s xxx": Search dictionary(Need install sdcv first).
+  * Type "t que;ans": Teach dialogues(Use ";" to split question and answer)
 
 ## Connect to WeChat
 * Write your token and ip on /etc/bread.cfg, then run command "breadbot start", it will soon connect to WeChat Official Account (https://mp.weixin.qq.com) and start working.

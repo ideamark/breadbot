@@ -31,11 +31,11 @@ class chat(object):
             res = memory.longStr(user).read_mem()
 
         if misc.is_super(user):
-            if re.match('^d .*$', inStr):
-                content = re.sub('^d ', '', inStr)
-                res = search.translate(content)
-            elif re.match('^s .*$', inStr):
+            if re.match('^s .*$', inStr):
                 content = re.sub('^s ', '', inStr)
+                res = search.translate(content)
+            elif re.match('^d .*$', inStr):
+                content = re.sub('^d ', '', inStr)
                 res = klg.response(self.db, user, content)
                 if not res:
                     res = search.baiduSearch(content)
@@ -51,6 +51,8 @@ class chat(object):
                 res = teach.response(user, content)
             elif re.search('[\u4e00-\u9fa5]', inStr):
                 res = search.baiduSearch(inStr)
+            elif klg.DO_YOU_MEAN in str(memory.dialogue(user).get_dia()[-1].values()):
+                res = klg.response(self.db, user, inStr)
         else:
             if re.search('[\u4e00-\u9fa5]', inStr):
                 resList = [
@@ -59,24 +61,13 @@ class chat(object):
                     'English, please.']
                 return random.choice(resList)
         if not res:
-            lastDias = memory.dialogue(user).get_dia()
-            if lastDias:
-                lastDia = lastDias[-1]
-                que = list(lastDia.keys())[0]
-                ans = list(lastDia.values())[0]
-            if inStr == que or klg.DO_YOU_MEAN in ans:
-                res = klg.response(self.db, user, inStr)
-                if not res:
-                    res = dia.response(self.db, user, inStr)
-            else:
-                res = dia.response(self.db, user, inStr)
+            res = dia.response(self.db, user, inStr)
         if not res:
             notList = [
                 "I don't understand",
                 "What?",
-                "Let's change a topic",
-                "I don't know",
                 "Parden?",
+                "...",
                 "Hmm..."]
             res = random.choice(notList)
         memory.dialogue(user).insert_dia(inStr, res)
