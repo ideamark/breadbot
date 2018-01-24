@@ -18,7 +18,7 @@
 * Run command "breadbot"
 * Then u can talk with Bread
   * Only English chatting.
-  * If return message is too long, type "n" to turn to the next page.
+  * If return message is too long, type "next" or "n" turn to next page.
   * Generally, Bread return the dia data result, But when you type the same words twice, Bread will return the klg data result.
 
 ## Super user mode

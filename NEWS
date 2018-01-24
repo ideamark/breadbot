@@ -152,7 +152,7 @@
 2018-01-26:
 - Version: 2.0.0
 - Happy New Year! This is a new version
-- Import jaro-winkler distance for question matching
-- Improved the speed of chat reply
-- Added large amount of corpus
-- Fixed bugs of setup.py
+- Import jaro-winkler
+- Sped up the chat reply
+- Added a large number of corpus
+- Some bug fix
