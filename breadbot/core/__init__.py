@@ -27,16 +27,18 @@ class chat(object):
         inStr = misc.init_input(inStr)
         res = ''
 
-        if re.match('^(n|next)$', inStr):
+        if re.match('^n$', inStr):
             res = memory.longStr(user).read_mem()
 
         if misc.is_super(user):
-            if re.match('^s .*$', inStr):
-                content = re.sub('^s ', '', inStr)
-                res = search.translate(content)
-            elif re.match('^d .*$', inStr):
+            if re.match('^d .*$', inStr):
                 content = re.sub('^d ', '', inStr)
-                res = search.baiduSearch(content)
+                res = search.translate(content)
+            elif re.match('^s .*$', inStr):
+                content = re.sub('^s ', '', inStr)
+                res = klg.response(self.db, user, content)
+                if not res:
+                    res = search.baiduSearch(content)
             elif re.match('^w .*$', inStr):
                 content = re.sub('^w ', '', inStr)
                 res = search.wikiSearch(content)
@@ -57,9 +59,6 @@ class chat(object):
                     'English, please.']
                 return random.choice(resList)
         if not res:
-            que = ''
-            ans = ''
-            lastDia = {}
             lastDias = memory.dialogue(user).get_dia()
             if lastDias:
                 lastDia = lastDias[-1]
@@ -71,8 +70,6 @@ class chat(object):
                     res = dia.response(self.db, user, inStr)
             else:
                 res = dia.response(self.db, user, inStr)
-                if not res:
-                    res = klg.response(self.db, user, inStr)
         if not res:
             notList = [
                 "I don't understand",

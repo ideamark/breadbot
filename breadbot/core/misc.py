@@ -25,9 +25,9 @@ def expand_abbrev(inStr):
 
 def show_help():
     return(
-        '- d ....search baidu\n'
+        '- d ....search dictionary\n'
+        '- s ....search knowledge\n'
         '- w ....search wikipedia\n'
-        '- s ....search dictionary\n'
         '- n ....show next message\n'
         '- t ....teach a dialogue\n')
 
