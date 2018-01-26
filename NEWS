@@ -156,4 +156,4 @@
 - Sped up the chat reply
 - Added a large number of corpus
 - Some bug fix
-- Added timeout function for response
+- Added timeout for chat response
