@@ -23,7 +23,7 @@ class chat(object):
         client = MongoClient(db_ip, db_port)
         return client[db_name]
 
-    @common.time_limit(5)
+    @common.time_limit(4)
     def response(self, user, inStr):
         inStr = common.init_input(inStr)
         res = ''
