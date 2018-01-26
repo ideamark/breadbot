@@ -8,6 +8,7 @@ from breadbot.core import common
 JARO_WINKLER_PERCENT = 0.98
 
 
+@common.time_limit(3)
 def response(db, user, inStr):
     inStr = common.que_init(inStr)
     ans = ''

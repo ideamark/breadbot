@@ -2,11 +2,11 @@ import random
 import re
 from pymongo import MongoClient
 
+from . import common
 from . import data
 from . import dia
 from . import klg
 from . import memory
-from . import common
 from . import search
 from . import teach
 
@@ -23,7 +23,6 @@ class chat(object):
         client = MongoClient(db_ip, db_port)
         return client[db_name]
 
-    @common.time_limit(4)
     def response(self, user, inStr):
         inStr = common.init_input(inStr)
         res = ''
@@ -63,8 +62,6 @@ class chat(object):
                 return random.choice(resList)
         if not res:
             res = dia.response(self.db, user, inStr)
-        if not res:
-            res = common.dontKnow()
         memory.dialogue(user).insert_dia(inStr, res)
         res = memory.longStr(user).check_long_str(res)
         return res
