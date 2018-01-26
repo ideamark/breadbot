@@ -16,7 +16,7 @@ class WeChat(View):
         return super(WeChat, self).dispatch(*args, **kwargs)
 
     def get(self, request):
-        token = core.misc.cfg().get('token')
+        token = core.common.cfg().get('token')
         signature = request.GET.get('signature', None)
         timestamp = request.GET.get('timestamp', None)
         nonce = request.GET.get('nonce', None)
@@ -52,5 +52,5 @@ class WeChat(View):
         contextXml = template.render(context)
         logStr = '\nUser:   %s\nAsk:    %s\nAnswer: %s\n' % \
                  (fromUser, content, res)
-        core.misc.log().write(logStr)
+        core.common.log().write(logStr)
         return HttpResponse(contextXml)

@@ -2,7 +2,7 @@ import os
 from pymongo import MongoClient
 import re
 
-from . import misc
+from . import common
 
 MEM_COLL = 'breadbot_memory_'
 
@@ -13,9 +13,9 @@ class _Coll(object):
 
     @staticmethod
     def get_mem_coll(user):
-        db_name = misc.cfg().get('db_name')
-        ip = misc.cfg().get('db_ip')
-        port = misc.cfg().get('db_port')
+        db_name = common.cfg().get('db_name')
+        ip = common.cfg().get('db_ip')
+        port = common.cfg().get('db_port')
         client = MongoClient(ip, port)
         db = client[db_name]
         colls = db.collection_names()

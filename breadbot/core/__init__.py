@@ -6,7 +6,7 @@ from . import data
 from . import dia
 from . import klg
 from . import memory
-from . import misc
+from . import common
 from . import search
 from . import teach
 
@@ -17,20 +17,21 @@ class chat(object):
         self.db = self._open_db()
 
     def _open_db(self):
-        db_name = misc.cfg().get('db_name')
-        db_ip = misc.cfg().get('db_ip')
-        db_port = misc.cfg().get('db_port')
+        db_name = common.cfg().get('db_name')
+        db_ip = common.cfg().get('db_ip')
+        db_port = common.cfg().get('db_port')
         client = MongoClient(db_ip, db_port)
         return client[db_name]
 
+    @common.time_limit(5)
     def response(self, user, inStr):
-        inStr = misc.init_input(inStr)
+        inStr = common.init_input(inStr)
         res = ''
 
         if re.match('^n$', inStr):
             res = memory.longStr(user).read_mem()
 
-        if misc.is_super(user):
+        if common.is_super(user):
             if re.match('^s .*$', inStr):
                 content = re.sub('^s ', '', inStr)
                 res = search.translate(content)
@@ -43,9 +44,9 @@ class chat(object):
                 content = re.sub('^w ', '', inStr)
                 res = search.wikiSearch(content)
             elif re.match('^help$', inStr.lower()):
-                res = misc.show_help()
+                res = common.show_help()
             elif re.match('^readme$', inStr.lower()):
-                res = misc.show_readme()
+                res = common.show_readme()
             elif re.match('^t .*$', inStr):
                 content = re.sub('^t ', '', inStr)
                 res = teach.response(user, content)
@@ -63,13 +64,7 @@ class chat(object):
         if not res:
             res = dia.response(self.db, user, inStr)
         if not res:
-            notList = [
-                "I don't understand",
-                "What?",
-                "Parden?",
-                "...",
-                "Hmm..."]
-            res = random.choice(notList)
+            res = common.dontKnow()
         memory.dialogue(user).insert_dia(inStr, res)
         res = memory.longStr(user).check_long_str(res)
         return res

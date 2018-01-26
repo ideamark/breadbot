@@ -3,13 +3,13 @@ import re
 import string
 import Levenshtein as Leven
 
-from breadbot.core import misc
+from breadbot.core import common
 
 JARO_WINKLER_PERCENT = 0.98
 
 
 def response(db, user, inStr):
-    inStr = misc.que_init(inStr)
+    inStr = common.que_init(inStr)
     ans = ''
     colls = db.collection_names()
     random.shuffle(colls)
@@ -29,7 +29,7 @@ def response(db, user, inStr):
             random.shuffle(ques)
             for que in ques:
                 que = str(que)
-                que = misc.que_init(que)
+                que = common.que_init(que)
                 if Leven.jaro_winkler(inStr, que) > JARO_WINKLER_PERCENT:
                     ans = qa['ans']
                     if type(ans) is list:

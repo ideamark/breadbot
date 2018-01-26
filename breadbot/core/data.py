@@ -4,7 +4,7 @@ import re
 import yaml
 from pymongo import MongoClient
 
-from breadbot.core import misc
+from breadbot.core import common
 
 SPLIT_SYMBLE = ' '
 
@@ -14,7 +14,7 @@ class Data(object):
     def __init__(self, dataPaths=[]):
         self.all_flag = False
         if not dataPaths:
-            dataPaths = misc.cfg().get('data_path')
+            dataPaths = common.cfg().get('data_path')
             self.all_flag = True
         self.dataPaths = dataPaths
         self.dataLogPath = self._get_data_log_path()
@@ -27,22 +27,22 @@ class Data(object):
         self._import_db_data(changedList)
 
     def drop_db(self):
-        db_name = misc.cfg().get('db_name')
-        ip = misc.cfg().get('db_ip')
-        port = misc.cfg().get('db_port')
+        db_name = common.cfg().get('db_name')
+        ip = common.cfg().get('db_ip')
+        port = common.cfg().get('db_port')
         client = MongoClient(ip, port)
         client.drop_database(db_name)
         data_log = os.path.join(
-            misc.cfg().get('log_path'),
+            common.cfg().get('log_path'),
             'data.log')
         if os.path.exists(data_log):
             os.remove(data_log)
         print('\n Drop Database Done.')
 
     def _open_db(self):
-        db_name = misc.cfg().get('db_name')
-        ip = misc.cfg().get('db_ip')
-        port = misc.cfg().get('db_port')
+        db_name = common.cfg().get('db_name')
+        ip = common.cfg().get('db_ip')
+        port = common.cfg().get('db_port')
         client = MongoClient(ip, port)
         return client[db_name]
 
@@ -60,7 +60,7 @@ class Data(object):
                 changedList.remove(dataPath)
 
     def _get_data_log_path(self):
-        dataLogPath = os.path.join(misc.cfg().get('log_path'), 'data.log')
+        dataLogPath = os.path.join(common.cfg().get('log_path'), 'data.log')
         return dataLogPath
 
     def _get_path_name(self, dataPath):

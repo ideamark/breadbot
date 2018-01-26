@@ -3,7 +3,7 @@ import re
 import string
 
 from breadbot.core import memory
-from breadbot.core import misc
+from breadbot.core import common
 
 DO_YOU_MEAN = 'Do you mean:'
 
@@ -22,8 +22,8 @@ def _get_qas(db, coll, isSuper=False):
 
 
 def response(db, user, inStr):
-    isSuper = misc.is_super(user)
-    inStr = misc.expand_abbrev(inStr)
+    isSuper = common.is_super(user)
+    inStr = common.expand_abbrev(inStr)
     inStr = re.sub('[%s]+' % string.punctuation, '', inStr)
     inStr = inStr.lower()
     if len(inStr) < 3:

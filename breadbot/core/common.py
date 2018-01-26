@@ -1,8 +1,29 @@
 from configobj import ConfigObj
 import os
+import random
 import re
 import string
+from threading import Thread
 import time
+
+
+def time_limit(secs):
+    def dec(function):
+        def dec2(*args,**kwargs):
+            class TimeLimited(Thread):
+                def __init__(self):
+                    Thread.__init__(self)
+                    self.result = dontKnow()
+
+                def run(self):
+                    self.result = function(*args,**kwargs)
+
+            t = TimeLimited()
+            t.start()
+            t.join(secs)
+            return t.result
+        return dec2
+    return dec
 
 
 def init_input(inStr):
@@ -50,6 +71,16 @@ def is_super(name):
             if user == name:
                 return True
     return False
+
+
+def dontKnow():
+    notList = [
+        "What?",
+        "Parden?",
+        "...",
+        "Hmm..."]
+    res = random.choice(notList)
+    return res
 
 
 class log(object):
