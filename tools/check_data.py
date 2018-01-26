@@ -17,7 +17,7 @@ if not os.path.exists(filePath):
     error('', 'wrong file path')
 
 with open(filePath, 'r') as f:
-    qas = yaml.load(f.read())['QA']
+    qas = yaml.load(f.read())['qas']
 
 for qa in qas:
     if not qa:
