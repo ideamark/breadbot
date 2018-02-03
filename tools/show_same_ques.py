@@ -7,17 +7,21 @@ import yaml
 from breadbot.core import misc
 
 
-class sameQue(object):
+class ShowSameQues(object):
 
-    def __init__(self, dataPath=None):
+    def __init__(self):
+        pass
+
+    def action(self, dataPath=None):
         if not dataPath:
             dataPaths = misc.cfg().get('data_path')
         if not dataPaths:
             print('[Error] data path not found')
             sys.exit(1)
-        logPath = './same-que.log'
+        logPath = os.path.join(os.getcwd(), 'same-que.log')
         for dataPath in dataPaths:
             self.show_same(dataPath, logPath)
+        print('Complete! All results have saved in %s' % logPath)
 
     def _init(self, inStr):
         inStr = str(inStr)
@@ -65,4 +69,4 @@ class sameQue(object):
 
 
 if __name__ == '__main__':
-    sameQue()
+    ShowSameQues().action()

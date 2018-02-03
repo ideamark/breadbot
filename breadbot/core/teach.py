@@ -23,5 +23,5 @@ def response(user, inStr):
     text = '\n- que:\n  - %s\n  ans:\n  - %s\n' % (que, ans)
     f.write(text)
     f.close()
-    data.Data([file_path]).import_data()
+    data.Data().import_data([file_path])
     return 'OK, I learned.'

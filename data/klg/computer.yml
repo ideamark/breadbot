@@ -61,8 +61,11 @@ qas:
 - que:
   - how to tar
   - how to compress
-  ans:
-  - tar -jcvf xxx.tar.bz2 filename
+  ans: |
+   - tar cvf xxx.tar filename
+   - tar czf xxx.tar.gz filename
+   - tar cjf xxx.tar.bz2 filename
+   - tar cZf xxx.tar.Z filename
 
 - que:
   - how to unzip
@@ -1391,3 +1394,9 @@ qas:
   - vim how to open multiple files
   ans:
   - vi -o file1, file2, file3
+
+- que:
+  - vim how to edit multiple files
+  ans: |
+   - :args *.txt
+   - :argdo %s/old/new/g
