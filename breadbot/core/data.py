@@ -127,7 +127,6 @@ class Data(object):
                 db_coll = self.db[coll]
                 readStr = self._read_data_file(dataPath)
                 data = yaml.load(readStr)
-                data = {}
                 data['path'] = dataPath
                 data['mtime'] = self._get_modify_time(dataPath)
                 db_coll.insert(data)
