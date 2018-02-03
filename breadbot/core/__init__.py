@@ -31,6 +31,7 @@ class chat(object):
             res = memory.longStr(user).read_mem()
 
         if common.is_super(user):
+            mem_dias = memory.dialogue(user).get_dia()
             if re.match('^s .*$', inStr):
                 content = re.sub('^s ', '', inStr)
                 res = search.translate(content)
@@ -51,7 +52,7 @@ class chat(object):
                 res = teach.response(user, content)
             elif re.search('[\u4e00-\u9fa5]', inStr):
                 res = search.baiduSearch(inStr)
-            elif klg.DO_YOU_MEAN in str(memory.dialogue(user).get_dia()[-1].values()):
+            elif mem_dias and klg.DO_YOU_MEAN in str(mem_dias[-1].values()):
                 res = klg.response(self.db, user, inStr)
         else:
             if re.search('[\u4e00-\u9fa5]', inStr):
