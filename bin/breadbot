@@ -18,6 +18,7 @@ def show_help():
         '\n'
         ' import:   import data\n'
         ' drop:     drop database\n'
+        ' ques:     count ques\n'
         ' start:    start server\n'
         ' Ctr+C:    stop server\n'
         ' help:     display this help\n'
@@ -35,6 +36,8 @@ def active(cmd):
         data.import_data.importData().do_import(dataPaths)
     elif cmd == 'drop':
         data.import_data.importData().drop_db()
+    elif cmd == 'ques':
+        data.count_ques.countQues().do_count()
     elif cmd == 'start':
         serv.start()
     else:
