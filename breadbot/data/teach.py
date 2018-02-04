@@ -1,7 +1,7 @@
 import os
 
-from . import data
-from . import common
+from . import import_data
+from breadbot.core import common
 
 
 def response(user, inStr):
@@ -23,5 +23,5 @@ def response(user, inStr):
     text = '\n- que:\n  - %s\n  ans:\n  - %s\n' % (que, ans)
     f.write(text)
     f.close()
-    data.Data().import_data([file_path])
+    import_data.importData().do_import([file_path])
     return 'OK, I learned.'

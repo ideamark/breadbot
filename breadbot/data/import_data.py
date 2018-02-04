@@ -7,12 +7,12 @@ from pymongo import MongoClient
 from breadbot.core import common
 
 
-class Data(object):
+class importData(object):
 
     def __init__(self):
         self.db = self._open_db()
 
-    def import_data(self, dataPaths=[]):
+    def do_import(self, dataPaths=[]):
         self.all_flag = False
         if not dataPaths:
             dataPaths = common.cfg().get('data_path')

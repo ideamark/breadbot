@@ -4,6 +4,7 @@ import re
 import sys
 
 from breadbot import core
+from breadbot import data
 from breadbot import serv
 
 
@@ -28,12 +29,12 @@ def active(cmd):
     if cmd == 'help':
         show_help()
     elif cmd == 'import':
-        core.data.Data().import_data()
+        data.import_data.importData().do_import()
     elif re.match('^import .*$', cmd):
         dataPaths = re.sub('^import ', '', cmd).split(' ')
-        core.data.Data().import_data(dataPaths)
+        data.import_data.importData().do_import(dataPaths)
     elif cmd == 'drop':
-        core.data.Data().drop_db()
+        data.import_data.importData().drop_db()
     elif cmd == 'start':
         serv.start()
     else:

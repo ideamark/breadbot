@@ -26,8 +26,8 @@ elif sys.argv[1] == 'install':
     os.system('breadbot import')
 
 elif sys.argv[1] == 'uninstall':
-    from breadbot import core
-    core.data.Data().drop_db()
+    from breadbot import data
+    data.import_data.importData().drop_db()
     os.system('pip3 uninstall breadbot')
     os.system('rm -f /etc/bread.cfg')
     os.system('rm -f /usr/local/bin/breadbot')
@@ -44,7 +44,6 @@ elif sys.argv[1] == 'clean':
         'etc',
         'log',
         'tests',
-        'tools',
         'LICENSE',
         'NEWS',
         'README.md',

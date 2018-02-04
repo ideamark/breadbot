@@ -3,12 +3,11 @@ import re
 from pymongo import MongoClient
 
 from . import common
-from . import data
 from . import dia
 from . import klg
 from . import memory
 from . import search
-from . import teach
+from breadbot.data import teach
 
 
 class chat(object):
