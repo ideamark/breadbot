@@ -18,7 +18,8 @@ def show_help():
         '\n'
         ' import:   import data\n'
         ' drop:     drop database\n'
-        ' ques:     count ques\n'
+        ' count:     count ques\n'
+        ' check:    check data\n'
         ' start:    start server\n'
         ' Ctr+C:    stop server\n'
         ' help:     display this help\n'
@@ -29,15 +30,16 @@ def show_help():
 def active(cmd):
     if cmd == 'help':
         show_help()
-    elif cmd == 'import':
-        data.import_data.importData().do_import()
-    elif re.match('^import .*$', cmd):
-        dataPaths = re.sub('^import ', '', cmd).split(' ')
+    elif re.match('^import.*$', cmd):
+        dataPaths = cmd.split(' ')[1:]
         data.import_data.importData().do_import(dataPaths)
     elif cmd == 'drop':
         data.import_data.importData().drop_db()
-    elif cmd == 'ques':
+    elif cmd == 'count':
         data.count_ques.countQues().do_count()
+    elif re.match('^check.*$', cmd):
+        dataPaths = cmd.split(' ')[1:]
+        data.check_data.checkData().do_check(dataPaths)
     elif cmd == 'start':
         serv.start()
     else:

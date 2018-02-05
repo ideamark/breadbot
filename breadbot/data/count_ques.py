@@ -3,12 +3,12 @@ from breadbot.core.common import cfg
 import os
 
 
-class CountQues(object):
+class countQues(object):
 
     def __init__(self):
         self.dataPaths = cfg().get('data_path')
 
-    def action(self):
+    def do_count(self):
         count = 0
         for dataPath in self.dataPaths:
             for root, dirs, files in os.walk(dataPath):
@@ -22,8 +22,4 @@ class CountQues(object):
                         content = fp.read()
                         count += content.count('- que:\n')
 
-        print('Count: %s' % count)
-
-
-if __name__ == '__main__':
-    CountQues().action()
+        print('ques: %s' % count)
