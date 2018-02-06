@@ -2,33 +2,17 @@
 import os
 import sys
 
+from breadbot.core import common
+
 
 class transformCorpus(object):
 
     def __init__(self):
         pass
 
-    def action(self, pathList=[]):
-        if not pathList:
-            print('Please enter file paths')
-            return None
-        for i in range(len(pathList)):
-            if pathList[i][-1] == '*':
-                pathList[i] == pathList[i][:-2]
-            if os.path.isdir(pathList[i]):
-                newPaths = os.listdir(pathList[i])
-                for j in range(len(newPaths)):
-                    newPaths[j] = os.path.join(pathList[i], newPaths[j])
-                pathList += newPaths
-        self.transform(pathList)
-
-    def transform(self, pathList):
-        for filePath in pathList:
-            if not os.path.exists(filePath):
-                print('%s not exists, passed!' % filePath)
-                continue
-            print(filePath)
-            continue
+    def do_transform(self, filePaths=[]):
+        filePaths = common.path_parser(filePaths)
+        for filePath in filePaths:
             fr = open(filePath, 'r')
             text = fr.read()
             fr.close()
@@ -49,7 +33,3 @@ class transformCorpus(object):
                 for ans in item[-1]:
                     fw.write('  - %s\n' % ans)
             fw.close()
-
-
-if __name__ == '__main__':
-    transformCorpus().action(sys.argv[1:])

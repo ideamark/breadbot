@@ -139,3 +139,26 @@ class cfg(object):
                 raise Exception("super_user must be a list")
             self.cfg['wechat']['super_user'] = ':'.join(key)
         self.cfg.write()
+
+def path_parser(filePaths=[]):
+    if not filePaths:
+        print('Please enter file paths')
+        return []
+
+    for path in filePaths:
+        if path[-1] == '*':
+            path = path[:-1]
+        if not os.path.exists(path):
+            filePaths.remove(path)
+        if os.path.isdir(path):
+            filePaths.remove(path)
+            files = os.listdir(path)
+            for f in files:
+                fPath = os.path.join(path, f)
+                if not os.path.exists(fPath):
+                    continue
+                if os.path.isfile(fPath) and \
+                        f[-4:] == '.yml':
+                    filePaths.append(fPath)
+
+    return filePaths
