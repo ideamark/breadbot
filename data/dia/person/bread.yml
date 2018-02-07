@@ -15526,11 +15526,6 @@ qas:
   - Nothing.
 
 - que:
-  - no
-  ans:
-  - OK, then.
-
-- que:
   - realy
   ans:
   - as you wish

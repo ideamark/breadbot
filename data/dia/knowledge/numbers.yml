@@ -574,7 +574,7 @@ qas:
   - One hundred fifty three.
 
 - que:
-  - 0
+  - '0'
   ans:
   - What is 0 
 
