@@ -8,11 +8,11 @@
 ## Setup
 * Install
   * Make sure you have installed python3, python3-pip and mongodb
-  * sudo python3 setup.py install
+  * python3 setup.py install
 * Uninstall
-  * sudo python3 setup.py uninstall
+  * python3 setup.py uninstall
 * Clean (not uninstall)
-  * sudo python3 setup.py clean
+  * python3 setup.py clean
 
 ## How to use
 * Run command "breadbot"
