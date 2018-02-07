@@ -19,10 +19,10 @@ elif sys.argv[1] == 'install':
         setup_requires=['pbr>=0.1'],
         pbr=True,)
     from breadbot import core
-    log_path = core.misc.cfg().get('log_path')
+    log_path = core.common.cfg().get('log_path')
     os.mkdir(log_path)
     data_path = [os.path.join(os.getcwd(), 'data')]
-    core.misc.cfg().write('data_path', data_path)
+    core.common.cfg().write('data_path', data_path)
     os.system('breadbot import')
 
 elif sys.argv[1] == 'uninstall':
