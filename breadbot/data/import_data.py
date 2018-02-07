@@ -26,14 +26,6 @@ class importData(object):
         self._clean_old_db_data(changedList)
         self._import_db_data(changedList)
 
-    def drop_db(self):
-        db_name = common.cfg().get('db_name')
-        ip = common.cfg().get('db_ip')
-        port = common.cfg().get('db_port')
-        client = MongoClient(ip, port)
-        client.drop_database(db_name)
-        print('\n Drop Database Done.')
-
     def _open_db(self):
         db_name = common.cfg().get('db_name')
         ip = common.cfg().get('db_ip')

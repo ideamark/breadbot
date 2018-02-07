@@ -18,7 +18,7 @@ def show_help():
         '\n'
         ' import:   import data\n'
         ' drop:     drop database\n'
-        ' count:     count ques\n'
+        ' count:    count ques\n'
         ' check:    check data\n'
         ' start:    start server\n'
         ' Ctr+C:    stop server\n'
@@ -34,7 +34,7 @@ def active(cmd):
         dataPaths = cmd.split(' ')[1:]
         data.import_data.importData().do_import(dataPaths)
     elif cmd == 'drop':
-        data.import_data.importData().drop_db()
+        data.database.dataBase().drop_db()
     elif cmd == 'count':
         data.count_ques.countQues().do_count()
     elif re.match('^check.*$', cmd):
