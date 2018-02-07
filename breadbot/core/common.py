@@ -9,14 +9,14 @@ import time
 
 def time_limit(secs):
     def dec(function):
-        def dec2(*args,**kwargs):
+        def dec2(*args, **kwargs):
             class TimeLimited(Thread):
                 def __init__(self):
                     Thread.__init__(self)
                     self.result = dontKnow()
 
                 def run(self):
-                    self.result = function(*args,**kwargs)
+                    self.result = function(*args, **kwargs)
 
             t = TimeLimited()
             t.start()
@@ -139,6 +139,7 @@ class cfg(object):
                 raise Exception("super_user must be a list")
             self.cfg['wechat']['super_user'] = ':'.join(key)
         self.cfg.write()
+
 
 def path_parser(filePaths=[]):
     if not filePaths:
