@@ -16,14 +16,15 @@ if os.geteuid():
 def show_help():
     print(
         '\n'
-        ' import:   import data\n'
-        ' drop:     drop database\n'
-        ' count:    count ques\n'
-        ' check:    check data\n'
-        ' start:    start server\n'
-        ' Ctr+C:    stop server\n'
-        ' help:     display this help\n'
-        ' q:        exit this console\n'
+        ' import:     import data\n'
+        ' drop:       drop database\n'
+        ' count:      count ques\n'
+        ' check:      check data\n'
+        ' transform:  transform corpus\n'
+        ' start:      start server\n'
+        ' Ctr+C:      stop server\n'
+        ' help:       display this help\n'
+        ' q:          exit this console\n'
         )
 
 
@@ -40,6 +41,9 @@ def active(cmd):
     elif re.match('^check.*$', cmd):
         dataPaths = cmd.split(' ')[1:]
         data.check_data.checkData().do_check(dataPaths)
+    elif re.match('^transform.*$', cmd):
+        dataPaths = cmd.split(' ')[1:]
+        data.transform_corpus.transformCorpus().do_transform(dataPaths)
     elif cmd == 'start':
         serv.start()
     else:
