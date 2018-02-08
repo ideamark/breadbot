@@ -1400,3 +1400,13 @@ qas:
   ans: |
    - :args *.txt
    - :argdo %s/old/new/g
+
+- que:
+  - how to clean git log
+  ans: |
+   - git checkout --orphan xx
+   - git add -A
+   - git commit -am "clean"
+   - git branch -D master
+   - git branch -m master
+   - git push -f
