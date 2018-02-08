@@ -149,7 +149,7 @@
 - Moved the log path to /var/log
 - Moved memory data to database and made it support multiple users
 
-2018-01-26:
+2018-02-08:
 - Version: 2.0.0
 - This is a new version for new year
 - Import jaro-winkler
