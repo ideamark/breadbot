@@ -151,10 +151,11 @@
 
 2018-01-26:
 - Version: 2.0.0
-- Happy New Year! This is a new version
+- This is a new version for new year
 - Import jaro-winkler
 - Sped up the chat reply
 - Added a large number of corpus
 - Some bug fix
 - Added timeout for chat response
-- Built some useful tools in tools folder
+- Built some useful commands for data processing
+- Expand corpus over 1000,000
