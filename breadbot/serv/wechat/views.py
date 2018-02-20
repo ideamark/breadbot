@@ -35,7 +35,7 @@ class WeChat(View):
         currentTime = str(int(time.time()))
         msgType = strXml.find('MsgType').text
         content = '...'
-        sorry = 'Sorry, I can only chat with English.'
+        sorry = 'Sorry, I chat in English.'
         if msgType == 'text':
             content = strXml.find('Content').text
             if '[Unsupported Message]' in content:

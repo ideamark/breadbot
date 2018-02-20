@@ -1345,9 +1345,11 @@ qas:
 
 - que:
   - how to release port
+  - how to kill port
+  - how to close port
   ans: |
    - lsof -i :8000
-   - kill -9 xxx
+   - kill -9 <pid>
 
 - que:
   - how to update pip
