@@ -9,14 +9,14 @@ import time
 
 def time_limit(secs):
     def dec(function):
-        def dec2(*args, **kwargs):
+        def dec2(*args,**kwargs):
             class TimeLimited(Thread):
                 def __init__(self):
                     Thread.__init__(self)
                     self.result = dontKnow()
 
                 def run(self):
-                    self.result = function(*args, **kwargs)
+                    self.result = function(*args,**kwargs)
 
             t = TimeLimited()
             t.start()
@@ -107,7 +107,7 @@ class cfg(object):
 
     def get(self, value):
         if value == 'data_path':
-            return self.cfg['local']['data_path'].split(':')
+            return self.cfg['local']['data_path']
         elif value == 'log_path':
             return self.cfg['local']['log_path']
         elif value == 'token':
@@ -115,7 +115,7 @@ class cfg(object):
         elif value == 'server_ip':
             return self.cfg['wechat']['server_ip']
         elif value == 'super_user':
-            return self.cfg['wechat']['super_user'].split(':')
+            return self.cfg['wechat']['super_user']
         elif value == 'db_name':
             return self.cfg['mongodb']['db_name']
         elif value == 'db_ip':
@@ -127,7 +127,7 @@ class cfg(object):
         if value == 'data_path':
             if type(key) != list:
                 raise Exception("data_path must be a list")
-            self.cfg['local']['data_path'] = ':'.join(key)
+            self.cfg['local']['data_path'] = ', '.join(key)
         elif value == 'log_path':
             self.cfg['local']['log_path'] = key
         elif value == 'token':
@@ -137,9 +137,8 @@ class cfg(object):
         elif value == 'super_user':
             if type(key) != list:
                 raise Exception("super_user must be a list")
-            self.cfg['wechat']['super_user'] = ':'.join(key)
+            self.cfg['wechat']['super_user'] = ', '.join(key)
         self.cfg.write()
-
 
 def path_parser(filePaths=[]):
     if not filePaths:
