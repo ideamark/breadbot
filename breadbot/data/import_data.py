@@ -122,6 +122,7 @@ class importData(object):
                 data['path'] = dataPath
                 data['mtime'] = self._get_modify_time(dataPath)
                 db_coll.insert(data)
+                db_coll.create_index('tag')
                 db_coll.create_index('que')
             print('\n All Complete!')
         except Exception as e:
