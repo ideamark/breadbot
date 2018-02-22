@@ -107,7 +107,11 @@ class cfg(object):
 
     def get(self, value):
         if value == 'data_path':
-            return self.cfg['local']['data_path']
+            data_path = self.cfg['local']['data_path']
+            if type(data_path) is not list:
+                return [data_path]
+            else:
+                return data_path
         elif value == 'log_path':
             return self.cfg['local']['log_path']
         elif value == 'token':
@@ -115,7 +119,11 @@ class cfg(object):
         elif value == 'server_ip':
             return self.cfg['wechat']['server_ip']
         elif value == 'super_user':
-            return self.cfg['wechat']['super_user']
+            super_user = self.cfg['wechat']['super_user']
+            if type(super_user) is not list:
+                return [super_user]
+            else:
+                return super_user
         elif value == 'db_name':
             return self.cfg['mongodb']['db_name']
         elif value == 'db_ip':
