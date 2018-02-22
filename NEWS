@@ -159,3 +159,7 @@
 - Added timeout for chat response
 - Built some useful commands for data processing
 - Expand corpus over 1000,000
+
+2018-02-22:
+- Version: 2.0.1
+- Fixed some bugs.
