@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import View
-from django.template import loader, Context
+from django.template import loader
 import hashlib
 import time
 from xml.etree import ElementTree as ET
@@ -45,10 +45,10 @@ class WeChat(View):
         else:
             res = sorry
         template = loader.get_template('wechat/text_message_template.xml')
-        context = Context({'toUser': fromUser,
-                           'fromUser': toUser,
-                           'currentTime': currentTime,
-                           'content': res})
+        context = {'toUser': fromUser,
+                   'fromUser': toUser,
+                   'currentTime': currentTime,
+                   'content': res}
         contextXml = template.render(context)
         logStr = '\nUser:   %s\nAsk:    %s\nAnswer: %s\n' % \
                  (fromUser, content, res)
