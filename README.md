@@ -34,7 +34,7 @@
 
 ## More corpus
 * The basic corpus is in the data folder
-* You can get more corpus from: https://github.com/ideamark/breadbot_corpus
+* There's more corpus on https://github.com/ideamark/breadbot_corpus
 
 ## Seek more
 * Author: Mark Young
