@@ -13,6 +13,7 @@ class importData(object):
         self.db = self._open_db()
 
     def do_import(self, dataPaths=[]):
+        print('Start import data...')
         self.all_flag = False
         if not dataPaths:
             dataPaths = common.cfg().get('data_path')
