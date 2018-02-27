@@ -1412,3 +1412,9 @@ qas:
    - git branch -D master
    - git branch -m master
    - git push -f
+
+- que:
+  - how to set ssh timeout
+  ans: |
+   - edit /etc/profile, modify TMOUT=0
+   - source /etc/profile
