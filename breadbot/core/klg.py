@@ -11,13 +11,13 @@ DO_YOU_MEAN = 'Do you mean:'
 def _get_qas(db, coll, isSuper=False):
     if coll[-4:] != '_yml':
         return
-    reqs = db[coll].find_one()
-    tags = reqs['tag']
-    if 'klg' not in tags:
-        return
-    elif 'sec' in tags and not isSuper:
-        return
-    qas = reqs['qas']
+    if isSuper: 
+        curser = db[coll].find({'$or': [{'tag': 'klg'}, {'tag': 'sec'}]})
+    else:
+        curser = db[coll].find({'tag': 'klg'})
+    qas =[] 
+    for reqs in curser:
+        qas += reqs['qas']
     return qas
 
 

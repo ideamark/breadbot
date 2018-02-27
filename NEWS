@@ -163,3 +163,7 @@
 2018-02-22:
 - Version: 2.0.1
 - Fixed some bugs.
+
+2018-02-27:
+- Version: 2.0.2
+- Speed up the response

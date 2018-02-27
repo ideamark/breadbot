@@ -17,9 +17,8 @@ def response(db, user, inStr):
     for coll in colls:
         if coll[-4:] != '_yml':
             continue
-        reqs = db[coll].find_one()
-        tags = reqs['tag']
-        if 'dia' not in tags:
+        reqs = db[coll].find_one({'tag': 'dia'})
+        if not reqs:
             continue
         qas = reqs['qas']
         if not qas:
