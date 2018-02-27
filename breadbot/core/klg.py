@@ -12,13 +12,14 @@ def _get_qas(db, coll, isSuper=False):
     if coll[-4:] != '_yml':
         return
     if isSuper: 
-        curser = db[coll].find({'$or': [{'tag': 'klg'}, {'tag': 'sec'}]})
+        reqs = db[coll].find_one({'$or': [{'tag': 'klg'}, {'tag': 'sec'}]})
     else:
-        curser = db[coll].find({'tag': 'klg'})
-    qas =[] 
-    for reqs in curser:
-        qas += reqs['qas']
-    return qas
+        reqs = db[coll].find_one({'tag': 'klg'})
+    if reqs:
+        qas = reqs['qas']
+        return qas
+    else:
+        return []
 
 
 def response(db, user, inStr):
