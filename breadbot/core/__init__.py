@@ -28,8 +28,7 @@ class chat(object):
 
         if re.match('^n$', inStr):
             res = memory.longStr(user).read_mem()
-
-        if common.is_super(user):
+        elif common.is_super(user):
             mem_dias = memory.dialogue(user).get_dia()
             if re.match('^s .*$', inStr):
                 content = re.sub('^s ', '', inStr)
