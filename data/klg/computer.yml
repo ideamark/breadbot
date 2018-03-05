@@ -1418,3 +1418,8 @@ qas:
   ans: |
    - edit /etc/profile, modify TMOUT=0
    - source /etc/profile
+
+- que:
+  - vim how to format json
+  ans:
+  - :%!python -m json.tool
