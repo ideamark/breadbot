@@ -1423,3 +1423,8 @@ qas:
   - vim how to format json
   ans:
   - :%!python -m json.tool
+
+- que:
+  - python how to format json
+  ans:
+  - json.dump(dict, fp, indent=4)
