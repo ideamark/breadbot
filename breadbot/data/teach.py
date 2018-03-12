@@ -8,9 +8,10 @@ class Teach(object):
 
     def __init__(self):
         self.splitSym = ';'
-        self.file_name = 'new.yml'
+        self.new_dia = 'new_dia.yml'
+        self.new_klg = 'new_klg.yml'
 
-    def do_teach(self, user, inStr):
+    def do_teach(self, tag, user, inStr):
         if not common.is_super(user):
             return
         if not inStr:
@@ -18,7 +19,12 @@ class Teach(object):
         if self.splitSym not in inStr:
             return
         data_path = common.cfg().get('data_path')[0]
-        file_path = os.path.join(data_path, self.file_name)
+        if tag == 'dia':
+            file_path = os.path.join(data_path, self.new_dia)
+        elif tag == 'klg':
+            file_path = os.path.join(data_path, self.new_klg)
+        else:
+            return
         f = open(file_path, 'a')
         que = inStr.split(self.splitSym)[0]
         ans = inStr.split(self.splitSym)[1]
