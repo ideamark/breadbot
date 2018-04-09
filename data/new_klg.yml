@@ -2,3 +2,8 @@ tag:
 - klg
 
 qas:
+
+- que:
+  - how to awk
+  ans:
+  - awk -F ',' '{print $4}'
