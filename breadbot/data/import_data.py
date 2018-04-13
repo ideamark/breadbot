@@ -16,7 +16,7 @@ class importData(object):
         print('Start import data...')
         self.all_flag = False
         if not dataPaths:
-            dataPaths = common.cfg().get('data_path')
+            dataPaths = common.cfg().get('local', 'data_paths')
             self.all_flag = True
         self.dataPaths = dataPaths
         redundList = \
@@ -28,9 +28,9 @@ class importData(object):
         self._import_db_data(changedList)
 
     def _open_db(self):
-        db_name = common.cfg().get('db_name')
-        ip = common.cfg().get('db_ip')
-        port = common.cfg().get('db_port')
+        db_name = common.cfg().get('mongodb', 'db_name')
+        ip = common.cfg().get('mongodb', 'db_ip')
+        port = common.cfg().get('mongodb', 'db_port')
         client = MongoClient(ip, port)
         return client[db_name]
 

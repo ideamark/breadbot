@@ -6,16 +6,13 @@ from . import manage
 
 
 def start():
-    token = common.cfg().get('token')
+    token = common.cfg().get('wechat', 'token')
     if not token:
         token = input('Please enter your wechat token: ')
-        common.cfg().write('token', token)
+        common.cfg().write('wechat', 'token', token)
 
-    ip = common.cfg().get('server_ip')
-    if not re.match(r"^((?:(2[0-4]\d)|(25[0-5])|([01]?\d\d?))\.){3}"
-                    r"(?:(2[0-4]\d)|(255[0-5])|([01]?\d\d?))$", ip):
-        ip = input('Please enter your server ip: ')
-        common.cfg().write('server_ip', ip)
+    ip = input('Please enter your IP: ')
+    common.cfg().write('wechat', 'allowed_ips', ip)
 
     ma_path = manage.__file__
     port = '80'

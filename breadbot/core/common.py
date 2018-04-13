@@ -9,14 +9,14 @@ import time
 
 def time_limit(secs):
     def dec(function):
-        def dec2(*args,**kwargs):
+        def dec2(*args, **kwargs):
             class TimeLimited(Thread):
                 def __init__(self):
                     Thread.__init__(self)
                     self.result = dontKnow()
 
                 def run(self):
-                    self.result = function(*args,**kwargs)
+                    self.result = function(*args, **kwargs)
 
             t = TimeLimited()
             t.start()
@@ -66,8 +66,8 @@ def que_init(inStr):
 
 
 def is_super(name):
-    super_users = cfg().get('super_user')
-    if super_users and type(super_users) == list:
+    super_users = cfg().get('wechat', 'super_users')
+    if super_users and type(super_users) is list:
         for user in super_users:
             if user == name:
                 return True
@@ -87,7 +87,8 @@ def dontKnow():
 
 class log(object):
     def __init__(self):
-        self.logDir = os.path.join(cfg().get('log_path'), 'dia.log')
+        self.logDir = os.path.join(
+            cfg().get('local', 'log_path'), 'dia.log')
 
     def write(self, inStr):
         curTime = time.strftime('[%Y-%m-%d %H:%M:%S] ', time.localtime())
@@ -106,48 +107,29 @@ class cfg(object):
     def __init__(self):
         self.cfg = ConfigObj('/etc/bread.cfg')
 
-    def get(self, value):
-        if value == 'data_path':
-            data_path = self.cfg['local']['data_path']
-            if type(data_path) is not list:
-                return [data_path]
-            else:
-                return data_path
-        elif value == 'log_path':
-            return self.cfg['local']['log_path']
-        elif value == 'token':
-            return self.cfg['wechat']['token']
-        elif value == 'server_ip':
-            return self.cfg['wechat']['server_ip']
-        elif value == 'super_user':
-            super_user = self.cfg['wechat']['super_user']
-            if type(super_user) is not list:
-                return [super_user]
-            else:
-                return super_user
-        elif value == 'db_name':
-            return self.cfg['mongodb']['db_name']
-        elif value == 'db_ip':
-            return self.cfg['mongodb']['db_ip']
-        elif value == 'db_port':
-            return int(self.cfg['mongodb']['db_port'])
+    def get(self, ctype, value):
+        res = self.cfg[ctype][value]
+        if (ctype, value) == ('local', 'data_paths') or \
+            (ctype, value) == ('wechat', 'allowed_ips') or \
+                (ctype, value) == ('wechat', 'super_users'):
+            if type(res) is not list:
+                res = [res]
+        elif ctype == 'mongodb' and value == 'db_port':
+            res = int(res)
+        return res
 
-    def write(self, value, key):
-        if value == 'data_path':
-            if type(key) != list:
-                raise Exception("data_path must be a list")
-            self.cfg['local']['data_path'] = ', '.join(key)
-        elif value == 'log_path':
-            self.cfg['local']['log_path'] = key
-        elif value == 'token':
-            self.cfg['wechat']['token'] = key
-        elif value == 'server_ip':
-            self.cfg['wechat']['server_ip'] = key
-        elif value == 'super_user':
-            if type(key) != list:
-                raise Exception("super_user must be a list")
-            self.cfg['wechat']['super_user'] = ', '.join(key)
+    def write(self, ctype, value, key):
+        if (ctype, value) == ('local', 'data_paths') or \
+            (ctype, value) == ('wechat', 'allowed_ips') or \
+                (ctype, value) == ('wechat', 'super_users'):
+            if type(key) is not list:
+                key = [key]
+            old_key = self.get(ctype, value)
+            key = old_key + key
+        key = list(set(key))
+        self.cfg[ctype][value] = key
         self.cfg.write()
+
 
 def path_parser(filePaths=[]):
     if not filePaths:

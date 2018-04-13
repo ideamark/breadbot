@@ -171,3 +171,9 @@
 2018-03-12:
 - Version: 2.0.3
 - Add function of teach klg
+
+2018-04-13:
+- Version: 2.0.4
+- modified bread.cfg
+- Make some code simpler
+- Fixed some PEP8 errors

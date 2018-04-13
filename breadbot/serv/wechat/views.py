@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import View
-from django.template import loader
+from django.template import loader, Context
 import hashlib
 import time
 from xml.etree import ElementTree as ET
@@ -16,7 +16,7 @@ class WeChat(View):
         return super(WeChat, self).dispatch(*args, **kwargs)
 
     def get(self, request):
-        token = core.common.cfg().get('token')
+        token = core.common.cfg().get('wechat', 'token')
         signature = request.GET.get('signature', None)
         timestamp = request.GET.get('timestamp', None)
         nonce = request.GET.get('nonce', None)
@@ -45,6 +45,10 @@ class WeChat(View):
         else:
             res = sorry
         template = loader.get_template('wechat/text_message_template.xml')
+#        context = Context({'toUser': fromUser,
+#                           'fromUser': toUser,
+#                           'currentTime': currentTime,
+#                           'content': res})
         context = {'toUser': fromUser,
                    'fromUser': toUser,
                    'currentTime': currentTime,

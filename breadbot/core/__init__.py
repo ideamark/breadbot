@@ -16,9 +16,9 @@ class chat(object):
         self.db = self._open_db()
 
     def _open_db(self):
-        db_name = common.cfg().get('db_name')
-        db_ip = common.cfg().get('db_ip')
-        db_port = common.cfg().get('db_port')
+        db_name = common.cfg().get('mongodb', 'db_name')
+        db_ip = common.cfg().get('mongodb', 'db_ip')
+        db_port = common.cfg().get('mongodb', 'db_port')
         client = MongoClient(db_ip, db_port)
         return client[db_name]
 

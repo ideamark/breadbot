@@ -11,7 +11,7 @@ DO_YOU_MEAN = 'Do you mean:'
 def _get_qas(db, coll, isSuper=False):
     if coll[-4:] != '_yml':
         return
-    if isSuper: 
+    if isSuper:
         reqs = db[coll].find_one({'$or': [{'tag': 'klg'}, {'tag': 'sec'}]})
     else:
         reqs = db[coll].find_one({'tag': 'klg'})
@@ -77,7 +77,7 @@ def response(db, user, inStr):
                 if Que in ques:
                     res = qa['ans']
                     break
-        if type(res) == list:
+        if type(res) is list:
             res = random.choice(res)
         if res[-1] == '\n':
             res = res[:-1]

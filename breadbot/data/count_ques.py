@@ -6,7 +6,7 @@ import os
 class countQues(object):
 
     def __init__(self):
-        self.dataPaths = cfg().get('data_path')
+        self.dataPaths = cfg().get('local', 'data_paths')
 
     def do_count(self):
         count = 0

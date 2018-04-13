@@ -18,7 +18,7 @@ class Teach(object):
             return
         if self.splitSym not in inStr:
             return
-        data_path = common.cfg().get('data_path')[0]
+        data_path = common.cfg().get('local', 'data_paths')[0]
         if tag == 'dia':
             file_path = os.path.join(data_path, self.new_dia)
         elif tag == 'klg':

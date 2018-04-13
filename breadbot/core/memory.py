@@ -13,9 +13,9 @@ class _Coll(object):
 
     @staticmethod
     def get_mem_coll(user):
-        db_name = common.cfg().get('db_name')
-        ip = common.cfg().get('db_ip')
-        port = common.cfg().get('db_port')
+        db_name = common.cfg().get('mongodb', 'db_name')
+        ip = common.cfg().get('mongodb', 'db_ip')
+        port = common.cfg().get('mongodb', 'db_port')
         client = MongoClient(ip, port)
         db = client[db_name]
         colls = db.collection_names()

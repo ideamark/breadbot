@@ -7,3 +7,8 @@ qas:
   - how to awk
   ans:
   - awk -F ',' '{print $4}'
+
+- que:
+  - shell how to count lines
+  ans:
+  - wc -l

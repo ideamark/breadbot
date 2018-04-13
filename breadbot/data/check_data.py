@@ -34,7 +34,7 @@ class checkData(object):
                             self._error(qa, 'value is none')
                         else:
                             for item in value:
-                                if type(item) == dict:
+                                if type(item) is dict:
                                     self._error(qa, 'item is dict')
                                 if not item:
                                     self._error(qa, 'item is none')

@@ -27,9 +27,8 @@ SECRET_KEY = '-qmj3-d)$%sz41wtot03va2u2izb@4bp_)nd$ohuy_!xjjwzqc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    core.common.cfg().get('server_ip'),
-]
+ALLOWED_HOSTS = \
+    core.common.cfg().get('wechat', 'allowed_ips')
 
 
 # Application definition
