@@ -26,7 +26,7 @@
   * Type "readme": Display this web page.
   * Type "d xxx": Search knowledge base and baidu.
   * Type "w xxx": Search wikipedia.
-  * Type "s xxx": Search dictionary(Need install sdcv first).
+  * Type "s xxx": Search google translator
   * Type "t que;ans": Teach dialogues(Use ";" to split question and answer)
 
 ## Connect to WeChat
