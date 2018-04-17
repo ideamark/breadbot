@@ -1438,3 +1438,8 @@ qas:
   - shell how to count lines
   ans:
   - wc -l
+
+- que:
+  - how to fix grabled chinese on english windows
+  ans:
+  - Control Panel -> Region and Language -> Change location -> Administrative -> Change system locale -> Chinese -> restart

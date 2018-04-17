@@ -1,7 +1,7 @@
 # Bread Bot
 
 ## Overview
-* Bread Bot is a pure-Python, pure-text chatbot. The aim is to build a high speed, short text message chat AI.
+* Bread Bot is a pure-Python chatbot, easy to deploy, simple but powerful. The aim is to build a high speed, short text message chat AI.
   * Why Python: For platform independence and fast development.
   * Why text only: Text can express anything, easily to be processed, fast to be translated. That's why we only use text message for Bread Bot.
 
@@ -28,13 +28,14 @@
   * Type "w xxx": Search wikipedia.
   * Type "s xxx": Search google translator
   * Type "t que;ans": Teach dialogues(Use ";" to split question and answer)
+  * Type "tt que;ans": Teach knowledge(Use ";" to split question and answer)
 
 ## Connect to WeChat
-* Write your token and ip on /etc/bread.cfg, then run command "breadbot start", it will soon connect to WeChat Official Account (https://mp.weixin.qq.com) and u can chat with Bread on WeChat!
+* Write your token and IP on /etc/bread.cfg, then run command "breadbot start", it will soon connect to WeChat Official Account (https://mp.weixin.qq.com) and u can chat with Bread on WeChat.
 
 ## More corpus
 * The basic corpus is in the data folder
-* There's more corpus on https://github.com/ideamark/breadbot_corpus
+* More corpus on https://github.com/ideamark/breadbot_corpus
 
 ## Seek more
 * Author: Mark Young
