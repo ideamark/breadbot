@@ -1,9 +1,9 @@
-# Bread Bot
+# Breadbot
 
 ## Overview
-* Bread Bot is a pure-Python chatbot, easy to deploy, simple but powerful. The aim is to build a high speed, short text message chat AI.
+* Breadbot is a pure-Python chatbot, easy to deploy, simple but powerful. The aim is to build a high speed, short text message chat AI.
   * Why Python: For platform independence and fast development.
-  * Why text only: Text can express anything, easily to be processed, fast to be translated. That's why we only use text message for Bread Bot.
+  * Why text only: Text can express anything, easily to be processed, fast to be translated. That's why we only use text message for Breadbot.
 
 ## Setup
 * Install
