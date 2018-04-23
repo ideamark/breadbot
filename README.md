@@ -6,6 +6,8 @@
   * Why text only: Text can express anything, easily to be processed, fast to be translated. That's why we only use text message for Breadbot.
 
 ## Setup
+* Download
+  * git clone https://github.com/ideamark/breadbot
 * Install
   * Make sure you have installed python3, python3-pip and mongodb
   * python3 setup.py install
