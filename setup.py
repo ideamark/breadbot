@@ -21,21 +21,22 @@ elif sys.argv[1] == 'install':
         setup_requires=['pbr>=0.1'],
         pbr=True,)
     from breadbot import core
-    log_path = core.common.cfg().get('log_path')
+    log_path = core.common.cfg().get('local', 'log_path')
     os.mkdir(log_path)
     data_path = [os.path.join(os.getcwd(), 'data')]
-    core.common.cfg().write('data_path', data_path)
+    core.common.cfg().write('local', 'data_paths', data_path)
     print('Start clone corpus from github...')
     os.system('git clone https://github.com/ideamark/ideamark.github.io "data"')
     print('Start import corpus...')
     os.system('breadbot import')
 
 elif sys.argv[1] == 'uninstall':
-    from breadbot import data
-    data.database.dataBase().drop_db()
+    if os.path.exists('/etc/bread.cfg'):
+        from breadbot import data
+        data.database.dataBase().drop_db()
+    os.system('rm -f /usr/local/bin/breadbot')
     os.system('pip3 uninstall breadbot')
     os.system('rm -f /etc/bread.cfg')
-    os.system('rm -f /usr/local/bin/breadbot')
     sys.exit(0)
 
 elif sys.argv[1] == 'clean':
