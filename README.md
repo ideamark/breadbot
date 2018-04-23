@@ -16,7 +16,7 @@
 * Import corpus
   * You must import corpus before play with breadbot
   * git clone https://github.com/ideamark/ideamark.github.io
-  * Add ideamark.github.io path to "data_path" in bread.cfg
+  * Add ideamark.github.io path to "data_paths" in bread.cfg
   * Type "breadbot import" to import corpus
 
 ## Local console
