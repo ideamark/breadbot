@@ -13,6 +13,10 @@
   * python3 setup.py uninstall
 * Clean (not uninstall)
   * python3 setup.py clean
+* Import corpus
+  * git clone https://github.com/ideamark/ideamark.github.io
+  * Add ideamark.github.io path to bread.cfg
+  * Type "breadbot import"
 
 ## Local console
 * Type command "breadbot" to launch the local console.
@@ -32,10 +36,6 @@
 
 ## Connect to WeChat
 * Write your token and IP on /etc/bread.cfg, then run command "breadbot start", it will soon connect to WeChat Official Account (https://mp.weixin.qq.com) and u can chat with Bread on WeChat.
-
-## More corpus
-* The basic corpus is in the data folder
-* More corpus on https://github.com/ideamark/breadbot_corpus
 
 ## Seek more
 * Author: Mark Young

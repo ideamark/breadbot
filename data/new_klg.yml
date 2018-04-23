@@ -2,8 +2,3 @@ tag:
 - klg
 
 qas:
-
-- que:
-  - linux how to check badblocks
-  ans:
-  - badblocks -v /dev/sdb
