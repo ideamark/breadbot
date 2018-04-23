@@ -25,7 +25,6 @@ elif sys.argv[1] == 'install':
     os.mkdir(log_path)
     data_path = [os.path.join(os.getcwd(), 'data')]
     core.common.cfg().write('data_path', data_path)
-    os.system('breadbot import')
 
 elif sys.argv[1] == 'uninstall':
     from breadbot import data

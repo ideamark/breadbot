@@ -181,3 +181,7 @@
 2018-04-16:
 - Version: 2.0.5
 - Replaced sdcv with googletrans
+
+2018-04-23:
+- Version: 2.0.6
+- Strip all corpus into ideamark.github.io

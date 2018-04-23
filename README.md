@@ -14,9 +14,10 @@
 * Clean (not uninstall)
   * python3 setup.py clean
 * Import corpus
+  * You must import corpus before play with breadbot
   * git clone https://github.com/ideamark/ideamark.github.io
-  * Add ideamark.github.io path to bread.cfg
-  * Type "breadbot import"
+  * Add ideamark.github.io path to "data_path" in bread.cfg
+  * Type "breadbot import" to import corpus
 
 ## Local console
 * Type command "breadbot" to launch the local console.
