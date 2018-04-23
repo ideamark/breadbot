@@ -8,8 +8,8 @@ class Teach(object):
 
     def __init__(self):
         self.splitSym = ';'
-        self.new_dia = 'new_dia.yml'
-        self.new_klg = 'new_klg.yml'
+        self.new_dia = 'new/new_dia.yml'
+        self.new_klg = 'new/new_klg.yml'
 
     def do_teach(self, tag, user, inStr):
         if not common.is_super(user):
