@@ -18,6 +18,8 @@ class importData(object):
         if not dataPaths:
             dataPaths = common.cfg().get('local', 'data_paths')
             self.all_flag = True
+        if type(dataPaths) is not list:
+            dataPaths = [dataPaths]
         self.dataPaths = dataPaths
         redundList = \
             self._get_redund_list()
@@ -61,10 +63,10 @@ class importData(object):
             if not os.path.exists(dataPath):
                 continue
             for root, dirs, files in os.walk(dataPath):
-                for file in files:
-                    if not re.match(r'^.*\.yml$', file):
+                for File in files:
+                    if os.path.splitext(File)[1] != '.yml':
                         continue
-                    dataPath = os.path.join(root, file)
+                    dataPath = os.path.join(root, File)
                     curList.append(dataPath)
         return curList
 
@@ -82,11 +84,11 @@ class importData(object):
         return oldList
 
     def _get_changed_list(self):
-        if not self.all_flag:
-            return self.dataPaths
         curList = self._get_cur_list()
         oldList = self._get_old_list()
         changedList = []
+        if not self.all_flag:
+            return curList
         for dataPath in curList:
             coll = self._get_coll_name(dataPath)
             db_data = self.db[coll].find_one()
@@ -101,11 +103,11 @@ class importData(object):
         return changedList
 
     def _get_redund_list(self):
-        if not self.all_flag:
-            return self.dataPaths
         curList = self._get_cur_list()
         oldList = self._get_old_list()
         redundList = []
+        if not self.all_flag:
+            return curList
         for dataPath in oldList:
             if dataPath not in curList:
                 redundList.append(dataPath)

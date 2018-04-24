@@ -126,7 +126,7 @@ class cfg(object):
                 key = [key]
             old_key = self.get(ctype, value)
             key = old_key + key
-        key = list(set(key))
+            key = list(set(key))
         self.cfg[ctype][value] = key
         self.cfg.write()
 

@@ -182,7 +182,8 @@
 - Version: 2.0.5
 - Replaced sdcv with googletrans
 
-2018-04-23:
+2018-04-24:
 - Version: 2.0.6
 - Strip all corpus into ideamark.github.io
 - Upgrade setup.py
+- Fix bugs of import_data function

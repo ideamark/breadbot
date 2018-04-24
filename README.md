@@ -11,15 +11,13 @@
 * Install
   * Make sure you have installed python3, python3-pip and mongodb
   * python3 setup.py install
+  * The setup will download corpus from https://github.com/ideamark/ideamark.github.io
 * Uninstall
   * python3 setup.py uninstall
 * Clean (not uninstall)
   * python3 setup.py clean
-* Import corpus
-  * You must import corpus before play with breadbot
-  * git clone https://github.com/ideamark/ideamark.github.io
-  * Add ideamark.github.io path to "data_paths" in bread.cfg
-  * Type "breadbot import" to import corpus
+* Import all corpus
+  * The setup will only import basic corpus. If you want to import all corpus, just type "breadbot import". It may take a long time to finish importing.
 
 ## Local console
 * Type command "breadbot" to launch the local console.
