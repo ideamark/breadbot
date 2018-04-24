@@ -58,6 +58,10 @@ def show_readme():
     return 'https://github.com/ideamark/breadbot/blob/master/README.md'
 
 
+def show_homepage():
+    return 'http://ideamark.github.io'
+
+
 def que_init(inStr):
     inStr = expand_abbrev(inStr)
     inStr = re.sub('[%s]+' % string.punctuation, '', inStr)

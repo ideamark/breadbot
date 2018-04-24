@@ -45,6 +45,8 @@ class chat(object):
                 res = common.show_help()
             elif re.match('^readme$', inStr.lower()):
                 res = common.show_readme()
+            elif re.match('^(home|home page)$', inStr):
+                res = common.show_homepage()
             elif re.match('^t .*$', inStr):
                 content = re.sub('^t ', '', inStr)
                 res = teach.Teach().do_teach('dia', user, content)
