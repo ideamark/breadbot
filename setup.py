@@ -3,9 +3,6 @@ import os
 import sys
 from setuptools import setup
 
-from breadbot import data
-from breadbot import core
-
 
 data_path = os.path.join(os.getcwd(), 'data')
 log_path = '/var/log/breadbot'
@@ -29,6 +26,8 @@ elif sys.argv[1] == 'install':
     setup(
         setup_requires=['pbr>=0.1'],
         pbr=True,)
+    from breadbot import data
+    from breadbot import core
     if not os.path.exists(log_path):
         os.mkdir(log_path)
     core.common.cfg().write('local', 'data_paths', data_path)
