@@ -192,3 +192,7 @@
 - Version: 2.0.7
 - Fix some setup bugs
 - Add new parament "public_ip" in bread.cfg
+
+2018-05-08:
+- Version: 2.0.8
+- Modify teach function back to simple

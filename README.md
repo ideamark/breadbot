@@ -38,8 +38,7 @@
   * Type "d xxx": Search knowledge base and baidu.
   * Type "w xxx": Search wikipedia.
   * Type "s xxx": Search google translator
-  * Type "t que;ans": Teach dialogues(Use ";" to split question and answer)
-  * Type "tt que;ans": Teach knowledge(Use ";" to split question and answer)
+  * Type "t que: ans": Teach a dialogue and save it in data/teach.yml
 
 ## Connect to WeChat
 * Write your token and IP on /etc/bread.cfg, then run command "breadbot start", it will soon connect to WeChat Official Account (https://mp.weixin.qq.com) and u can chat with Bread on WeChat.

@@ -49,10 +49,7 @@ class chat(object):
                 res = common.show_homepage()
             elif re.match('^t .*$', inStr):
                 content = re.sub('^t ', '', inStr)
-                res = teach.Teach().do_teach('dia', user, content)
-            elif re.match('^tt .*$', inStr):
-                content = re.sub('^tt ', '', inStr)
-                res = teach.Teach().do_teach('klg', user, content)
+                res = teach.Teach().do_teach(user, content)
             elif re.search('[\u4e00-\u9fa5]', inStr):
                 res = search.baiduSearch(inStr)
             elif mem_dias and klg.DO_YOU_MEAN in str(mem_dias[-1].values()):
