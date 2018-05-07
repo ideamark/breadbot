@@ -50,7 +50,7 @@ def show_help():
         '- s ....search dictionary\n'
         '- w ....search wikipedia\n'
         '- n ....turn to next page\n'
-        '- t ....teach dialogue\n')
+        '- t ....teach a dialogue\n')
 
 
 def show_readme():
