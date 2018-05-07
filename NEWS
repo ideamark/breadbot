@@ -187,3 +187,8 @@
 - Strip all corpus into ideamark.github.io
 - Upgrade setup.py
 - Fix bugs of import_data function
+
+2018-05-07:
+- Version: 2.0.7
+- Fix some setup bugs
+- Add new parament "public_ip" in bread.cfg

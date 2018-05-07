@@ -32,7 +32,8 @@ elif sys.argv[1] == 'install':
         os.mkdir(log_path)
     core.common.cfg().write('local', 'data_paths', data_path)
     core.common.cfg().write('local', 'log_path', log_path)
-    os.system('git clone https://github.com/ideamark/ideamark.github.io "data"')
+    os.system(
+        'git clone https://github.com/ideamark/ideamark.github.io "data"')
     os.system('chmod -R 777 data')
     data.import_data.importData().do_import(basic_corpus_path)
 

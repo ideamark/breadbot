@@ -11,11 +11,14 @@ def start():
         token = input('Please enter your wechat token: ')
         common.cfg().write('wechat', 'token', token)
 
-    ip = input('Please enter your IP: ')
-    common.cfg().write('wechat', 'allowed_ips', ip)
+    public_ip = common.cfg().get('wechat', 'public_ip')
+    if not public_ip:
+        public_ip = input('Please enter public IP: ')
+        common.cfg().write('wechat', 'public_ip', public_ip)
 
     ma_path = manage.__file__
     port = '80'
-    exeList = ['python3', ma_path, 'runserver', ':'.join([ip, port])]
+    exeList = ['python3', ma_path, 'runserver',
+               ':'.join([public_ip, port])]
     exeStr = ' '.join(exeList)
     os.system(exeStr)

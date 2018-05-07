@@ -22,7 +22,10 @@
 * Import all corpus
   * The setup will only import basic corpus. If you want to import all corpus, just type "breadbot import". It may take a long time to finish importing.
 
-## Local console
+## Config
+* Just watch the only single config file: [bread.cfg](etc/bread.cfg)
+
+## Console
 * Type command "breadbot" to launch the local console.
 * Then u can test Bread, or run commands on this console, type "help" for more info.
 
