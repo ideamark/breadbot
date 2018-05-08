@@ -41,7 +41,9 @@
   * Type "t que: ans": Teach a dialogue and save it in data/teach.yml
 
 ## Connect to WeChat
-* Write your token and IP on /etc/bread.cfg, then run command "breadbot start", it will soon connect to WeChat Official Account (https://mp.weixin.qq.com) and u can chat with Bread on WeChat.
+* Config your WeChat public platform account on https://mp.weixin.qq.com, create the token and enter your url.
+* Run the command "breadbot start", enter your token and ip.
+* After that, Breadbot will connect to WeChat public platform and u can chat to it on WeChat.
 
 ## Seek more
 * Author: Mark Young
