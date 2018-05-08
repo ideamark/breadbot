@@ -26,6 +26,7 @@ def show_help():
         ' help:       display this help\n'
         ' q:          exit this console\n'
         )
+    print(core.common.show_help())
 
 
 def active(cmd):

@@ -34,7 +34,7 @@
 * The local console is default set as super user.
 * If your ID is in bread.cfg super user list, u will get the super user functions below:
   * Type "help": Simple & quick help.
-  * Type "readme": Display this web page.
+  * Type "readme": Display README file.
   * Type "d xxx": Search knowledge base and baidu.
   * Type "w xxx": Search wikipedia.
   * Type "s xxx": Search google translator

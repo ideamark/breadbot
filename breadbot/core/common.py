@@ -46,11 +46,11 @@ def expand_abbrev(inStr):
 
 def show_help():
     return(
-        '- d ....search knowledge\n'
-        '- s ....search dictionary\n'
-        '- w ....search wikipedia\n'
-        '- n ....turn to next page\n'
-        '- t ....teach a dialogue\n')
+        ' d ....search knowledge\n'
+        ' s ....search dictionary\n'
+        ' w ....search wikipedia\n'
+        ' n ....turn to next page\n'
+        ' t ....teach a dialogue\n')
 
 
 def show_readme():
