@@ -58,7 +58,7 @@ def show_readme():
 
 
 def show_homepage():
-    return 'http://ideamark.github.io'
+    return 'https://ideamark.github.io'
 
 
 def que_init(inStr):
