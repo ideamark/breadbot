@@ -12,7 +12,7 @@ class checkData(object):
         pass
 
     def _error(self, err, msg):
-        print('\n[Error] %s' % msg)
+        print('[Error] %s' % msg)
         raise Exception(err)
 
     def do_check(self, dataPaths=[]):
@@ -21,7 +21,7 @@ class checkData(object):
             for dataPath in dataPaths:
                 if os.path.splitext(dataPath)[-1] != '.yml':
                     continue
-                print('Checking %s...' % dataPath)
+                print('\nChecking %s...' % dataPath)
                 if not os.path.exists(dataPath):
                     self._error('', 'wrong data path')
 
@@ -40,7 +40,7 @@ class checkData(object):
                                     self._error(qa, 'item is dict')
                                 if not item:
                                     self._error(qa, 'item is none')
-                print('\nCheck Passed!')
+                print('Check Passed!')
 
         except Exception as e:
             print(e)
