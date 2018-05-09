@@ -19,6 +19,8 @@ class checkData(object):
         try:
             dataPaths = common.path_parser(dataPaths)
             for dataPath in dataPaths:
+                if os.path.splitext(dataPath)[-1] != '.yml':
+                    continue
                 print('Checking %s...' % dataPath)
                 if not os.path.exists(dataPath):
                     self._error('', 'wrong data path')
