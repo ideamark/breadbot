@@ -29,32 +29,28 @@ class WeChat(View):
             return HttpResponse(echostr)
 
     def post(self, request):
-        strXml = ET.fromstring(request.body)
-        fromUser = strXml.find('FromUserName').text
-        toUser = strXml.find('ToUserName').text
-        currentTime = str(int(time.time()))
-        msgType = strXml.find('MsgType').text
+        str_xml = ET.fromstring(request.body)
+        from_user = str_xml.find('FromUserName').text
+        to_user = str_xml.find('ToUserName').text
+        cur_time = str(int(time.time()))
+        msg_type = str_xml.find('MsgType').text
         content = '...'
         sorry = 'Sorry, I chat in English.'
-        if msgType == 'text':
-            content = strXml.find('Content').text
+        if msg_type == 'text':
+            content = str_xml.find('Content').text
             if '[Unsupported Message]' in content:
                 res = sorry
             else:
-                res = core.chat().response(fromUser, content)
+                res = core.chat().response(from_user, content)
         else:
             res = sorry
         template = loader.get_template('wechat/text_message_template.xml')
-#        context = Context({'toUser': fromUser,
-#                           'fromUser': toUser,
-#                           'currentTime': currentTime,
-#                           'content': res})
-        context = {'toUser': fromUser,
-                   'fromUser': toUser,
-                   'currentTime': currentTime,
+        context = {'toUser': from_user,
+                   'fromUser': to_user,
+                   'currentTtime': cur_time,
                    'content': res}
-        contextXml = template.render(context)
-        logStr = '\nUser:   %s\nAsk:    %s\nAnswer: %s\n' % \
-                 (fromUser, content, res)
-        core.common.chat_log().write(logStr)
-        return HttpResponse(contextXml)
+        context_xml = template.render(context)
+        log_str = '\nUser:   %s\nAsk:    %s\nAnswer: %s\n' % \
+                 (from_user, content, res)
+        core.common.chatLog().write(log_str)
+        return HttpResponse(context_xml)

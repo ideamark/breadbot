@@ -2,7 +2,7 @@
 from pymongo import MongoClient
 from breadbot.core import common
 
-LOG = common.console_log()
+LOG = common.consoleLog()
 
 class dataBase(object):
 

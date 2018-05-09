@@ -5,38 +5,38 @@ import shutil
 import sys
 from breadbot.core import common
 
-LOG = common.console_log()
+LOG = common.consoleLog()
 
 class transformCorpus(object):
 
     def __init__(self):
-        outDir = 'output'
-        if os.path.basename(os.getcwd()) == outDir:
-            self.outPath = os.getcwd()
+        out_dir = 'output'
+        if os.path.basename(os.getcwd()) == out_dir:
+            self.out_path = os.getcwd()
         else:
-            self.outPath = os.path.join(os.getcwd(), outDir)
-        if not os.path.exists(self.outPath):
-            LOG.info('Create %s' % self.outPath)
-            os.makedirs(self.outPath)
+            self.out_path = os.path.join(os.getcwd(), out_dir)
+        if not os.path.exists(self.out_path):
+            LOG.info('Create %s' % self.out_path)
+            os.makedirs(self.out_path)
 
-    def do_transform(self, filePaths=[]):
-        filePaths = common.path_parser(filePaths)
-        newFilePaths = []
+    def do_transform(self, file_path_list=[]):
+        file_path_list = common.path_parser(file_path_list)
+        new_file_path_list = []
 
         # Copy file
-        for filePath in filePaths:
-            fileName = os.path.basename(filePath)
-            newFilePath = os.path.join(self.outPath, fileName)
-            if not os.path.exists(newFilePath):
-                LOG.info('Copy %s' % filePath)
-                shutil.copyfile(filePath, newFilePath)
-            newFilePaths.append(newFilePath)
+        for file_path in file_path_list:
+            file_name = os.path.basename(file_path)
+            new_file_path = os.path.join(self.out_path, file_name)
+            if not os.path.exists(new_file_path):
+                LOG.info('Copy %s' % file_path)
+                shutil.copyfile(file_path, new_file_path)
+            new_file_path_list.append(new_file_path)
 
         # Initilization
-        for filePath in newFilePaths:
-            LOG.info('Initializing %s...' % filePath)
+        for file_path in new_file_path_list:
+            LOG.info('Initializing %s' % file_path)
             text = ''
-            with open(filePath, 'r') as fr:
+            with open(file_path, 'r') as fr:
                 text = fr.read()
             if not text:
                 raise Exception('empty file!')
@@ -74,22 +74,22 @@ class transformCorpus(object):
             text = re.sub(r'\n[^a-zA-Z0-9]*', r'\n', text)
             text = re.sub(r'(.*\?\n)(.*[^\?]\n)', r'\1\n\2', text)
             text = re.sub(r'(.*[^\?]\n)(.*\?\n)', r'\1\n\n\2', text)
-            with open(filePath, 'w') as fw:
+            with open(file_path, 'w') as fw:
                 fw.write(text)
 
         # Transform
-        for filePath in newFilePaths:
-            LOG.info('Transforming %s...' % filePath)
-            with open(filePath, 'r') as fr:
+        for file_path in new_file_path_list:
+            LOG.info('Transforming %s' % file_path)
+            with open(file_path, 'r') as fr:
                 text = fr.read()
             list1 = text.split('\n\n\n')
             list2 = []
             for item in list1:
-                subItem1 = item.split('\n\n')
-                subItem2 = [subItem1[0].split('\n'), subItem1[-1].split('\n')]
-                list2.append(subItem2)
-            ymlName = os.path.splitext(filePath)[0] + '.yml'
-            with open(os.path.join(self.outPath, ymlName), 'w') as fw:
+                sub_item1 = item.split('\n\n')
+                sub_item2 = [sub_item1[0].split('\n'), sub_item1[-1].split('\n')]
+                list2.append(sub_item2)
+            yml_name = os.path.splitext(file_path)[0] + '.yml'
+            with open(os.path.join(self.out_path, yml_name), 'w') as fw:
                 fw.write('tag:\n- dia\n\nqas:\n')
                 for item in list2:
                     fw.write('\n- que:\n')

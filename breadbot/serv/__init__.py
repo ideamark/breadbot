@@ -18,7 +18,7 @@ def start():
 
     ma_path = manage.__file__
     port = '80'
-    exeList = ['python3', ma_path, 'runserver',
+    exe_list = ['python3', ma_path, 'runserver',
                ':'.join([public_ip, port])]
-    exeStr = ' '.join(exeList)
-    os.system(exeStr)
+    exe_str = ' '.join(exe_list)
+    os.system(exe_str)

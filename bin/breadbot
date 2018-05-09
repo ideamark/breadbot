@@ -33,8 +33,8 @@ def active(cmd):
     if cmd == 'help':
         show_help()
     elif re.match('^import.*$', cmd):
-        dataPaths = cmd.split(' ')[1:]
-        data.import_data.importData().do_import(dataPaths)
+        data_paths = cmd.split(' ')[1:]
+        data.import_data.importData().do_import(data_paths)
     elif cmd == 'drop':
         cmd = input('Drop all data? (yes/no): ')
         if cmd == 'yes':
@@ -44,11 +44,11 @@ def active(cmd):
     elif cmd == 'count':
         data.count_ques.countQues().do_count()
     elif re.match('^check.*$', cmd):
-        dataPaths = cmd.split(' ')[1:]
-        data.check_data.checkData().do_check(dataPaths)
+        data_paths = cmd.split(' ')[1:]
+        data.check_data.checkData().do_check(data_paths)
     elif re.match('^transform.*$', cmd):
-        dataPaths = cmd.split(' ')[1:]
-        data.transform_corpus.transformCorpus().do_transform(dataPaths)
+        data_paths = cmd.split(' ')[1:]
+        data.transform_corpus.transformCorpus().do_transform(data_paths)
     elif cmd == 'start':
         serv.start()
     else:

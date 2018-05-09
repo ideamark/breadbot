@@ -5,29 +5,29 @@ import yaml
 from pymongo import MongoClient
 from breadbot.core import common
 
-LOG = common.console_log()
+LOG = common.consoleLog()
 
 class importData(object):
 
     def __init__(self):
         self.db = self._open_db()
 
-    def do_import(self, dataPaths=[]):
-        LOG.info('Start import data...')
+    def do_import(self, data_path_list=[]):
+        LOG.info('Start import data')
         self.all_flag = False
-        if not dataPaths:
-            dataPaths = common.cfg().get('local', 'data_paths')
+        if not data_path_list:
+            data_path_list = common.cfg().get('local', 'data_paths')
             self.all_flag = True
-        if type(dataPaths) is not list:
-            dataPaths = [dataPaths]
-        self.dataPaths = dataPaths
-        redundList = \
+        if type(data_path_list) is not list:
+            data_path_list = [data_path_list]
+        self.data_path_list = data_path_list
+        redund_list = \
             self._get_redund_list()
-        self._clean_old_db_data(redundList)
-        changedList = \
+        self._clean_old_db_data(redund_list)
+        changed_list = \
             self._get_changed_list()
-        self._clean_old_db_data(changedList)
-        self._import_db_data(changedList)
+        self._clean_old_db_data(changed_list)
+        self._import_db_data(changed_list)
 
     def _open_db(self):
         db_name = common.cfg().get('mongodb', 'db_name')
@@ -36,94 +36,94 @@ class importData(object):
         client = MongoClient(ip, port)
         return client[db_name]
 
-    def _clean_old_db_data(self, dataPaths):
-        for dataPath in dataPaths:
-            if not dataPath:
+    def _clean_old_db_data(self, data_path_list):
+        for data_path in data_path_list:
+            if not data_path:
                 continue
             else:
-                coll = self._get_coll_name(dataPath)
-                LOG.info('clean %s...' % coll)
+                coll = self._get_coll_name(data_path)
+                LOG.info('clean %s' % coll)
                 self.db[coll].drop()
 
-    def _get_coll_name(self, dataPath):
-        return re.sub('[^a-zA-Z0-9]', '_', dataPath)
+    def _get_coll_name(self, data_path):
+        return re.sub('[^a-zA-Z0-9]', '_', data_path)
 
-    def _read_data_file(self, dataPath):
-        with open(dataPath, 'r') as f:
-            readStr = f.read()
-            readStr = re.sub(r'\n +\n', '\n\n', readStr)
-        return readStr
+    def _read_data_file(self, data_path):
+        with open(data_path, 'r') as f:
+            read_str = f.read()
+            read_str = re.sub(r'\n +\n', '\n\n', read_str)
+        return read_str
 
-    def _get_modify_time(self, dataPath):
-        return os.stat(dataPath).st_mtime
+    def _get_modify_time(self, data_path):
+        return os.stat(data_path).st_mtime
 
     def _get_cur_list(self):
-        curList = []
-        for dataPath in self.dataPaths:
-            if not os.path.exists(dataPath):
+        cur_list = []
+        for data_path in self.data_path_list:
+            if not os.path.exists(data_path):
                 continue
-            for root, dirs, files in os.walk(dataPath):
+            for root, dirs, files in os.walk(data_path):
                 for File in files:
                     if os.path.splitext(File)[1] != '.yml':
                         continue
-                    dataPath = os.path.join(root, File)
-                    curList.append(dataPath)
-        return curList
+                    data_path = os.path.join(root, File)
+                    cur_list.append(data_path)
+        return cur_list
 
     def _get_old_list(self):
         colls = self.db.collection_names()
-        oldList = []
+        old_list = []
         for coll in colls:
             if coll[-4:] != '_yml':
                 continue
             db_data = self.db[coll].find_one()
             if db_data:
-                dataPath = db_data['path']
-                if dataPath:
-                    oldList.append(dataPath)
-        return oldList
+                data_path = db_data['path']
+                if data_path:
+                    old_list.append(data_path)
+        return old_list
 
     def _get_changed_list(self):
-        curList = self._get_cur_list()
-        oldList = self._get_old_list()
-        changedList = []
+        cur_list = self._get_cur_list()
+        old_list = self._get_old_list()
+        changed_list = []
         if not self.all_flag:
-            return curList
-        for dataPath in curList:
-            coll = self._get_coll_name(dataPath)
+            return cur_list
+        for data_path in cur_list:
+            coll = self._get_coll_name(data_path)
             db_data = self.db[coll].find_one()
             if db_data:
                 old_mtime = db_data['mtime']
-            new_mtime = self._get_modify_time(dataPath)
-            if dataPath not in oldList:
-                changedList.append(dataPath)
+            new_mtime = self._get_modify_time(data_path)
+            if data_path not in old_list:
+                changed_list.append(data_path)
             elif old_mtime != new_mtime:
-                changedList.append(dataPath)
-        changedList = list(set(changedList))
-        return changedList
+                changed_list.append(data_path)
+        changed_list = list(set(changed_list))
+        return changed_list
 
     def _get_redund_list(self):
-        curList = self._get_cur_list()
-        oldList = self._get_old_list()
-        redundList = []
+        cur_list = self._get_cur_list()
+        old_list = self._get_old_list()
+        redund_list = []
         if not self.all_flag:
-            return curList
-        for dataPath in oldList:
-            if dataPath not in curList:
-                redundList.append(dataPath)
-        redundList = list(set(redundList))
-        return redundList
+            return cur_list
+        for data_path in old_list:
+            if data_path not in cur_list:
+                redund_list.append(data_path)
+        redund_list = list(set(redund_list))
+        return redund_list
 
-    def _import_db_data(self, changedList):
+    def _import_db_data(self, changed_list):
         try:
-            for dataPath in changedList:
-                coll = self._get_coll_name(dataPath)
-                LOG.info('import %s...' % dataPath)
+            for data_path in changed_list:
+                coll = self._get_coll_name(data_path)
+                LOG.info('import %s' % data_path)
                 db_coll = self.db[coll]
-                readStr = self._read_data_file(dataPath)
-                data = yaml.load(readStr)
-                data['path'] = dataPath
-                data['mtime'] = self._get_modify_time(dataPath)
+                read_str = self._read_data_file(data_path)
+                data = yaml.load(read_str)
+                data['path'] = data_path
+                data['mtime'] = self._get_modify_time(data_path)
                 db_coll.insert(data)
                 db_coll.create_index('tag')
                 db_coll.create_index('que')

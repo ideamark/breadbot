@@ -66,8 +66,8 @@ elif sys.argv[1] == 'clean':
         'TODO',
         'tox.ini',
     ]
-    fileList = os.listdir('.')
-    for f in fileList:
+    file_list = os.listdir('.')
+    for f in file_list:
         if f not in exclude:
             os.system('rm -rf %s' % f)
     os.system('find -name "__pycache__"|xargs rm -rf')

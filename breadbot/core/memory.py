@@ -42,35 +42,35 @@ class _Coll(object):
 class longStr(object):
 
     def __init__(self, user):
-        self.maxWords = 140
-        self.nextSymble = r'....'
+        self.max_words = 140
+        self.next_symble = r'....'
         self.mem_coll = _Coll.get_mem_coll(user)
         self.mem_data = self.mem_coll.find_one()
 
     def _split_str(self, text):
         text = str(text)
-        blockCount = len(text) // self.maxWords
-        if len(text) % self.maxWords != 0:
-            blockCount += 1
-        self.mem_data['long_str']['block_count'] = blockCount
+        block_count = len(text) // self.max_words
+        if len(text) % self.max_words != 0:
+            block_count += 1
+        self.mem_data['long_str']['block_count'] = block_count
         self.mem_data['long_str']['cur_block'] = 1
         text = text.encode('unicode-escape').decode()
         content = [
-            text[i:i + self.maxWords]
-            for i in range(0, len(text), self.maxWords)]
+            text[i:i + self.max_words]
+            for i in range(0, len(text), self.max_words)]
         self.mem_data['long_str']['content'] = content
         _Coll.insert_to_coll(self.mem_coll, self.mem_data)
 
     def read_mem(self):
-        textList = self.mem_data['long_str']['content']
-        curBlock = int(self.mem_data['long_str']['cur_block'])
-        blockCount = int(self.mem_data['long_str']['block_count'])
-        if curBlock <= blockCount and textList:
-            res = textList[curBlock - 1] + self.nextSymble
-            self.mem_data['long_str']['cur_block'] = str(curBlock + 1)
+        text_list = self.mem_data['long_str']['content']
+        cur_block = int(self.mem_data['long_str']['cur_block'])
+        block_count = int(self.mem_data['long_str']['block_count'])
+        if cur_block <= block_count and text_list:
+            res = text_list[cur_block - 1] + self.next_symble
+            self.mem_data['long_str']['cur_block'] = str(cur_block + 1)
             _Coll.insert_to_coll(self.mem_coll, self.mem_data)
-            if curBlock == blockCount:
-                res = res.replace(self.nextSymble, '')
+            if cur_block == block_count:
+                res = res.replace(self.next_symble, '')
         else:
             res = 'no more'
         res = res.replace(r'\n', '\n')
@@ -79,7 +79,7 @@ class longStr(object):
 
     def check_long_str(self, text):
         text = str(text)
-        if len(text) <= self.maxWords or self.nextSymble in text:
+        if len(text) <= self.max_words or self.next_symble in text:
             return text
         elif 'http://' in text or 'https://' in text:
             return text
@@ -93,32 +93,32 @@ class longStr(object):
 class dialogue(object):
 
     def __init__(self, user):
-        self.maxLen = 3
+        self.max_len = 3
         self.mem_coll = _Coll.get_mem_coll(user)
         self.mem_data = self.mem_coll.find_one()
 
-    def insert_dia(self, inStr, res):
-        if inStr == 'n' or inStr == 'next':
+    def insert_dia(self, in_str, res):
+        if in_str == 'n' or in_str == 'next':
             return
-        inStr = str(inStr)
+        in_str = str(in_str)
         res = str(res)
-        diaList = self.mem_data['dialogue']
-        if len(diaList) >= self.maxLen:
-            diaList.pop(0)
-        inStr = inStr.encode('unicode-escape').decode()
+        dia_list = self.mem_data['dialogue']
+        if len(dia_list) >= self.max_len:
+            dia_list.pop(0)
+        in_str = in_str.encode('unicode-escape').decode()
         res = res.encode('unicode-escape').decode()
-        diaList.append({'que': inStr, 'ans': res})
-        self.mem_data['dialogue'] = diaList
+        dia_list.append({'que': in_str, 'ans': res})
+        self.mem_data['dialogue'] = dia_list
         _Coll.insert_to_coll(self.mem_coll, self.mem_data)
 
     def get_dia(self):
         dias = self.mem_data['dialogue']
         if not dias:
             return []
-        newDias = []
+        new_dia_list = []
         for dia in dias:
-            newDias.append({dia['que']: dia['ans']})
-        return newDias
+            new_dia_list.append({dia['que']: dia['ans']})
+        return new_dia_list
 
     def erase_dia(self):
         self.mem_data['dialogue'] = []

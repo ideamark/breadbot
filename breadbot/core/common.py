@@ -13,7 +13,7 @@ def time_limit(secs):
             class TimeLimited(Thread):
                 def __init__(self):
                     Thread.__init__(self)
-                    self.result = dontKnow()
+                    self.result = dont_know()
 
                 def run(self):
                     self.result = function(*args, **kwargs)
@@ -77,18 +77,18 @@ def is_super(name):
     return False
 
 
-def dontKnow():
-    notList = [
+def dont_know():
+    not_list = [
         "Well...",
         "What?",
         "Parden?",
         "...",
         "Hmm..."]
-    res = random.choice(notList)
+    res = random.choice(not_list)
     return res
 
 
-class chat_log(object):
+class chatLog(object):
     def __init__(self):
         self.log_dir = os.path.join(
             cfg().get('local', 'log_path'),
@@ -103,7 +103,7 @@ class chat_log(object):
         return text
 
 
-class console_log(object):
+class consoleLog(object):
     def __init__(self):
         self.log_dir = os.path.join(
             cfg().get('local', 'log_path'),
@@ -162,25 +162,25 @@ class cfg(object):
         self.cfg.write()
 
 
-def path_parser(filePaths=[]):
-    if not filePaths:
+def path_parser(file_path_list=[]):
+    if not file_path_list:
         print('Please enter file paths')
         return []
 
-    for path in filePaths:
+    for path in file_path_list:
         if path[-1] == '*':
             path = path[:-1]
         if not os.path.exists(path):
-            filePaths.remove(path)
+            file_path_list.remove(path)
         if os.path.isdir(path):
-            filePaths.remove(path)
+            file_path_list.remove(path)
             files = os.listdir(path)
             for f in files:
-                fPath = os.path.join(path, f)
-                if not os.path.exists(fPath):
+                f_path = os.path.join(path, f)
+                if not os.path.exists(f_path):
                     continue
-                if os.path.isfile(fPath) and \
+                if os.path.isfile(f_path) and \
                         f[-4:] == '.yml':
-                    filePaths.append(fPath)
+                    file_path_list.append(f_path)
 
-    return filePaths
+    return file_path_list

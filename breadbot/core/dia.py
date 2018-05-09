@@ -9,8 +9,8 @@ JARO_WINKLER_PERCENT = 0.98
 
 
 @common.time_limit(3)
-def response(db, user, inStr):
-    inStr = common.que_init(inStr)
+def response(db, user, in_str):
+    in_str = common.que_init(in_str)
     ans = ''
     colls = db.collection_names()
     random.shuffle(colls)
@@ -30,7 +30,7 @@ def response(db, user, inStr):
             for que in ques:
                 que = str(que)
                 que = common.que_init(que)
-                if Leven.jaro_winkler(inStr, que) > JARO_WINKLER_PERCENT:
+                if Leven.jaro_winkler(in_str, que) > JARO_WINKLER_PERCENT:
                     ans = qa['ans']
                     if type(ans) is list:
                         ans = random.choice(ans)

@@ -8,10 +8,10 @@ from breadbot.core import common
 DO_YOU_MEAN = 'Do you mean:'
 
 
-def _get_qas(db, coll, isSuper=False):
+def _get_qas(db, coll, is_super=False):
     if coll[-4:] != '_yml':
         return
-    if isSuper:
+    if is_super:
         reqs = db[coll].find_one({'$or': [{'tag': 'klg'}, {'tag': 'sec'}]})
     else:
         reqs = db[coll].find_one({'tag': 'klg'})
@@ -22,32 +22,32 @@ def _get_qas(db, coll, isSuper=False):
         return []
 
 
-def response(db, user, inStr):
-    isSuper = common.is_super(user)
-    inStr = common.expand_abbrev(inStr)
-    inStr = re.sub('[%s]+' % string.punctuation, '', inStr)
-    inStr = inStr.lower()
-    if len(inStr) < 3:
+def response(db, user, in_str):
+    is_super = common.is_super(user)
+    in_str = common.expand_abbrev(in_str)
+    in_str = re.sub('[%s]+' % string.punctuation, '', in_str)
+    in_str = in_str.lower()
+    if len(in_str) < 3:
         return
-    regexStr = '(^|.* )' + inStr + '( .*|$)'
+    regx_str = '(^|.* )' + in_str + '( .*|$)'
     colls = db.collection_names()
     try:
         dias = memory.dialogue(user).get_dia()
-        lastDia = dias[-1]
-        lastAns = list(lastDia.values())[0]
+        last_dia = dias[-1]
+        last_ans = list(last_dia.values())[0]
     except Exception:
         return
-    newQues = []
-    if DO_YOU_MEAN in lastAns:
-        ques = lastAns.split(r'\n')[1:]
+    new_ques = []
+    if DO_YOU_MEAN in last_ans:
+        ques = last_ans.split(r'\n')[1:]
         for que in ques:
-            if re.match(regexStr, que):
-                newQues.append(que)
-    newQues = list(set(newQues))
-    if len(newQues) < 1:
-        words = inStr.split(' ')
+            if re.match(regx_str, que):
+                new_ques.append(que)
+    new_ques = list(set(new_ques))
+    if len(new_ques) < 1:
+        words = in_str.split(' ')
         for coll in colls:
-            qas = _get_qas(db, coll, isSuper)
+            qas = _get_qas(db, coll, is_super)
             if not qas:
                 continue
             for qa in qas:
@@ -60,16 +60,16 @@ def response(db, user, inStr):
                             all_words_in = False
                             break
                     if all_words_in:
-                        newQues.append('- ' + que)
+                        new_ques.append('- ' + que)
                         break
-        newQues = list(set(newQues))
-    if len(newQues) < 1:
+        new_ques = list(set(new_ques))
+    if len(new_ques) < 1:
         return
-    elif len(newQues) == 1:
-        Que = newQues[0]
+    elif len(new_ques) == 1:
+        Que = new_ques[0]
         Que = re.sub(r'^- ', '', Que)
         for coll in colls:
-            qas = _get_qas(db, coll, isSuper)
+            qas = _get_qas(db, coll, is_super)
             if not qas:
                 continue
             for qa in qas:
@@ -82,8 +82,8 @@ def response(db, user, inStr):
         if res[-1] == '\n':
             res = res[:-1]
     else:
-        newQues.insert(0, DO_YOU_MEAN)
-        res = '\n'.join(newQues)
+        new_ques.insert(0, DO_YOU_MEAN)
+        res = '\n'.join(new_ques)
     if res:
-        memory.dialogue(user).insert_dia(inStr, res)
+        memory.dialogue(user).insert_dia(in_str, res)
     return res
