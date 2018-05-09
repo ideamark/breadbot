@@ -6,7 +6,7 @@ from setuptools import setup
 
 data_path = os.path.join(os.getcwd(), 'data')
 log_path = '/var/log/breadbot'
-basic_corpus_path = os.path.join(os.getcwd(), 'data/corpus/basic_dialogues')
+basic_corpus_path = os.path.join(os.getcwd(), 'data/basic_dialogues')
 bread_cfg_path = '/etc/bread.cfg'
 bread_bin_path = '/use/local/bin/breadbot'
 
