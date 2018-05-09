@@ -56,5 +56,5 @@ class WeChat(View):
         contextXml = template.render(context)
         logStr = '\nUser:   %s\nAsk:    %s\nAnswer: %s\n' % \
                  (fromUser, content, res)
-        core.common.log().write(logStr)
+        core.common.chat_log().write(logStr)
         return HttpResponse(contextXml)

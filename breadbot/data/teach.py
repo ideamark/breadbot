@@ -1,5 +1,4 @@
 import os
-
 from breadbot.core import common
 
 

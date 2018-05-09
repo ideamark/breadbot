@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
+from breadbot.core import common
 from breadbot.core.common import cfg
 import os
 
+LOG = common.console_log()
 
 class countQues(object):
 
@@ -22,4 +24,4 @@ class countQues(object):
                         content = fp.read()
                         count += content.count('- que:\n')
 
-        print('ques: %s' % count)
+        LOG.info('Total ques: %s' % count)

@@ -26,22 +26,22 @@ def time_limit(secs):
     return dec
 
 
-def init_input(inStr):
-    inStr = re.sub('\s', ' ', inStr)
-    inStr = re.sub('  ', ' ', inStr)
-    inStr = re.sub('  ', ' ', inStr)
-    inStr = inStr.strip()
-    return inStr
+def init_input(in_str):
+    in_str = re.sub('\s', ' ', in_str)
+    in_str = re.sub('  ', ' ', in_str)
+    in_str = re.sub('  ', ' ', in_str)
+    in_str = in_str.strip()
+    return in_str
 
 
-def expand_abbrev(inStr):
-    if "'" not in inStr:
-        return inStr
-    inStr = re.sub("'m", ' am', inStr)
-    inStr = re.sub("'s", ' is', inStr)
-    inStr = re.sub("'re", ' are', inStr)
-    inStr = re.sub("'ll", ' will', inStr)
-    return inStr
+def expand_abbrev(in_str):
+    if "'" not in in_str:
+        return in_str
+    in_str = re.sub("'m", ' am', in_str)
+    in_str = re.sub("'s", ' is', in_str)
+    in_str = re.sub("'re", ' are', in_str)
+    in_str = re.sub("'ll", ' will', in_str)
+    return in_str
 
 
 def show_help():
@@ -61,11 +61,11 @@ def show_homepage():
     return 'https://ideamark.github.io'
 
 
-def que_init(inStr):
-    inStr = expand_abbrev(inStr)
-    inStr = re.sub('[%s]+' % string.punctuation, '', inStr)
-    inStr = inStr.lower()
-    return inStr
+def que_init(in_str):
+    in_str = expand_abbrev(in_str)
+    in_str = re.sub('[%s]+' % string.punctuation, '', in_str)
+    in_str = in_str.lower()
+    return in_str
 
 
 def is_super(name):
@@ -88,22 +88,50 @@ def dontKnow():
     return res
 
 
-class log(object):
+class chat_log(object):
     def __init__(self):
-        self.logDir = os.path.join(
-            cfg().get('local', 'log_path'), 'dia.log')
+        self.log_dir = os.path.join(
+            cfg().get('local', 'log_path'),
+            'chat.log')
 
-    def write(self, inStr):
-        curTime = time.strftime('[%Y-%m-%d %H:%M:%S] ', time.localtime())
-        text = curTime + inStr
-        f = open(self.logDir, 'a')
+    def write(self, in_str):
+        cur_time = time.strftime('[%Y-%m-%d %H:%M:%S] ', time.localtime())
+        text = cur_time + in_str
+        f = open(self.log_dir, 'a')
         f.write(text + '\n')
         f.close()
         return text
 
-    def print(self, inStr):
-        curTime = time.strftime('[%Y-%m-%d %H:%M:%S] ', time.localtime())
-        print(curTime + str(inStr))
+
+class console_log(object):
+    def __init__(self):
+        self.log_dir = os.path.join(
+            cfg().get('local', 'log_path'),
+            'console.log')
+
+    def __write(self, tag, in_str):
+        cur_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+        text = '%s [%s] %s' % (cur_time, tag, in_str)
+        f = open(self.log_dir, 'a')
+        f.write(text + '\n')
+        f.close()
+        return text
+
+    def info(self, in_str):
+        print(in_str)
+        self.__write('INFO', in_str)
+
+    def warn(self, in_str):
+        print(in_str)
+        self.__write('WARN', in_str)
+
+    def error(self, in_str):
+        print(in_str)
+        self.__write('ERROR', in_str)
+
+    def debug(self, in_str):
+        print(in_str)
+        self.__write('DEBUG', in_str)
 
 
 class cfg(object):

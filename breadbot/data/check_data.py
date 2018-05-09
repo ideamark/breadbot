@@ -5,6 +5,7 @@ import yaml
 
 from breadbot.core import common
 
+LOG = common.console_log()
 
 class checkData(object):
 
@@ -12,7 +13,7 @@ class checkData(object):
         pass
 
     def _error(self, err, msg):
-        print('[Error] %s' % msg)
+        LOG.error('[Error] %s' % msg)
         raise Exception(err)
 
     def do_check(self, dataPaths=[]):
@@ -21,7 +22,8 @@ class checkData(object):
             for dataPath in dataPaths:
                 if os.path.splitext(dataPath)[-1] != '.yml':
                     continue
-                print('\nChecking %s...' % dataPath)
+                print('')
+                LOG.info('Checking %s...' % dataPath)
                 if not os.path.exists(dataPath):
                     self._error('', 'wrong data path')
 
@@ -40,7 +42,7 @@ class checkData(object):
                                     self._error(qa, 'item is dict')
                                 if not item:
                                     self._error(qa, 'item is none')
-                print('Check Passed!')
+                LOG.info('Check Passed!')
 
         except Exception as e:
-            print(e)
+            LOG.error(e)

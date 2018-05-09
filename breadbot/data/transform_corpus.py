@@ -3,9 +3,9 @@ import os
 import re
 import shutil
 import sys
-
 from breadbot.core import common
 
+LOG = common.console_log()
 
 class transformCorpus(object):
 
@@ -16,7 +16,7 @@ class transformCorpus(object):
         else:
             self.outPath = os.path.join(os.getcwd(), outDir)
         if not os.path.exists(self.outPath):
-            print('Create %s' % self.outPath)
+            LOG.info('Create %s' % self.outPath)
             os.makedirs(self.outPath)
 
     def do_transform(self, filePaths=[]):
@@ -28,13 +28,13 @@ class transformCorpus(object):
             fileName = os.path.basename(filePath)
             newFilePath = os.path.join(self.outPath, fileName)
             if not os.path.exists(newFilePath):
-                print('Copy %s' % filePath)
+                LOG.info('Copy %s' % filePath)
                 shutil.copyfile(filePath, newFilePath)
             newFilePaths.append(newFilePath)
 
         # Initilization
         for filePath in newFilePaths:
-            print('initializing %s...' % filePath)
+            LOG.info('Initializing %s...' % filePath)
             text = ''
             with open(filePath, 'r') as fr:
                 text = fr.read()
@@ -79,7 +79,7 @@ class transformCorpus(object):
 
         # Transform
         for filePath in newFilePaths:
-            print('Transforming %s...' % filePath)
+            LOG.info('Transforming %s...' % filePath)
             with open(filePath, 'r') as fr:
                 text = fr.read()
             list1 = text.split('\n\n\n')

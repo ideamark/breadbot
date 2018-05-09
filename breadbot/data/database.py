@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 from pymongo import MongoClient
-
 from breadbot.core import common
 
+LOG = common.console_log()
 
 class dataBase(object):
 
@@ -15,5 +15,5 @@ class dataBase(object):
         port = common.cfg().get('mongodb', 'db_port')
         client = MongoClient(ip, port)
         client.drop_database(db_name)
-        print('\n Drop Database Done.')
+        LOG.info('Drop Database Done.')
 

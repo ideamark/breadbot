@@ -3,9 +3,9 @@ import os
 import re
 import yaml
 from pymongo import MongoClient
-
 from breadbot.core import common
 
+LOG = common.console_log()
 
 class importData(object):
 
@@ -13,7 +13,7 @@ class importData(object):
         self.db = self._open_db()
 
     def do_import(self, dataPaths=[]):
-        print('Start import data...')
+        LOG.info('Start import data...')
         self.all_flag = False
         if not dataPaths:
             dataPaths = common.cfg().get('local', 'data_paths')
@@ -42,7 +42,7 @@ class importData(object):
                 continue
             else:
                 coll = self._get_coll_name(dataPath)
-                print('clean %s...' % coll)
+                LOG.info('clean %s...' % coll)
                 self.db[coll].drop()
 
     def _get_coll_name(self, dataPath):
@@ -118,7 +118,7 @@ class importData(object):
         try:
             for dataPath in changedList:
                 coll = self._get_coll_name(dataPath)
-                print('import %s...' % dataPath)
+                LOG.info('import %s...' % dataPath)
                 db_coll = self.db[coll]
                 readStr = self._read_data_file(dataPath)
                 data = yaml.load(readStr)
@@ -127,7 +127,7 @@ class importData(object):
                 db_coll.insert(data)
                 db_coll.create_index('tag')
                 db_coll.create_index('que')
-            print('\n All Complete!')
+            LOG.info('All Complete!')
         except Exception as e:
-            print(e)
-            print('\n Import Failed!')
+            LOG.error(e)
+            LOG.error('Import Failed!')

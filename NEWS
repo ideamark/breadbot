@@ -197,3 +197,8 @@
 - Version: 2.0.8
 - Modify teach function back to simple
 - Fix some PEP8 bugs
+
+2018-05-09:
+- Version: 2.0.9
+- Add console log function
+- Changed some code style
