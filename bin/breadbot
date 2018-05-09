@@ -36,7 +36,11 @@ def active(cmd):
         dataPaths = cmd.split(' ')[1:]
         data.import_data.importData().do_import(dataPaths)
     elif cmd == 'drop':
-        data.database.dataBase().drop_db()
+        cmd = input('Drop all data? (yes/no): ')
+        if cmd == 'yes':
+            data.database.dataBase().drop_db()
+        else:
+            print('Canceled')
     elif cmd == 'count':
         data.count_ques.countQues().do_count()
     elif re.match('^check.*$', cmd):
