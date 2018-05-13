@@ -162,25 +162,15 @@ class cfg(object):
         self.cfg.write()
 
 
-def path_parser(file_path_list=[]):
-    if not file_path_list:
-        print('Please enter file paths')
-        return []
-
-    for path in file_path_list:
-        if path[-1] == '*':
-            path = path[:-1]
-        if not os.path.exists(path):
-            file_path_list.remove(path)
-        if os.path.isdir(path):
-            file_path_list.remove(path)
-            files = os.listdir(path)
-            for f in files:
-                f_path = os.path.join(path, f)
-                if not os.path.exists(f_path):
+def expand_path(path_list=[]):
+    expand_path_list = []
+    for path in path_list:
+        for root, dirs, files in os.walk(path):
+            if not files:
+                continue
+            for _file in files:
+                if not _file:
                     continue
-                if os.path.isfile(f_path) and \
-                        f[-4:] == '.yml':
-                    file_path_list.append(f_path)
-
-    return file_path_list
+                file_path = os.path.join(root, _file)
+                expand_path_list.append(file_path)
+    return expand_path_list

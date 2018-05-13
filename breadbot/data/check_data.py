@@ -18,7 +18,9 @@ class checkData(object):
 
     def do_check(self, data_path_list=[]):
         try:
-            data_path_list = common.path_parser(data_path_list)
+            if not data_path_list:
+                data_path_list = common.cfg().get('local', 'data_paths')
+            data_path_list = common.expand_path(data_path_list)
             for data_path in data_path_list:
                 if os.path.splitext(data_path)[-1] != '.yml':
                     continue

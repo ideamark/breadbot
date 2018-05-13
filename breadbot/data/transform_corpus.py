@@ -20,7 +20,7 @@ class transformCorpus(object):
             os.makedirs(self.out_path)
 
     def do_transform(self, file_path_list=[]):
-        file_path_list = common.path_parser(file_path_list)
+        file_path_list = common.expand_path(file_path_list)
         new_file_path_list = []
 
         # Copy file
