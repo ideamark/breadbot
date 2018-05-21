@@ -8,7 +8,7 @@ import yaml
 from . import common
 
 
-@common.time_limit(4)
+@common.time_limit(3)
 def response(user, in_str):
     is_super = common.is_super(user)
     in_str = common.que_init(in_str)
