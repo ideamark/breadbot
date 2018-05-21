@@ -208,3 +208,4 @@
 - Removed database
 - Make response faster and more accurate
 - Fixed bugs
+- Made corpus format simpler
