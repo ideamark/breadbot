@@ -20,7 +20,6 @@ class Chat(object):
         if re.match('^n$', in_str):
             res = memory.Memory(user).get_longstr_mem()
         elif common.is_super(user):
-            mem_dialog_list = memory.Memory(user).get_dialog()
             if re.match('^s .*$', in_str):
                 content = re.sub('^s ', '', in_str)
                 res = search.translate(content)

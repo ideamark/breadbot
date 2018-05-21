@@ -42,7 +42,8 @@ def response(user, in_str):
         fp = open(path, 'r')
         text = fp.read()
         fp.close()
-        regx_str = '- que:\n(?:  - .*\n)*  - %s\n(?:  - .*\n)*  ans:(?: *\|)\n(?:(?!- que:).*\n)+' % que_str
+        regx_str = '- que:\n(?:  - .*\n)*  - %s\n(?:  - .*\n)*  ' \
+                   'ans:(?: *\|)\n(?:(?!- que:).*\n)+' % que_str
         qas = re.findall(regx_str, text)
         if not qas:
             continue
