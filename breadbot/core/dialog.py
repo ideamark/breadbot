@@ -29,12 +29,12 @@ def response(user, in_str):
         if 'sec_' in os.path.basename(path) and not is_super:
             continue
         que_str = re.sub('^%s:  - ' % path, '', res)
-        que_str = re.sub('\\n', '', que_str)
+        que_str = re.sub(r'\n', '', que_str)
         jaro = Leven.jaro_winkler(que_str, in_str)
         if jaro > max_jaro:
             max_jaro = jaro
             max_jaro_info_list = [(path, que_str)]
-            if max_jaro > 0.998:
+            if max_jaro == 1:
                 break
         elif jaro == max_jaro:
             max_jaro_info_list.append((path, que_str))
