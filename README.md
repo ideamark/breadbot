@@ -33,13 +33,7 @@
 ## Super user mode
 * Super user mode is set for developers.
 * The local console is default set as super user.
-* If your ID is in bread.cfg super user list, u will get the super user functions below:
-  * Type "help": Simple & quick help.
-  * Type "readme": Display README file.
-  * Type "d xxx": Search knowledge base and baidu.
-  * Type "w xxx": Search wikipedia.
-  * Type "s xxx": Search google translator
-  * Type "t que: ans": Teach a dialogue and save it in data/teach.yml
+* If your ID is in bread.cfg super user list, u will get the super user functions.
 
 ## Connect to WeChat
 * Config your WeChat public platform account on https://mp.weixin.qq.com, create the token and enter your url.

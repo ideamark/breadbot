@@ -44,13 +44,18 @@ def expand_abbrev(in_str):
     return in_str
 
 
-def show_help():
-    return(
-        ' d ....search knowledge\n'
-        ' s ....search dictionary\n'
-        ' w ....search wikipedia\n'
-        ' n ....turn to next page\n'
-        ' t ....teach a dialogue\n')
+def show_help(user):
+    text = \
+        'translate ... (translate dialogs)\n' \
+        'baidu ... (search baidu)\n' \
+        'wikipedia ... (search wikipedia)\n' \
+        'next (turn to next page)\n' \
+        'home (show breadbot website)\n' \
+        'readme (show readme file)\n'
+    if is_super(user):
+        text += \
+            'teach ... (teach a dialogue)\n'
+    return text
 
 
 def show_readme():
@@ -68,11 +73,11 @@ def que_init(in_str):
     return in_str
 
 
-def is_super(name):
+def is_super(user):
     super_users = Cfg().get('wechat', 'super_users')
     if super_users and type(super_users) is list:
         for user in super_users:
-            if user == name:
+            if user == user:
                 return True
     return False
 
