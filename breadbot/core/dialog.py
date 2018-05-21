@@ -34,7 +34,7 @@ def response(user, in_str):
         if jaro > max_jaro:
             max_jaro = jaro
             max_jaro_info_list = [(path, que_str)]
-            if max_jaro == 1:
+            if max_jaro > 0.998:
                 break
         elif jaro == max_jaro:
             max_jaro_info_list.append((path, que_str))
