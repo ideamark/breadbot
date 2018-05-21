@@ -209,3 +209,7 @@
 - Make response faster and more accurate
 - Fixed bugs
 - Made corpus format simpler
+
+2018-05-22:
+- Version: 2.1.1
+- Speed up response

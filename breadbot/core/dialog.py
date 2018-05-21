@@ -10,9 +10,18 @@ from . import common
 
 @common.time_limit(3)
 def response(user, in_str):
-    is_super = common.is_super(user)
     in_str = common.que_init(in_str)
-    regx_str = '^  - .*%s.*$' % in_str.replace(' ', '.*')
+    regx_str = '^  - %s.*$' % in_str
+    ans = __search_ans(user, regx_str, in_str)
+    if not ans:
+        regx_str = '^  - .*%s.*$' % in_str.replace(' ', '.*')
+        ans = __search_ans(user, regx_str, in_str)
+    if not ans:
+        ans = common.dont_know()
+    return ans
+
+def __search_ans(user, regx_str, in_str):
+    is_super = common.is_super(user)
     data_path_list = common.Cfg().get('local', 'data_paths')
 
     grep_list = []
@@ -40,7 +49,7 @@ def response(user, in_str):
             max_jaro_info_list.append((path, que_str))
 
     random.shuffle(max_jaro_info_list)
-    ans = common.dont_know()
+    ans = None
     for path, que_str in max_jaro_info_list:
         fp = open(path, 'r')
         text = fp.read()
