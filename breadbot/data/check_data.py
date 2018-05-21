@@ -27,7 +27,7 @@ class CheckData(object):
                 LOG.info('Checking %s' % data_path)
 
                 with open(data_path, 'r') as f:
-                    qas = yaml.load(f.read())['qas']
+                    qas = yaml.load(f.read())
 
                 for qa in qas:
                     if not qa:

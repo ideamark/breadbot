@@ -162,13 +162,16 @@ class Cfg(object):
 def expand_path(path_list=[]):
     expand_path_list = []
     for path in path_list:
+        if not os.path.isdir(path):
+            expand_path_list.append(path)
+            continue
         for root, dirs, files in os.walk(path):
             if not files:
                 continue
-            for _file in files:
-                if not _file:
+            for filename in files:
+                if not filename:
                     continue
-                file_path = os.path.join(root, _file)
+                file_path = os.path.join(root, filename)
                 expand_path_list.append(file_path)
     return expand_path_list
 

@@ -24,10 +24,11 @@ class Chat(object):
                 content = re.sub('^s ', '', in_str)
                 res = search.translate(content)
             elif re.match('^d .*$', in_str):
-                res = search.baiduSearch(content)
+                content = re.sub('^d ', '', in_str)
+                res = search.baidu_search(content)
             elif re.match('^w .*$', in_str):
                 content = re.sub('^w ', '', in_str)
-                res = search.wikiSearch(content)
+                res = search.wiki_search(content)
             elif re.match('^help$', in_str.lower()):
                 res = common.show_help()
             elif re.match('^readme$', in_str.lower()):
@@ -38,7 +39,7 @@ class Chat(object):
                 content = re.sub('^t ', '', in_str)
                 res = teach.Teach().do_teach(user, content)
             elif re.search('[\u4e00-\u9fa5]', in_str):
-                res = search.baiduSearch(in_str)
+                res = search.baidu_search(in_str)
         else:
             if re.search('[\u4e00-\u9fa5]', in_str):
                 res_list = [

@@ -5,14 +5,14 @@ import urllib.parse
 import urllib.request
 
 
-def baiduSearch(keyword):
+def baidu_search(keyword):
     if not keyword:
         return
     p = {'wd': keyword}
     return "http://www.baidu.com/s?" + urllib.parse.urlencode(p)
 
 
-def wikiSearch(keyword):
+def wiki_search(keyword):
     if not keyword:
         return
     keyword = keyword.replace(' ', '_')

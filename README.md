@@ -10,11 +10,12 @@
   * Support WeChat
 
 ## Setup
-* Note: Breadbot only works on Linux. Also u can let it work on other OS by modify the source code.
+* Note
+  * Breadbot only works on Linux. Also u can let it work on other OS by modify the source code.
 * Download
   * git clone https://github.com/ideamark/breadbot
 * Install
-  * Make sure you have installed python3, python3-pip and mongodb
+  * First, make sure you have installed python3 and python3-pip
   * python3 setup.py install
   * The setup will download corpus from https://github.com/ideamark/ideamark.github.io
 * Uninstall

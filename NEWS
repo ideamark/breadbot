@@ -207,3 +207,4 @@
 - Version: 2.1.0
 - Removed database
 - Make response faster and more accurate
+- Fixed bugs
