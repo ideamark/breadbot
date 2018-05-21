@@ -32,23 +32,25 @@ class Chat(object):
                     'Speak English please.',
                     'English, please.']
                 return random.choice(res_list)
-            elif re.match('^(?:.* ){0,5}translate .*$', in_str):
-                content = re.sub('^(?:.* ){0,5}translate ', '', in_str)
-                res = search.translate(content)
-            elif re.match('^(?:.* ){0,5}baidu .*$', in_str):
-                content = re.sub('^(?:.* ){0,5}baidu ', '', in_str)
-                res = search.baidu_search(content)
-            elif re.match('^(?:.* ){0,5}wikipedia .*$', in_str):
-                content = re.sub('^(?:.* ){0,5}wikipedia ', '', in_str)
-                res = search.wiki_search(content)
-            elif re.match('^help$', in_str.lower()):
-                res = common.show_help(user)
-            elif re.match('^readme$', in_str.lower()):
-                res = common.show_readme()
-            elif re.match('^(home|home page)$', in_str):
-                res = common.show_homepage()
+
+        if re.match('^(?:.* ){0,5}translate .*$', in_str):
+            content = re.sub('^(?:.* ){0,5}translate ', '', in_str)
+            res = search.translate(content)
+        elif re.match('^(?:.* ){0,5}baidu .*$', in_str):
+            content = re.sub('^(?:.* ){0,5}baidu ', '', in_str)
+            res = search.baidu_search(content)
+        elif re.match('^(?:.* ){0,5}wikipedia .*$', in_str):
+            content = re.sub('^(?:.* ){0,5}wikipedia ', '', in_str)
+            res = search.wiki_search(content)
+        elif re.match('^help$', in_str.lower()):
+            res = common.show_help(user)
+        elif re.match('^readme$', in_str.lower()):
+            res = common.show_readme()
+        elif re.match('^(home|home page)$', in_str):
+            res = common.show_homepage()
         if not res:
             res = dialog.response(user, in_str)
+
         memory.Memory(user).save_dialog(in_str, res)
         res = memory.Memory(user).check_longstr(res)
         return res
