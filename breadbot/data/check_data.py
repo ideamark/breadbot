@@ -5,9 +5,9 @@ import yaml
 
 from breadbot.core import common
 
-LOG = common.consoleLog()
+LOG = common.ConsoleLog()
 
-class checkData(object):
+class CheckData(object):
 
     def __init__(self):
         pass
@@ -19,15 +19,12 @@ class checkData(object):
     def do_check(self, data_path_list=[]):
         try:
             if not data_path_list:
-                data_path_list = common.cfg().get('local', 'data_paths')
+                data_path_list = common.Cfg().get('local', 'data_paths')
             data_path_list = common.expand_path(data_path_list)
+            data_path_list = common.get_yml_path_list(data_path_list)
             for data_path in data_path_list:
-                if os.path.splitext(data_path)[-1] != '.yml':
-                    continue
                 print('')
                 LOG.info('Checking %s' % data_path)
-                if not os.path.exists(data_path):
-                    self._error('', 'wrong data path')
 
                 with open(data_path, 'r') as f:
                     qas = yaml.load(f.read())['qas']

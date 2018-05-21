@@ -202,3 +202,8 @@
 - Version: 2.0.9
 - Add console log function
 - Changed some code style
+
+2018-05-21:
+- Version: 2.1.0
+- Removed database
+- Make response faster and more accurate

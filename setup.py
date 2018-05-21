@@ -4,13 +4,6 @@ import sys
 from setuptools import setup
 
 
-data_path = os.path.join(os.getcwd(), 'data')
-log_path = '/var/log/breadbot'
-basic_corpus_path = os.path.join(os.getcwd(), 'data/basic_dialogues')
-bread_cfg_path = '/etc/bread.cfg'
-bread_bin_path = '/use/local/bin/breadbot'
-
-
 if os.geteuid():
     args = [sys.executable] + sys.argv
     os.execlp('sudo', 'sudo', *args)
@@ -26,24 +19,28 @@ elif sys.argv[1] == 'install':
     setup(
         setup_requires=['pbr>=0.1'],
         pbr=True,)
-    from breadbot import data
-    from breadbot import core
+    from breadbot.core.common import Cfg
+    data_path = os.path.join(os.getcwd(), 'data')
+    Cfg().write('local', 'data_paths', data_path)
+    log_path = Cfg().get('local', 'log_path')
+    mem_path = Cfg().get('local', 'mem_path')
     if not os.path.exists(log_path):
         os.mkdir(log_path)
-    core.common.cfg().write('local', 'data_paths', data_path)
-    core.common.cfg().write('local', 'log_path', log_path)
+    if not os.path.exists(mem_path):
+        os.mkdir(mem_path)
     os.system(
         'git clone https://github.com/ideamark/ideamark.github.io "data"')
     os.system('chmod -R 777 data')
-    data.import_data.importData().do_import(basic_corpus_path)
+    sys.exit(0)
 
 elif sys.argv[1] == 'uninstall':
-    if os.path.exists(bread_cfg_path):
-        from breadbot import data
-        data.database.dataBase().drop_db()
-        os.remove(bread_cfg_path)
-    if os.path.exists(bread_bin_path):
-        os.remove(bread_bin_path)
+    from breadbot.core.common import Cfg
+    cfg_path = Cfg().get('local', 'cfg_path')
+    bin_path = Cfg().get('local', 'bin_path')
+    if os.path.exists(cfg_path):
+        os.remove(cfg_path)
+    if os.path.exists(bin_path):
+        os.remove(bin_path)
     os.system('pip3 uninstall breadbot')
     sys.exit(0)
 

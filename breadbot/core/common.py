@@ -69,7 +69,7 @@ def que_init(in_str):
 
 
 def is_super(name):
-    super_users = cfg().get('wechat', 'super_users')
+    super_users = Cfg().get('wechat', 'super_users')
     if super_users and type(super_users) is list:
         for user in super_users:
             if user == name:
@@ -88,10 +88,10 @@ def dont_know():
     return res
 
 
-class chatLog(object):
+class ChatLog(object):
     def __init__(self):
         self.log_dir = os.path.join(
-            cfg().get('local', 'log_path'),
+            Cfg().get('local', 'log_path'),
             'chat.log')
 
     def write(self, in_str):
@@ -103,10 +103,10 @@ class chatLog(object):
         return text
 
 
-class consoleLog(object):
+class ConsoleLog(object):
     def __init__(self):
         self.log_dir = os.path.join(
-            cfg().get('local', 'log_path'),
+            Cfg().get('local', 'log_path'),
             'console.log')
 
     def __write(self, tag, in_str):
@@ -130,11 +130,10 @@ class consoleLog(object):
         self.__write('ERROR', in_str)
 
     def debug(self, in_str):
-        print(in_str)
         self.__write('DEBUG', in_str)
 
 
-class cfg(object):
+class Cfg(object):
     def __init__(self):
         self.cfg = ConfigObj('/etc/bread.cfg')
 
@@ -145,8 +144,6 @@ class cfg(object):
                 (ctype, value) == ('wechat', 'super_users'):
             if type(res) is not list:
                 res = [res]
-        elif ctype == 'mongodb' and value == 'db_port':
-            res = int(res)
         return res
 
     def write(self, ctype, value, key):
@@ -174,3 +171,17 @@ def expand_path(path_list=[]):
                 file_path = os.path.join(root, _file)
                 expand_path_list.append(file_path)
     return expand_path_list
+
+
+def get_yml_path_list(path_list=[]):
+    if not path_list:
+        path_list = Cfg().get('local', 'data_paths')
+    path_list = expand_path(path_list)
+    yml_path_list = []
+    for path in path_list:
+        if not os.path.exists(path):
+            continue
+        elif os.path.splitext(path)[-1] != '.yml':
+            continue
+        yml_path_list.append(path)
+    return yml_path_list

@@ -16,7 +16,7 @@ class WeChat(View):
         return super(WeChat, self).dispatch(*args, **kwargs)
 
     def get(self, request):
-        token = core.common.cfg().get('wechat', 'token')
+        token = core.common.Cfg().get('wechat', 'token')
         signature = request.GET.get('signature', None)
         timestamp = request.GET.get('timestamp', None)
         nonce = request.GET.get('nonce', None)
@@ -41,7 +41,7 @@ class WeChat(View):
             if '[Unsupported Message]' in content:
                 res = sorry
             else:
-                res = core.chat().response(from_user, content)
+                res = core.Chat().response(from_user, content)
         else:
             res = sorry
         template = loader.get_template('wechat/text_message_template.xml')
@@ -52,5 +52,5 @@ class WeChat(View):
         context_xml = template.render(context)
         log_str = '\nUser:   %s\nAsk:    %s\nAnswer: %s\n' % \
                  (from_user, content, res)
-        core.common.chatLog().write(log_str)
+        core.common.ChatLog().write(log_str)
         return HttpResponse(context_xml)

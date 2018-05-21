@@ -6,15 +6,15 @@ from . import manage
 
 
 def start():
-    token = common.cfg().get('wechat', 'token')
+    token = common.Cfg().get('wechat', 'token')
     if not token:
         token = input('Please enter your wechat token: ')
-        common.cfg().write('wechat', 'token', token)
+        common.Cfg().write('wechat', 'token', token)
 
-    public_ip = common.cfg().get('wechat', 'public_ip')
+    public_ip = common.Cfg().get('wechat', 'public_ip')
     if not public_ip:
         public_ip = input('Please enter public IP: ')
-        common.cfg().write('wechat', 'public_ip', public_ip)
+        common.Cfg().write('wechat', 'public_ip', public_ip)
 
     ma_path = manage.__file__
     port = '80'

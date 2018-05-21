@@ -5,9 +5,9 @@ import shutil
 import sys
 from breadbot.core import common
 
-LOG = common.consoleLog()
+LOG = common.ConsoleLog()
 
-class transformCorpus(object):
+class TransformCorpus(object):
 
     def __init__(self):
         out_dir = 'output'
@@ -90,7 +90,7 @@ class transformCorpus(object):
                 list2.append(sub_item2)
             yml_name = os.path.splitext(file_path)[0] + '.yml'
             with open(os.path.join(self.out_path, yml_name), 'w') as fw:
-                fw.write('tag:\n- dia\n\nqas:\n')
+                fw.write('qas:\n')
                 for item in list2:
                     fw.write('\n- que:\n')
                     for que in item[0]:

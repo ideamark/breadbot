@@ -5,10 +5,12 @@
   * Easy to deploy
   * More than 1000,000 corpus
   * Fast response
+  * No database
   * Based on Python3
   * Support WeChat
 
 ## Setup
+* Note: Breadbot only works on Linux. Also u can let it work on other OS by modify the source code.
 * Download
   * git clone https://github.com/ideamark/breadbot
 * Install
@@ -19,8 +21,6 @@
   * python3 setup.py uninstall
 * Clean (not uninstall)
   * python3 setup.py clean
-* Import all corpus
-  * The setup will only import basic corpus. If you want to import all corpus, just type "breadbot import". It may take a long time to finish importing.
 
 ## Config
 * Just watch the only single config file: [bread.cfg](etc/bread.cfg)

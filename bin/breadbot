@@ -16,8 +16,6 @@ if os.geteuid():
 def show_help():
     print(
         '\n'
-        ' import:     import data\n'
-        ' drop:       drop database\n'
         ' count:      count ques\n'
         ' check:      check data\n'
         ' transform:  transform corpus\n'
@@ -32,27 +30,18 @@ def show_help():
 def active(cmd):
     if cmd == 'help':
         show_help()
-    elif re.match('^import.*$', cmd):
-        data_paths = cmd.split(' ')[1:]
-        data.import_data.importData().do_import(data_paths)
-    elif cmd == 'drop':
-        cmd = input('Drop all data? (yes/no): ')
-        if cmd == 'yes':
-            data.database.dataBase().drop_db()
-        else:
-            print('Canceled')
     elif cmd == 'count':
-        data.count_ques.countQues().do_count()
+        data.count_ques.CountQues().do_count()
     elif re.match('^check.*$', cmd):
         data_paths = cmd.split(' ')[1:]
-        data.check_data.checkData().do_check(data_paths)
+        data.check_data.CheckData().do_check(data_paths)
     elif re.match('^transform.*$', cmd):
         data_paths = cmd.split(' ')[1:]
-        data.transform_corpus.transformCorpus().do_transform(data_paths)
+        data.transform_corpus.TransformCorpus().do_transform(data_paths)
     elif cmd == 'start':
         serv.start()
     else:
-        print(core.chat().response('localuser', cmd))
+        print(core.Chat().response('localuser', cmd))
 
 
 if __name__ == '__main__':
