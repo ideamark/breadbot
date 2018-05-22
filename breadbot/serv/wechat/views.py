@@ -41,7 +41,7 @@ class WeChat(View):
             if '[Unsupported Message]' in content:
                 res = sorry
             else:
-                res = core.Chat().response(from_user, content)
+                res = core.response(from_user, content)
         else:
             res = sorry
         template = loader.get_template('wechat/text_message_template.xml')

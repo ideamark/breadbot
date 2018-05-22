@@ -43,7 +43,7 @@ def active(cmd):
     elif cmd == 'start':
         serv.start()
     else:
-        print(core.Chat().response(user, cmd))
+        print(core.response(user, cmd))
 
 
 if __name__ == '__main__':
