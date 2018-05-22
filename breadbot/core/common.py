@@ -74,10 +74,10 @@ def que_init(in_str):
 
 
 def is_super(user):
-    super_users = Cfg().get('wechat', 'super_users')
-    if super_users and type(super_users) is list:
-        for user in super_users:
-            if user == user:
+    super_user_list = Cfg().get('wechat', 'super_users')
+    if super_user_list and type(super_user_list) is list:
+        for super_user in super_user_list:
+            if user == super_user:
                 return True
     return False
 

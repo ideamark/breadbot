@@ -25,15 +25,14 @@ class Chat(object):
                 res = teach.Teach().do_teach(user, content)
             elif re.search('[\u4e00-\u9fa5]', in_str):
                 res = search.baidu_search(in_str)
-        else:
+        elif not common.is_super(user):
             if re.search('[\u4e00-\u9fa5]', in_str):
                 res_list = [
                     'I speak English only.',
                     'Speak English please.',
                     'English, please.']
-                return random.choice(res_list)
-
-        if re.match('^(?:.* ){0,5}translate .*$', in_str):
+                res = random.choice(res_list)
+        elif re.match('^(?:.* ){0,5}translate .*$', in_str):
             content = re.sub('^(?:.* ){0,5}translate ', '', in_str)
             res = search.translate(content)
         elif re.match('^(?:.* ){0,5}baidu .*$', in_str):
