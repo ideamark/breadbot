@@ -9,7 +9,14 @@
   * Based on Python3
   * Support WeChat
 
-## Setup
+## Have a try
+* Download WeChat on your phone
+* Login WeChat and scan the QR code
+  [[QR.jpg]]
+* Talk to Breadbot
+
+## Install
+* You can also download the source code to build your own Breadbot.
 * Note
   * Breadbot only works on Linux. Also u can let it work on other OS by modify the source code.
 * Download
