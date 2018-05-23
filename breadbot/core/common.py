@@ -49,6 +49,7 @@ def show_help(user):
         'translate ... (translate dialogs)\n' \
         'baidu ... (search baidu)\n' \
         'wikipedia ... (search wikipedia)\n' \
+        'corpus ... (search corpus)\n' \
         'next (turn to next page)\n' \
         'home (show breadbot website)\n' \
         'readme (show readme file)\n'

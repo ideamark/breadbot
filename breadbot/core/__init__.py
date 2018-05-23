@@ -23,6 +23,9 @@ def response(user, in_str):
     elif re.match('^(?:.* ){0,5}wikipedia .*$', in_str):
         content = re.sub('^(?:.* ){0,5}wikipedia ', '', in_str)
         res = search.wiki_search(content)
+    elif re.match('^(?:.* ){0,5}corpus .*$', in_str):
+        content = re.sub('^(?:.* ){0,5}corpus ', '', in_str)
+        res = search.corpus_search(content)
     elif re.match('^help$', in_str.lower()):
         res = common.show_help(user)
     elif re.match('^readme$', in_str.lower()):

@@ -9,7 +9,7 @@ def baidu_search(keyword):
     if not keyword:
         return
     p = {'wd': keyword}
-    return "http://www.baidu.com/s?" + urllib.parse.urlencode(p)
+    return 'http://www.baidu.com/s?' + urllib.parse.urlencode(p)
 
 
 def wiki_search(keyword):
@@ -17,6 +17,13 @@ def wiki_search(keyword):
         return
     keyword = keyword.replace(' ', '_')
     return 'https://en.m.wikipedia.org/wiki/' + keyword
+
+
+def corpus_search(keyword):
+    if not keyword:
+        return
+    keyword = keyword.replace(' ', '+')
+    return 'https://github.com/ideamark/ideamark.github.io/search?q=' + keyword
 
 
 def translate(word):
