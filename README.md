@@ -12,7 +12,7 @@
 ## Have a try
 * Download WeChat on your phone
 * Login WeChat and scan the QR code
-  ![QR](QR.jpg)
+  * ![QR](QR.jpg)
 * Talk to Breadbot
 
 ## Install
