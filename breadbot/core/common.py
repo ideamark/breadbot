@@ -30,6 +30,7 @@ def init_input(in_str):
     in_str = re.sub('\s', ' ', in_str)
     in_str = re.sub('  ', ' ', in_str)
     in_str = re.sub('  ', ' ', in_str)
+    in_str = in_str.lower()
     in_str = in_str.strip()
     return in_str
 
