@@ -35,19 +35,15 @@ def response(user, in_str):
         res = common.show_readme()
     elif re.match('^(home|home page)$', in_str):
         res = common.show_homepage()
-    elif common.is_super(user):
-        if re.match('^teach .*$', in_str):
+    elif common.is_super(user) and re.match('^teach .*$', in_str):
             content = re.sub('^teach ', '', in_str)
             res = teach.Teach().do_teach(user, content)
-        elif re.search('[\u4e00-\u9fa5]', in_str):
-            res = search.baidu_search(in_str)
-    elif not common.is_super(user):
-        if re.search('[\u4e00-\u9fa5]', in_str):
-            res_list = [
-                'I speak English only.',
-                'Speak English please.',
-                'English, please.']
-            res = random.choice(res_list)
+    elif re.search('[\u4e00-\u9fa5]', in_str):
+        res_list = [
+            'I speak English only.',
+            'Speak English please.',
+            'English, please.']
+        res = random.choice(res_list)
     if not res:
         res = chat.Chat().response(user, in_str)
 
