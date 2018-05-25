@@ -14,17 +14,17 @@ def response(user, in_str):
 
     if re.match('^next$', in_str):
         res = memory.Memory(user).get_longstr_mem()
-    elif re.match('^(?:.* ){0,5}translate .*$', in_str):
-        content = re.sub('^(?:.* ){0,5}translate ', '', in_str)
+    elif re.match('^translate .*$', in_str):
+        content = re.sub('^translate ', '', in_str)
         res = search.translate(content)
-    elif re.match('^(?:.* ){0,5}baidu .*$', in_str):
-        content = re.sub('^(?:.* ){0,5}baidu ', '', in_str)
+    elif re.match('^baidu .*$', in_str):
+        content = re.sub('^baidu ', '', in_str)
         res = search.baidu_search(content)
-    elif re.match('^(?:.* ){0,5}wikipedia .*$', in_str):
-        content = re.sub('^(?:.* ){0,5}wikipedia ', '', in_str)
+    elif re.match('^wikipedia .*$', in_str):
+        content = re.sub('^wikipedia ', '', in_str)
         res = search.wiki_search(content)
-    elif re.match('^(?:.* ){0,5}corpus .*$', in_str):
-        content = re.sub('^(?:.* ){0,5}corpus ', '', in_str)
+    elif re.match('^corpus .*$', in_str):
+        content = re.sub('^corpus ', '', in_str)
         res = search.corpus_search(content)
     elif re.match('^help$', in_str.lower()):
         res = common.show_help(user)
