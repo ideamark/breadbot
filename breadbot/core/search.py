@@ -12,6 +12,13 @@ def baidu_search(keyword):
     return 'http://www.baidu.com/s?' + urllib.parse.urlencode(p)
 
 
+def google_search(keyword):
+    if not keyword:
+        return
+    keyword = keyword.replace(' ', '+')
+    return 'https://www.google.com/search?q=' + keyword
+
+
 def wiki_search(keyword):
     if not keyword:
         return

@@ -49,6 +49,7 @@ def show_help(user):
     text = \
         'translate ... (translate dialogs)\n' \
         'baidu ... (search baidu)\n' \
+        'google ... (search google)\n' \
         'wikipedia ... (search wikipedia)\n' \
         'corpus ... (search corpus)\n' \
         'next (turn to next page)\n' \
