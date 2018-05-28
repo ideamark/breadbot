@@ -32,7 +32,14 @@ class Memory(object):
 
     def __get_data(self):
         with open(self.mem_path, 'r') as fp:
-            return json.load(fp)
+            try:
+                return json.load(fp)
+            except Exception:
+                self.__del_data()
+                return ''
+
+    def __del_data(self):
+        os.remove(self.mem_path)
 
     def __save_data(self, data):
         with open(self.mem_path, 'w') as fp:
