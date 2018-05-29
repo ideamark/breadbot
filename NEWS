@@ -1,13 +1,13 @@
 2017-05-05:
-- Version: 1.0.0
+- V1.0.0
 - First open source code
 
 2017-05-08:
-- Version: 1.0.1
+- V1.0.1
 - Add log function
 
 2017-06-21:
-- Version: 1.0.2
+- V1.0.2
 - Add 4908 new dialogs
 
 2017-06-25:
@@ -25,132 +25,132 @@
 - Fix the bug of bool value in data
 
 2017-07-31:
-- Version: 1.0.6
+- V1.0.6
 - Rename yaml and database files
 - Merge random tag with answer tag
 - simplify question and answer tag names
 
 2017-08-08:
-- Version: 1.0.7
+- V1.0.7
 - Fix lots of bugs
 - Makes the code more clean
 
 2017-08-10:
-- Version: 1.0.8
+- V1.0.8
 - Make all the database to one
 - Make all the data files to one folder
 
 2017-09-06:
-- Version: 1.1.0
+- V1.1.0
 - Make all the code to a module package
 - More easy to install and configure
 - Created one console to control all functions.
 
 2017-09-11:
-- Version: 1.1.1
+- V1.1.1
 - Add tox with pep8 check
 
 2017-09-15:
-- Version: 1.1.2
+- V1.1.2
 - Move yaml folder to local
 - Add write cfg function
 
 2017-09-18:
-- Version: 1.1.3
+- V1.1.3
 - improve the white board and rename it as memory
 
 2017-09-19:
-- Version: 1.1.4
+- V1.1.4
 - Enhance the question searching function
 
 2017-09-22:
-- Version: 1.1.5
+- V1.1.5
 - Fix some bugs
 
 2017-10-16:
-- Version: 1.2.0
+- V1.2.0
 - Replace sqlite by mongodb
 - Clean up the core code
 
 2017-10-30:
-- Version: 1.2.1
+- V1.2.1
 - Fix some bugs of core code
 - Fix some bugs of data files
 - Add tools for data processing
 
 2017-10-31:
-- Version: 1.2.2
+- V1.2.2
 - Enhanced the core engine
 - Fix some bugs of data files
 
 2017-11-10:
-- Version: 1.2.3
+- V1.2.3
 - Improved the search nom function of core code
 - Improved the dialogue memory function to make it remember quesions
 
 2017-11-12:
-- Version: 1.2.4
+- V1.2.4
 - Fixed some bugs of core engine.
 
 2017-11-14:
-- Version: 1.2.5
+- V1.2.5
 - Fixed the bug of Chinese string processing.
 
 2017-11-17:
-- Version: 1.2.6
+- V1.2.6
 - Fixed many bugs of the data files
 - Fixed some bugs of the core engine
 
 2017-11-22:
-- Version: 1.2.7
+- V1.2.7
 - Fixed some bugs of core engine
 - Modify nom to klg
 
 2017-11-26:
-- Version: 1.2.8
+- V1.2.8
 - Added a new function: teach dialogue
 
 2017-12-8:
-- Version: 1.2.9
+- V1.2.9
 - Add shortcut to sec data files
 
 2017-12-24:
-- Version: 1.3.0
+- V1.3.0
 - Fix a bug of klg module
 - change project name "breadAI" to "breadbot"
 
 2017-12-27:
-- Version: 1.3.1
+- V1.3.1
 - Improved data insert function
 
 2017-12-28:
-- Version: 1.3.2
+- V1.3.2
 - Imporved data insert function
 - Changed the format of bread.cfg
 - Added drop database function in bin
 - Deleted non-print chars in data files (Thanks to kiwisky:)
 
 2017-12-29:
-- Version: 1.3.3
+- V1.3.3
 - Added mongodb info in bread.cfg
 - Fixed some bugs
 
 2018-01-08:
-- Version: 1.3.4
+- V1.3.4
 - Added the function of expanding abbreviation
 
 2018-01-16:
-- Version: 1.3.5
+- V1.3.5
 - Some bug fix
 
 2018-01-17:
-- Version: 1.3.6
+- V1.3.6
 - Improved super user module
 - Moved the log path to /var/log
 - Moved memory data to database and made it support multiple users
 
 2018-02-08:
-- Version: 2.0.0
+- V2.0.0
 - This is a new version for new year
 - Import jaro-winkler
 - Sped up the chat reply
@@ -161,60 +161,65 @@
 - Expand corpus over 1000,000
 
 2018-02-22:
-- Version: 2.0.1
+- V2.0.1
 - Fixed some bugs.
 
 2018-02-27:
-- Version: 2.0.2
+- V2.0.2
 - Speed up the response
 
 2018-03-12:
-- Version: 2.0.3
+- V2.0.3
 - Add function of teach klg
 
 2018-04-13:
-- Version: 2.0.4
+- V2.0.4
 - Modified bread.cfg
 - Make some code simpler
 - Fixed some PEP8 errors
 
 2018-04-16:
-- Version: 2.0.5
+- V2.0.5
 - Replaced sdcv with googletrans
 
 2018-04-24:
-- Version: 2.0.6
+- V2.0.6
 - Strip all corpus into ideamark.github.io
 - Upgrade setup.py
 - Fix bugs of import_data function
 
 2018-05-07:
-- Version: 2.0.7
+- V2.0.7
 - Fix some setup bugs
 - Add new parament "public_ip" in bread.cfg
 
 2018-05-08:
-- Version: 2.0.8
+- V2.0.8
 - Modify teach function back to simple
 - Fix some PEP8 bugs
 
 2018-05-09:
-- Version: 2.0.9
+- V2.0.9
 - Add console log function
 - Changed some code style
 
 2018-05-21:
-- Version: 2.1.0
+- V2.1.0
 - Removed database
 - Make response faster and more accurate
 - Fixed bugs
 - Made corpus format simpler
 
 2018-05-22:
-- Version: 2.1.1
+- V2.1.1
 - Speed up response
 - Improved the function dialogues
 
 2018-05-23:
-- Version: 2.1.2
+- V2.1.2
 - Added corpus search function
+
+2018-05-29:
+- V2.1.3
+- Fixed bugs of memory function
+- Imporved transform function
