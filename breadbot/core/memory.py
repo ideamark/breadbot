@@ -41,7 +41,8 @@ class Memory(object):
                 return json.load(fp)
 
     def __del_data(self):
-        os.remove(self.mem_path)
+        if os.path.exists(self.mem_path):
+            os.remove(self.mem_path)
 
     def __save_data(self, data):
         with open(self.mem_path, 'w') as fp:
