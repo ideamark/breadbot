@@ -90,7 +90,6 @@ class TransformCorpus(object):
                 list2.append(sub_item2)
             yml_name = os.path.splitext(file_path)[0] + '.yml'
             with open(os.path.join(self.out_path, yml_name), 'w') as fw:
-                fw.write('qas:\n')
                 for item in list2:
                     fw.write('\n- que:\n')
                     for que in item[0]:
