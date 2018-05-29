@@ -15,9 +15,9 @@ class Memory(object):
         log_path = common.Cfg().get('local', 'mem_path')
         mem_name = '%s.log' % self.user
         self.mem_path = os.path.join(log_path, mem_name)
-        self.__create_mem_log()
+        self.__create_data()
 
-    def __create_mem_log(self):
+    def __create_data(self):
         if not os.path.exists(self.mem_path):
             data = {
                 'dialog': [],
@@ -31,12 +31,14 @@ class Memory(object):
                 json.dump(data, fp, indent=4)
 
     def __get_data(self):
-        with open(self.mem_path, 'r') as fp:
-            try:
+        try:
+            with open(self.mem_path, 'r') as fp:
                 return json.load(fp)
-            except Exception:
-                self.__del_data()
-                return ''
+        except Exception:
+            self.__del_data()
+            self.__create_data()
+            with open(self.mem_path, 'r') as fp:
+                return json.load(fp)
 
     def __del_data(self):
         os.remove(self.mem_path)
