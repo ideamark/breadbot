@@ -16,8 +16,8 @@ def start():
         public_ip = input('Please enter public IP: ')
         common.Cfg().write('wechat', 'public_ip', public_ip)
 
+    port = common.Cfg().get('wechat', 'port')
     ma_path = manage.__file__
-    port = '80'
     exe_list = ['python3', ma_path, 'runserver',
                 ':'.join([public_ip, port])]
     exe_str = ' '.join(exe_list)
