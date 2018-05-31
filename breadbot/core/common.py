@@ -47,12 +47,12 @@ def expand_abbrev(in_str):
 
 def show_help(user):
     text = \
+        'next (turn to next page)\n' \
         'translate ... (translate dialogs)\n' \
         'baidu ... (search baidu)\n' \
         'google ... (search google)\n' \
         'wikipedia ... (search wikipedia)\n' \
         'corpus ... (search corpus)\n' \
-        'next (turn to next page)\n' \
         'home (show breadbot website)\n' \
         'readme (show readme file)\n'
     if is_super(user):
@@ -87,10 +87,11 @@ def is_super(user):
 
 def dont_know():
     not_list = [
+        "Let's talk about sth. others",
+        "Let's change a topic",
+        "Sorry, I don't know",
         "Well...",
-        "What?",
-        "Parden?",
-        "...",
+        "Let me see...",
         "Hmm..."]
     res = random.choice(not_list)
     return res
