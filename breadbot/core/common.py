@@ -48,16 +48,16 @@ def expand_abbrev(in_str):
 def show_help(user):
     text = \
         'next (turn to next page)\n' \
-        'translate ... (translate dialogs)\n' \
-        'baidu ... (search baidu)\n' \
-        'google ... (search google)\n' \
-        'wikipedia ... (search wikipedia)\n' \
-        'corpus ... (search corpus)\n' \
+        'translate xxx (translate dialogs)\n' \
+        'baidu xxx (search baidu)\n' \
+        'google xxx (search google)\n' \
+        'wikipedia xxx (search wikipedia)\n' \
+        'corpus xxx (search corpus)\n' \
         'home (show breadbot website)\n' \
         'readme (show readme file)\n'
     if is_super(user):
         text += \
-            'teach ... (teach a dialogue)\n'
+            'teach xxx (teach a dialogue)\n'
     return text
 
 
