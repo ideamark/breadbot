@@ -23,8 +23,8 @@ def response(user, in_str):
     elif re.match('^google .*$', in_str):
         content = re.sub('^google ', '', in_str)
         res = search.google_search(content)
-    elif re.match('^wikipedia .*$', in_str):
-        content = re.sub('^wikipedia ', '', in_str)
+    elif re.match('^wiki .*$', in_str):
+        content = re.sub('^wiki ', '', in_str)
         res = search.wiki_search(content)
     elif re.match('^corpus .*$', in_str):
         content = re.sub('^corpus ', '', in_str)
