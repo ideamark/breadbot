@@ -224,3 +224,8 @@
 - Fixed bugs of memory function
 - Imporved transform function
 - Add port value in bread.cfg
+
+2018-06-14:
+- V2.1.4
+- Added the function of get public ip
+- Make links shorter by adding HTML

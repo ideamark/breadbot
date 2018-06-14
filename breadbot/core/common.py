@@ -7,6 +7,9 @@ from threading import Thread
 import time
 
 
+def url_to_html(url, text='Link'):
+    return '<a href="%s">%s</a>' % (url, text)
+
 def time_limit(secs):
     def dec(function):
         def dec2(*args, **kwargs):
@@ -57,16 +60,9 @@ def show_help(user):
         'readme (show readme file)\n'
     if is_super(user):
         text += \
-            'teach xxx (teach a dialogue)\n'
+            'teach xxx (teach a dialogue)\n' \
+            'public ip (get public ip)\n'
     return text
-
-
-def show_readme():
-    return 'https://github.com/ideamark/breadbot/blob/master/README.md'
-
-
-def show_homepage():
-    return 'https://ideamark.github.io'
 
 
 def que_init(in_str):
