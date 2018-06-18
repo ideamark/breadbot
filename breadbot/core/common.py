@@ -52,14 +52,12 @@ def show_help(user):
     text = \
         'next (turn to next page)\n' \
         'translate xxx (translate dialogs)\n' \
-        'baidu xxx (search baidu)\n' \
-        'google xxx (search google)\n' \
-        'wiki xxx (search wikipedia)\n' \
-        'corpus xxx (search corpus)\n' \
         'home (show breadbot website)\n' \
         'readme (show readme file)\n'
     if is_super(user):
         text += \
+            '--------\n' \
+            'corpus xxx (search corpus)\n' \
             'teach xxx (teach a dialogue)\n' \
             'public ip (get public ip)\n'
     return text

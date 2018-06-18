@@ -229,3 +229,7 @@
 - V2.1.4
 - Added the function of get public ip
 - Make links shorter by adding HTML
+
+2018-06-18:
+- V2.1.5
+- Removed some useless commands

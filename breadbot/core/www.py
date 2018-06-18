@@ -14,22 +14,6 @@ def baidu_search(keyword):
     return common.url_to_html(url)
 
 
-def google_search(keyword):
-    if not keyword:
-        return
-    keyword = keyword.replace(' ', '+')
-    url = 'https://www.google.com/search?q=' + keyword
-    return common.url_to_html(url)
-
-
-def wiki_search(keyword):
-    if not keyword:
-        return
-    keyword = keyword.replace(' ', '_')
-    url = 'https://en.m.wikipedia.org/wiki/' + keyword
-    return common.url_to_html(url)
-
-
 def corpus_search(keyword):
     if not keyword:
         return
