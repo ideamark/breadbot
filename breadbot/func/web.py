@@ -41,11 +41,11 @@ def get_public_ip():
     return result
 
 
-def show_readme():
-    url = 'https://github.com/ideamark/breadbot/blob/master/README.md'
-    return common.url_to_html(url, 'Readme')
-
-
 def show_homepage():
     url = 'https://ideamark.github.io'
     return common.url_to_html(url, 'Home Page')
+
+
+def show_projectpage():
+    url = 'https://github.com/ideamark'
+    return common.url_to_html(url, 'Project Page')

@@ -7,6 +7,21 @@ from threading import Thread
 import time
 
 
+def show_help(user):
+    text = \
+        'next (turn to next page)\n' \
+        'translate xxx (translate dialogs)\n' \
+        'home page (show home page)\n' \
+        'project page (show project page)\n'
+    if is_super(user):
+        text += \
+            '--------\n' \
+            'corpus xxx (search corpus)\n' \
+            'teach xxx (teach a dialogue)\n' \
+            'public ip (get public ip)\n'
+    return text
+
+
 def url_to_html(url, text='Link'):
     return '<a href="%s">%s</a>' % (url, text)
 
@@ -46,21 +61,6 @@ def expand_abbrev(in_str):
     in_str = re.sub("'re", ' are', in_str)
     in_str = re.sub("'ll", ' will', in_str)
     return in_str
-
-
-def show_help(user):
-    text = \
-        'next (turn to next page)\n' \
-        'translate xxx (translate dialogs)\n' \
-        'home (show breadbot website)\n' \
-        'readme (show readme file)\n'
-    if is_super(user):
-        text += \
-            '--------\n' \
-            'corpus xxx (search corpus)\n' \
-            'teach xxx (teach a dialogue)\n' \
-            'public ip (get public ip)\n'
-    return text
 
 
 def que_init(in_str):

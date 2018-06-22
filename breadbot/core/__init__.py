@@ -19,10 +19,10 @@ def response(user, in_str):
         res = web.translate(content)
     elif re.match('^help$', in_str.lower()):
         res = common.show_help(user)
-    elif re.match('^readme$', in_str.lower()):
-        res = web.show_readme()
-    elif re.match('^(home|home page)$', in_str):
+    elif re.match('^home page$', in_str):
         res = web.show_homepage()
+    elif re.match('^project page$', in_str):
+        res = web.show_projectpage()
     elif re.search('[\u4e00-\u9fa5]', in_str):
         res_list = [
             'I speak English only.',
