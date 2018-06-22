@@ -233,3 +233,7 @@
 2018-06-18:
 - V2.1.5
 - Removed some useless commands
+
+2018-06-22:
+- V2.2.1
+- moved fuunctions from core

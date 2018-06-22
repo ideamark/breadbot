@@ -3,7 +3,7 @@ import os
 import re
 import urllib.parse
 import urllib.request
-from . import common
+from breadbot.core import common
 
 
 def baidu_search(keyword):

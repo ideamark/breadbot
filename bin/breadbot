@@ -4,7 +4,7 @@ import re
 import sys
 
 from breadbot import core
-from breadbot import data
+from breadbot import func
 from breadbot import serv
 
 
@@ -33,13 +33,13 @@ def active(cmd):
     if cmd == 'help':
         show_help()
     elif cmd == 'count':
-        data.count_ques.CountQues().do_count()
+        func.count_ques.CountQues().do_count()
     elif re.match('^check.*$', cmd):
         data_paths = cmd.split(' ')[1:]
-        data.check_data.CheckData().do_check(data_paths)
+        func.check_data.CheckData().do_check(data_paths)
     elif re.match('^transform.*$', cmd):
         data_paths = cmd.split(' ')[1:]
-        data.transform_corpus.TransformCorpus().do_transform(data_paths)
+        func.transform_corpus.TransformCorpus().do_transform(data_paths)
     elif cmd == 'start':
         serv.start()
     else:
