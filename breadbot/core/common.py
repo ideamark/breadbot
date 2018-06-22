@@ -9,10 +9,10 @@ import time
 
 def show_help(user):
     text = \
-        'next (turn to next page)\n' \
         'translate xxx (translate dialogs)\n' \
         'home page (show home page)\n' \
-        'project page (show project page)\n'
+        'project page (show project page)\n' \
+        'next (turn to next page)\n'
     if is_super(user):
         text += \
             '--------\n' \

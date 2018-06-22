@@ -12,7 +12,7 @@ def response(user, in_str):
     in_str = common.init_input(in_str)
     res = ''
 
-    if re.match('^n|next$', in_str):
+    if re.match('^next|n$', in_str):
         res = memory.Memory(user).get_longstr_mem()
     elif re.match('^translate .*$', in_str):
         content = re.sub('^translate ', '', in_str)
