@@ -24,11 +24,9 @@ def response(user, in_str):
     elif re.match('^project page$', in_str):
         res = web.show_projectpage()
     elif re.search('[\u4e00-\u9fa5]', in_str):
-        res_list = [
-            'I speak English only.',
-            'Speak English please.',
-            'English, please.']
-        res = random.choice(res_list)
+        en_str = web.translate(in_str)
+        res = chat.Chat().response(user, en_str)
+        res = web.translate(res)
 
     if common.is_super(user):
         if re.match('^teach .*$', in_str):

@@ -235,5 +235,9 @@
 - Removed some useless commands
 
 2018-06-22:
-- V2.2.1
-- moved fuunctions from core
+- V2.1.6
+- Moved fuunctions from core
+
+2018-06-23:
+- V2.1.7
+- Add Chinese chatting

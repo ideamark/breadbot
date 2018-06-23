@@ -12,7 +12,7 @@ class Chat(object):
     def __init__(self):
         pass
 
-    @common.time_limit(3)
+    @common.time_limit(2)
     def response(self, user, in_str):
         in_str = common.que_init(in_str)
         regx_str = '^  - %s.*$' % in_str

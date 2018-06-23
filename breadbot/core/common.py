@@ -85,6 +85,8 @@ def dont_know():
         "Let's change a topic",
         "Sorry, I don't know",
         "Well...",
+        "My IQ is not enough",
+        "I'm still under construction",
         "Let me see...",
         "Hmm..."]
     res = random.choice(not_list)
