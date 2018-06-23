@@ -16,19 +16,22 @@
 * Talk to Breadbot
 
 ## Install
-* You can also download the source code to build your own Breadbot.
-* Note
-  * Breadbot only works on Linux. Also u can let it work on other OS by modify the source code.
+Breadbot works on Linux. Ofcause u can let it work on other OS by modify the source code.
 * Download
   * git clone https://github.com/ideamark/breadbot
 * Install
   * First, make sure you have installed python3 and python3-pip
-  * python3 setup.py install
-  * The setup will download corpus from https://github.com/ideamark/ideamark.github.io
+  * run setup command: python3 setup.py install
+  * The setup will download corpus from ideamark.github.io
 * Uninstall
   * python3 setup.py uninstall
 * Clean (not uninstall)
   * python3 setup.py clean
+
+## Corpus
+* All the corpus of Breadbot is on ideamark.github.io. It is a website and also a git repo.
+* The repo will be downloaded automatically when you setup Breadbot by python3 setup.py install.
+* Or u can download it manually by: git clone https://github.com/ideamark/ideamark.github.io 
 
 ## Config
 * Just watch the only single config file: [bread.cfg](etc/bread.cfg)
