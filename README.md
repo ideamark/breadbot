@@ -29,8 +29,8 @@ Breadbot works on Linux. Ofcause u can let it work on other OS by modify the sou
   * python3 setup.py clean
 
 ## Corpus
-* All the corpus of Breadbot is on ideamark.github.io. It is a website and also a git repo.
-* The repo will be downloaded automatically when you setup Breadbot by python3 setup.py install.
+* All the corpus of Breadbot is on [ideamark.github.io](https://ideamark.github.io). It is a website and also a git repo.
+* The repo will be downloaded automatically when you setup Breadbot by `python3 setup.py install`.
 * Or u can download it manually by: git clone https://github.com/ideamark/ideamark.github.io 
 
 ## Config
