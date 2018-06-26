@@ -10,8 +10,7 @@ import time
 def show_help(user):
     text = \
         'translate xxx (translate dialogs)\n' \
-        'home page (show home page)\n' \
-        'project page (show project page)\n' \
+        'home (show home pages)\n' \
         'next (turn to next page)\n'
     if is_super(user):
         text += \
@@ -81,14 +80,15 @@ def is_super(user):
 
 def dont_know():
     not_list = [
+        "Well...",
+        "Hmm...",
         "Let's talk about sth. others",
         "Let's change a topic",
         "Sorry, I don't know",
-        "Well...",
         "My IQ is not enough",
         "I'm still under construction",
-        "Let me see...",
-        "Hmm..."]
+        "You'd better in English",
+        "Let me see..."]
     res = random.choice(not_list)
     return res
 

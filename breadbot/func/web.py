@@ -42,10 +42,11 @@ def get_public_ip():
 
 
 def show_homepage():
+    web_list = []
     url = 'https://ideamark.github.io'
-    return common.url_to_html(url, 'Home Page')
-
-
-def show_projectpage():
+    name = 'Corpus Page'
+    web_list.append(common.url_to_html(url, name))
     url = 'https://github.com/ideamark'
-    return common.url_to_html(url, 'Project Page')
+    name = 'Project Page'
+    web_list.append(common.url_to_html(url, name))
+    return '\r'.join(web_list)
