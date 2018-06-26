@@ -19,7 +19,7 @@ def response(user, in_str):
         res = web.translate(content)
     elif re.match('^help$', in_str.lower()):
         res = common.show_help(user)
-    elif re.match('^home$', in_str):
+    elif re.match('^page$', in_str):
         res = web.show_homepage()
     elif re.search('[\u4e00-\u9fa5]', in_str):
         en_str = web.translate(in_str)
