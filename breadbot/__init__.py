@@ -1,3 +1,3 @@
 from . import core
-from . import data
+from . import func
 from . import serv

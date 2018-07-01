@@ -57,6 +57,7 @@ elif sys.argv[1] == 'clean':
         'LICENSE',
         'NEWS',
         'README.md',
+        'QR.jpg',
         'requirements.txt',
         'setup.cfg',
         'setup.py',
