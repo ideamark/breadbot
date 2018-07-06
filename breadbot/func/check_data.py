@@ -7,6 +7,7 @@ from breadbot.core import common
 
 LOG = common.ConsoleLog()
 
+
 class CheckData(object):
 
     def __init__(self):

@@ -4,6 +4,7 @@ import os
 
 LOG = common.ConsoleLog()
 
+
 class CountQues(object):
 
     def __init__(self):

@@ -24,6 +24,7 @@ def show_help(user):
 def url_to_html(url, text='Link'):
     return '<a href="%s">%s</a>' % (url, text)
 
+
 def time_limit(secs):
     def dec(function):
         def dec2(*args, **kwargs):

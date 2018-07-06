@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 import os
 import re
-import shutil
 import sys
 from breadbot.core import common
 
 LOG = common.ConsoleLog()
+
 
 class TransformCorpus(object):
 
@@ -60,7 +60,8 @@ class TransformCorpus(object):
             list2 = []
             for item in list1:
                 sub_item1 = item.split('\n\n')
-                sub_item2 = [sub_item1[0].split('\n'), sub_item1[-1].split('\n')]
+                sub_item2 = [sub_item1[0].split('\n'),
+                             sub_item1[-1].split('\n')]
                 list2.append(sub_item2)
 
             yml_path = file_path + '.yml'
