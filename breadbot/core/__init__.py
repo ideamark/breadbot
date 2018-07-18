@@ -30,8 +30,6 @@ def response(user, in_str):
         if re.match('^teach .*$', in_str):
             content = re.sub('^teach ', '', in_str)
             res = teach.Teach().do_teach(user, content)
-        elif re.match('^public ip$', in_str):
-            res = web.get_public_ip()
         elif re.match('^corpus .*$', in_str):
             content = re.sub('^corpus ', '', in_str)
             res = web.corpus_search(content)

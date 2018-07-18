@@ -33,14 +33,6 @@ def translate(word):
         return translator.translate(word, dest='en').text
 
 
-def get_public_ip():
-    reg = 'fk="\d+\.\d+\.\d+\.\d+" '
-    url = 'http://www.baidu.com/s?wd=gongwangip'
-    result = re.search(reg, str(urllib.request.urlopen(url).read())).group(0)
-    result = re.search('\d+\.\d+\.\d+\.\d+', result).group(0)
-    return result
-
-
 def show_homepage():
     web_list = []
     url = 'https://ideamark.github.io'

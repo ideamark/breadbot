@@ -20,17 +20,18 @@ elif sys.argv[1] == 'install':
         setup_requires=['pbr>=0.1'],
         pbr=True,)
     from breadbot.core.common import Cfg
-    data_path = os.path.join(os.getcwd(), 'data')
-    Cfg().write('local', 'data_paths', data_path)
     log_path = Cfg().get('local', 'log_path')
     mem_path = Cfg().get('local', 'mem_path')
     if not os.path.exists(log_path):
         os.mkdir(log_path)
     if not os.path.exists(mem_path):
         os.mkdir(mem_path)
-    os.system(
-        'git clone https://github.com/ideamark/ideamark.github.io "data"')
-    os.system('chmod -R 777 data')
+    data_path = os.path.join(os.getcwd(), 'data')
+    if not os.path.exists(data_path):
+        Cfg().write('local', 'data_paths', data_path)
+        os.system('git clone https://github.com/ideamark/ideamark.github.io "data"')
+        os.system('chmod -R 777 data')
+    print('Install success!')
     sys.exit(0)
 
 elif sys.argv[1] == 'uninstall':
@@ -42,6 +43,7 @@ elif sys.argv[1] == 'uninstall':
     if os.path.exists(bin_path):
         os.remove(bin_path)
     os.system('pip3 uninstall breadbot')
+    print('Uninstall success!')
     sys.exit(0)
 
 elif sys.argv[1] == 'clean':
@@ -69,4 +71,5 @@ elif sys.argv[1] == 'clean':
         if f not in exclude:
             os.system('rm -rf %s' % f)
     os.system('find -name "__pycache__"|xargs rm -rf')
+    print('Clean up success!')
     sys.exit(0)

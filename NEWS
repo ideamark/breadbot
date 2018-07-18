@@ -245,3 +245,8 @@
 2018-06-26:
 - V2.1.8
 - Modified the homepage function
+
+2018-07-18:
+- V2.1.9
+- Removed get public ip function for security
+- Added fast reinstall of setup.py

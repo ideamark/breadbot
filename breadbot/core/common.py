@@ -16,8 +16,7 @@ def show_help(user):
         text += \
             '--------\n' \
             'corpus xxx (search corpus)\n' \
-            'teach xxx (teach a dialogue)\n' \
-            'public ip (get public ip)\n'
+            'teach xxx (teach a dialogue)\n'
     return text
 
 
