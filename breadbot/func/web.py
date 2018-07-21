@@ -34,11 +34,6 @@ def translate(word):
 
 
 def show_homepage():
-    web_list = []
     url = 'https://ideamark.github.io'
-    name = 'Corpus Page'
-    web_list.append(common.url_to_html(url, name))
-    url = 'https://github.com/ideamark'
-    name = 'Project Page'
-    web_list.append(common.url_to_html(url, name))
-    return '\r'.join(web_list)
+    name = 'Home Page'
+    return common.url_to_html(url, name)
