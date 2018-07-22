@@ -1,13 +1,13 @@
 # Breadbot
 
 ## Overview
-* Breadbot is a simple and powerful chatbot
-  * Easy to deploy
-  * More than 1000,000 corpus
-  * Fast response
-  * No database
-  * Based on Python3
-  * Support WeChat
+Breadbot is a simple and powerful chatbot
+* Easy to deploy
+* Fast response
+* More than 1000,000 corpus
+* No database
+* Based on Python3
+* Support WeChat
 
 ## Have a try
 * Download WeChat on your phone
@@ -38,18 +38,20 @@ Breadbot works on Linux. Ofcause u can let it work on other OS by modify the sou
 
 ## Console
 * Type command `breadbot` to launch the local console.
-* Then u can test Bread, or run commands on this console, type `help` for more info.
+* Then u can test Breadbot. Type `help` for more info.
 
 ## Super user mode
 * Super user mode is set for developers.
 * The local console is default set as super user.
-* If your ID is in bread.cfg super user list, u will get the super user functions.
+* If your WeChat ID is in [bread.cfg](etc/bread.cfg) super user list, u will get the super user functions.
 
 ## Connect to WeChat
-* Config your WeChat public platform account on [mp.weixin.qq.com](https://mp.weixin.qq.com), create the token and enter your url.
-* Run the command `breadbot start`, enter your token and ip.
+* Config your WeChat public platform account on [mp.weixin.qq.com](https://mp.weixin.qq.com). Create the Token and enter your server URL.
+* Then back to local server. Run the command `breadbot start` to launch the server. Enter your Token and server IP.
 * After that, Breadbot will connect to WeChat public platform and u can chat to it on WeChat.
 
 ## Seek more
-* Author: Mark Young
+* Author: Mark Young (IdeaMark)
 * Email: ideamark@qq.com
+* Weibo: https://weibo.com/ideamark
+* Twitter: https://twitter.com/IdeamarkYoung
