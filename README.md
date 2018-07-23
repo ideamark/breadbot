@@ -53,5 +53,6 @@ Breadbot works on Linux. Ofcause u can let it work on other OS by modify the sou
 ## Seek more
 * Author: Mark Young (IdeaMark)
 * Email: ideamark@qq.com
+* Homepage: https://ideamark.github.io
 * Weibo: https://weibo.com/ideamark
 * Twitter: https://twitter.com/IdeamarkYoung
