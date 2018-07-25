@@ -9,7 +9,7 @@ Breadbot is a simple and powerful chatbot
 * Based on Python3
 * Support WeChat
 
-The aim is to dig out the value of tacit knowledge. Please visit our [Homepage](https://ideamark.github.io).
+The aim of Breadbot is to dig out the value of tacit knowledge. Please visit our [Homepage](https://ideamark.github.io) for more info.
 
 ## Have a try
 * Download WeChat on your phone
