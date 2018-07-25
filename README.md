@@ -9,6 +9,8 @@ Breadbot is a simple and powerful chatbot
 * Based on Python3
 * Support WeChat
 
+The aim is to dig out the value of tacit knowledge, see our [Homepage](https://ideamark.github.io)
+
 ## Have a try
 * Download WeChat on your phone
 * Login WeChat and scan the QR code
@@ -16,7 +18,7 @@ Breadbot is a simple and powerful chatbot
 * Talk to Breadbot
 
 ## Install
-Breadbot works on Linux. Ofcause u can let it work on other OS by modify the source code.
+Breadbot works on Linux. Of cause u can let it work on other OS by modify the source code.
 * Download
   * `git clone https://github.com/ideamark/breadbot`
 * Install
@@ -53,6 +55,5 @@ Breadbot works on Linux. Ofcause u can let it work on other OS by modify the sou
 ## Seek more
 * Author: Mark Young (IdeaMark)
 * Email: ideamark@qq.com
-* Homepage: https://ideamark.github.io
 * Weibo: https://weibo.com/ideamark
 * Twitter: https://twitter.com/IdeamarkYoung
