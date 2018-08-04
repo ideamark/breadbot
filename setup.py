@@ -48,27 +48,15 @@ elif sys.argv[1] == 'uninstall':
 
 elif sys.argv[1] == 'clean':
     exclude = [
-        '.git',
-        '.gitignore',
-        '.tox',
-        'bin',
-        'breadbot',
-        'data',
-        'etc',
-        'tests',
-        'LICENSE',
-        'NEWS',
-        'README.md',
-        'QR.jpg',
-        'requirements.txt',
-        'setup.cfg',
-        'setup.py',
-        'TODO',
-        'tox.ini',
+        '.eggs',
+        'AUTHORS',
+        'breadbot.egg-info',
+        'build',
+        'ChangeLog'
     ]
     file_list = os.listdir('.')
     for f in file_list:
-        if f not in exclude:
+        if f in exclude:
             os.system('rm -rf %s' % f)
     os.system('find -name "__pycache__"|xargs rm -rf')
     print('Clean up success!')

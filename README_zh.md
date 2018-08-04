@@ -53,5 +53,3 @@
 ## 更多
 * 作者：Mark Young (IdeaMark)
 * 邮箱：ideamark@qq.com
-* 微博：https://weibo.com/ideamark
-* 推特：https://twitter.com/IdeamarkYoung
