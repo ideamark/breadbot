@@ -47,6 +47,11 @@ Breadbot works on Linux. Of cause u can let it work on other OS by modify the so
 * The local console is default set as super user.
 * If your WeChat ID is in [bread.cfg](etc/bread.cfg) super user list, u will get the super user functions.
 
+## Import to your project
+* Need root permission.
+> from breadbot.core import response
+> response('localuser', 'hello')
+
 ## Connect to WeChat
 * Config your WeChat public platform account on [mp.weixin.qq.com](https://mp.weixin.qq.com). Create the Token and enter your server URL.
 * Then back to local server. Run the command `breadbot start` to launch the server. Enter your Token and server IP.

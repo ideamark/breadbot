@@ -45,6 +45,11 @@
 * 本地终端已默认设置为超级用户。
 * 如果你的微信 ID 在 [bread.cfg](etc/bread.cfg) 的超级用户列表里，你就能使用超级用户相关功能。
 
+## 导入到你的工程
+* 需要 root 权限
+> from breadbot.core import response
+> response('localuser', 'hello')
+
 ## 连接微信
 * 登录微信公众平台 [mp.weixin.qq.com](https://mp.weixin.qq.com)，创建 Token 并输入你的服务器 URL.
 * 回到本地服务器，运行命令 `breadbot start` 启动服务，输入你的 Token 和服务器 IP.
