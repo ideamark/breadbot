@@ -47,8 +47,10 @@
 
 ## 导入到你的工程
 * 需要 root 权限
-> from breadbot.core import response
-> response('localuser', 'hello')
+```python
+from breadbot.core import response
+response('localuser', 'hello')
+```
 
 ## 连接微信
 * 登录微信公众平台 [mp.weixin.qq.com](https://mp.weixin.qq.com)，创建 Token 并输入你的服务器 URL.

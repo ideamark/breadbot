@@ -49,8 +49,10 @@ Breadbot works on Linux. Of cause u can let it work on other OS by modify the so
 
 ## Import to your project
 * Need root permission.
-> from breadbot.core import response
-> response('localuser', 'hello')
+```python
+from breadbot.core import response
+response('localuser', 'hello')
+```
 
 ## Connect to WeChat
 * Config your WeChat public platform account on [mp.weixin.qq.com](https://mp.weixin.qq.com). Create the Token and enter your server URL.
