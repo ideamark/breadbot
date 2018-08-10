@@ -25,7 +25,7 @@ def corpus_search(keyword):
 def translate(word):
     if not word:
         return
-    translator = Translator(service_urls=['translate.google.com.cn'])
+    translator = Translator(service_urls=['translate.google.cn'])
     lang = translator.detect([word])[0].lang
     if lang == 'en':
         return translator.translate(word, dest='zh-cn').text
