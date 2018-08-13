@@ -34,6 +34,6 @@ def translate(word):
 
 
 def show_homepage():
-    url = 'https://ideamark.github.io'
-    name = 'Home Page'
+    url = 'http://breadbot.fun'
+    name = 'Breadbot.Fun'
     return common.url_to_html(url, name)
