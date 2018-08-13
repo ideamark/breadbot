@@ -9,7 +9,7 @@
 * 基于 Python3
 * 支持微信对接
 
-小面包的愿景是挖掘隐性知识的价值，请看我们的[主页](https://ideamark.github.io)。
+访问主页 [breadbot.fun](http://breadbot.fun) 获取更多信息。
 
 ## 试一试
 * 微信扫描下方二维码开始和小面包聊天！
@@ -17,21 +17,20 @@
 
 ## 安装
 小面包工作于 Linux，当然，你也可以通过修改代码使其工作于 Windows.
-* 下载
+* 下载：
   * `git clone https://gitee.com/ideamark/breadbot`
-* 安装
+* 安装：
   * 首先，确保你已经安装了 python3 和 python3-pip
   * 执行安装命令：`python3 setup.py install`
-  * 安装过程会自动从 ideamark.github.io 下载语料。
-* 卸载
+  * 安装过程会自动从 [breadbot.fun](http://breadbot.fun) 下载语料。
+* 卸载：
   * `python3 setup.py uninstall`
-* 清理 (不是卸载)
+* 清理 (不是卸载)：
   * `python3 setup.py clean`
 
 ## 语料
-* 小面包的全部语料都在 [ideamark.github.io](https://ideamark.github.io) 上，这是一个网站，同时也是个 Git 仓库。
+* 小面包的全部语料都在 [breadbot.fun](http://breadbot.fun) 上，这是一个网站，同时也是个 Git 仓库。
 * 当你运行安装命令 `python3 setup.py install` 的时候，这些语料会被自动下载到本地。
-* 当然你也可以手动下载：`git clone https://github.com/ideamark/ideamark.github.io`
 
 ## 配置
 * 只需阅读唯一的配置文件 [bread.cfg](etc/bread.cfg) 即可一目了然。

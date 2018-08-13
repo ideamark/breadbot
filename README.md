@@ -9,7 +9,7 @@ Breadbot is an 100% open source, simple and powerful chatbot.
 * Based on Python3
 * Support WeChat
 
-The aim of Breadbot is to dig out the value of tacit knowledge. Please visit our [Homepage](https://ideamark.github.io) for more info.
+Visit Homepage [breadbot.fun](http://breadbot.fun) for more info.
 
 ## Have a try
 * Download WeChat on your phone
@@ -19,21 +19,20 @@ The aim of Breadbot is to dig out the value of tacit knowledge. Please visit our
 
 ## Install
 Breadbot works on Linux. Of cause u can let it work on other OS by modify the source code.
-* Download
+* Download:
   * `git clone https://github.com/ideamark/breadbot`
-* Install
-  * First, make sure you have installed python3 and python3-pip
+* Install:
+  * First, make sure you have installed python3 and python3-pip.
   * run setup command: `python3 setup.py install`
-  * The setup will download corpus from ideamark.github.io
-* Uninstall
+  * The setup will download corpus from [breadbot.fun](http://breadbot.fun).
+* Uninstall:
   * `python3 setup.py uninstall`
-* Clean (not uninstall)
+* Clean (not uninstall):
   * `python3 setup.py clean`
 
 ## Corpus
-* All the corpus of Breadbot is on [ideamark.github.io](https://ideamark.github.io). It is a website and also a git repo.
+* All the corpus of Breadbot is on [breadbot.fun](http://breadbot.fun), which is a website and also a git repo.
 * The repo will be downloaded automatically when you setup Breadbot by `python3 setup.py install`.
-* Or u can download it manually by `git clone https://github.com/ideamark/ideamark.github.io`
 
 ## Config
 * Just watch the only single config file: [bread.cfg](etc/bread.cfg)
