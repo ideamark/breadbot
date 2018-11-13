@@ -9,11 +9,9 @@ if os.geteuid():
     os.execlp('sudo', 'sudo', *args)
 
 
-if len(sys.argv) <= 1:
-    print('Please enter install, uninstall or clean')
-    sys.exit(1)
-
-elif sys.argv[1] == 'install':
+def install():
+    os.system('git clone https://github.com/BoseCorp/py-googletrans.git')
+    os.system('python3 py-googletrans/setup.py install')
     os.system('pip3 install -U pip')
     os.system('pip3 install -r requirements.txt')
     setup(
@@ -32,27 +30,30 @@ elif sys.argv[1] == 'install':
         os.system('git clone https://github.com/ideamark/ideamark.github.io "data"')
         os.system('chmod -R 777 data')
     print('Install success!')
-    sys.exit(0)
 
-elif sys.argv[1] == 'uninstall':
-    from breadbot.core.common import Cfg
-    cfg_path = Cfg().get('local', 'cfg_path')
-    bin_path = Cfg().get('local', 'bin_path')
-    if os.path.exists(cfg_path):
-        os.remove(cfg_path)
-    if os.path.exists(bin_path):
-        os.remove(bin_path)
-    os.system('pip3 uninstall breadbot')
+def uninstall():
+    try:
+        from breadbot.core.common import Cfg
+        cfg_path = Cfg().get('local', 'cfg_path')
+        bin_path = Cfg().get('local', 'bin_path')
+        if os.path.exists(cfg_path):
+            os.remove(cfg_path)
+        if os.path.exists(bin_path):
+            os.remove(bin_path)
+        os.system('pip3 uninstall breadbot')
+    except Exception:
+        pass
     print('Uninstall success!')
-    sys.exit(0)
 
-elif sys.argv[1] == 'clean':
+def clean():
     exclude = [
         '.eggs',
         'AUTHORS',
         'breadbot.egg-info',
         'build',
-        'ChangeLog'
+        'ChangeLog',
+        'py-googletrans',
+        'googletrans.egg-info'
     ]
     file_list = os.listdir('.')
     for f in file_list:
@@ -60,4 +61,18 @@ elif sys.argv[1] == 'clean':
             os.system('rm -rf %s' % f)
     os.system('find -name "__pycache__"|xargs rm -rf')
     print('Clean up success!')
+
+
+if len(sys.argv) <= 1:
+    print('Please enter install, uninstall or clean')
+    sys.exit(1)
+elif sys.argv[1] == 'install':
+    install()
+    sys.exit(0)
+elif sys.argv[1] == 'uninstall':
+    uninstall()
+    clean()
+    sys.exit(0)
+elif sys.argv[1] == 'clean':
+    clean()
     sys.exit(0)
