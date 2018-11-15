@@ -10,13 +10,12 @@ if os.geteuid():
 
 
 def install():
-    os.system('git clone https://github.com/BoseCorp/py-googletrans.git')
-    os.system('python3 py-googletrans/setup.py install')
     os.system('pip3 install -U pip')
     os.system('pip3 install -r requirements.txt')
     setup(
         setup_requires=['pbr>=0.1'],
         pbr=True,)
+
     from breadbot.core.common import Cfg
     log_path = Cfg().get('local', 'log_path')
     mem_path = Cfg().get('local', 'mem_path')
@@ -51,9 +50,7 @@ def clean():
         'AUTHORS',
         'breadbot.egg-info',
         'build',
-        'ChangeLog',
-        'py-googletrans',
-        'googletrans.egg-info'
+        'ChangeLog'
     ]
     file_list = os.listdir('.')
     for f in file_list:

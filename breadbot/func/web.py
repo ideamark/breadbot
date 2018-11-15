@@ -1,4 +1,4 @@
-from googletrans import Translator
+import goslate
 import os
 import re
 import urllib.parse
@@ -22,15 +22,15 @@ def corpus_search(keyword):
     return common.url_to_html(url)
 
 
-def translate(word):
-    if not word:
+def translate(in_str):
+    if not in_str:
         return
-    translator = Translator(service_urls=['translate.google.cn'])
-    lang = translator.detect([word])[0].lang
+    gs = goslate.Goslate()
+    lang = gs.detect(in_str)
     if lang == 'en':
-        return translator.translate(word, dest='zh-cn').text
+        return gs.translate(in_str, 'zh')
     else:
-        return translator.translate(word, dest='en').text
+        return gs.translate(in_str, 'en')
 
 
 def show_homepage():

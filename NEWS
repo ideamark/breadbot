@@ -263,3 +263,7 @@
 - V2.3.1
 - Fixed the googletrans bug
 - Improved setup.py
+
+2018-11-15:
+- V2.3.2
+- Replaced googletrans by goslate
