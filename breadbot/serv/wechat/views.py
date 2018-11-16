@@ -35,15 +35,14 @@ class WeChat(View):
         cur_time = str(int(time.time()))
         msg_type = str_xml.find('MsgType').text
         content = '...'
-        sorry = 'Sorry, I chat in English.'
         if msg_type == 'text':
             content = str_xml.find('Content').text
             if '[Unsupported Message]' in content:
-                res = sorry
+                res = 'Error: unknow message'
             else:
                 res = core.response(from_user, content)
         else:
-            res = sorry
+            res = "Sorry, I can't chat by %s" % msg_type
         template = loader.get_template('wechat/text_message_template.xml')
         context = {'toUser': from_user,
                    'fromUser': to_user,
