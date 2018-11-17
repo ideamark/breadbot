@@ -1,9 +1,10 @@
-import goslate
 import os
 import re
 import urllib.parse
 import urllib.request
+
 from breadbot.core import common
+from google.cloud import translate as google_trans
 
 
 def baidu_search(keyword):
@@ -25,12 +26,16 @@ def corpus_search(keyword):
 def translate(in_str):
     if not in_str:
         return
-    gs = goslate.Goslate()
-    lang = gs.detect(in_str)
+    trans_client = google_trans.Client()
+    lang = trans_client.detect_language(in_str)['language']
     if lang == 'en':
-        return gs.translate(in_str, 'zh')
+        trans = trans_client.translate(
+            in_str, target_language='zh')
+        return trans['translatedText']
     else:
-        return gs.translate(in_str, 'en')
+        trans = trans_client.translate(
+            in_str, target_language='en')
+        return trans['translatedText']
 
 
 def show_homepage():

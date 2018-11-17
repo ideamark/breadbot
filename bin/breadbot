@@ -9,6 +9,7 @@ from breadbot import serv
 
 
 user = 'localuser'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = core.common.Cfg().get('local', 'google_app_credentials')
 
 if os.geteuid():
     args = [sys.executable] + sys.argv
