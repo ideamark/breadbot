@@ -270,4 +270,4 @@
 
 2018-11-18:
 - V2.3.3
-- Replaced goslate by google API client
+- Replaced goslate by google official API client
