@@ -271,3 +271,7 @@
 2018-11-18:
 - V2.3.3
 - Replaced goslate by google official API client
+
+2019-01-02:
+- V2.3.4
+- Fixed some installation bugs.
