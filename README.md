@@ -23,7 +23,7 @@ Breadbot works on Linux. Of cause u can let it work on other OS by modify the so
 * Download:
   * `git clone https://github.com/ideamark/breadbot`
 * Install:
-  * First, make sure you have installed python3 and python3-pip.
+  * First, make sure you have installed python3, python3-pip, python3-dev, gcc.
   * run setup command: `python3 setup.py install`
 * Uninstall:
   * `python3 setup.py uninstall`

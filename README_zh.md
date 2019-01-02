@@ -21,7 +21,7 @@
 * 下载：
   * `git clone https://gitee.com/ideamark/breadbot`
 * 安装：
-  * 首先，确保你已经安装了 python3 和 python3-pip
+  * 首先，确保你已经安装了 python3, python3-pip, python3-dev, gcc.
   * 执行安装命令：`python3 setup.py install`
 * 卸载：
   * `python3 setup.py uninstall`
