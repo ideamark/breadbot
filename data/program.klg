@@ -1,0 +1,39 @@
+# Platform: python
+
+create thread
+t = threading.Thread(target=func, args=(a,))
+t.setDaemon(True)
+t.start()
+
+undefined symbol ps_update_lmset
+sudo easy_install -m sphinxbase
+sudo easy_install -m pocketsphinx
+
+install tkinter
+sudo apt install python3-tk
+
+solve coding problem
+Str = Str.encode('unicode-escape').decode()
+
+simple http server
+python -m SimpleHTTPServer 80
+
+format json
+json.dump(dict, fp, indent=4)
+
+regex mismatch
+[^xx]*
+
+regex save middle string
+use (.*)
+
+get object size
+sys.getsizeof(xx)
+
+pip cannot import name main
+Replace /usr/bin/pip last 3 lines with:
+---
+from pip import __main__
+if __name__ == "__main__"\:
+      sys.exit(__main__._main())
+---
