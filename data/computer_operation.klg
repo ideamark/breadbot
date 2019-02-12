@@ -1190,3 +1190,14 @@ tcpdump 'dst port 22 or dst port 80'
 tcpdump 'host www.baidu.com'
 tcpdump 'port ftp'
 more filter, see "man pcap-filter"
+
+
+# Platform:: git
+push to remote branch
+git push origin local_branch:remote_branch
+
+pull from remote branch
+git pull origin local_branch:remote_branch
+
+delete remote branch
+git push origin :remote_branch
