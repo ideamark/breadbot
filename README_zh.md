@@ -2,12 +2,10 @@
 
 ## 概览
 小面包（Breadbot）是一款以 Wiki 作为知识库的强大且轻量化的聊天 AI.
-* 完全开源
 * 一键部署
 * 快速响应
 * 开放百万级语料
 * 免数据库
-* 基于 Python3
 * 支持微信对接
 
 访问主页 [Breadbot.Fun](http://breadbot.fun) 获取更多信息。
