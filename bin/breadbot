@@ -20,6 +20,7 @@ def show_help():
     print(
         '\n'
         ' start:      start server\n'
+        ' import:     import data\n'
         ' Ctr+C:      stop server\n'
         ' help:       display this help\n'
         ' q:          exit this console\n'
@@ -36,6 +37,8 @@ def active(cmd):
         show_help()
     elif cmd == 'start':
         serv.start()
+    elif cmd == 'import':
+        import_data()
     else:
         print(core.response(db, user, cmd))
 
