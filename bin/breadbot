@@ -21,6 +21,7 @@ def show_help():
         '\n'
         ' start:      start server\n'
         ' import:     import data\n'
+        ' count:      count data\n'
         ' Ctr+C:      stop server\n'
         ' help:       display this help\n'
         ' q:          exit this console\n'
@@ -32,6 +33,10 @@ def import_data():
     func.import_data.import_data(db)
 
 
+def count_data():
+    print(len(db.keys()))
+
+
 def active(cmd):
     if cmd == 'help':
         show_help()
@@ -39,6 +44,8 @@ def active(cmd):
         serv.start()
     elif cmd == 'import':
         import_data()
+    elif cmd == 'count':
+        count_data()
     else:
         print(core.response(db, user, cmd))
 
