@@ -8,20 +8,17 @@ from breadbot import func
 from breadbot import serv
 
 
-user = 'localuser'
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = core.common.Cfg().get('local', 'google_app_credentials')
-
 if os.geteuid():
     args = [sys.executable] + sys.argv
     os.execlp('sudo', 'sudo', *args)
+
+user = 'localuser'
+db = core.common.get_db()
 
 
 def show_help():
     print(
         '\n'
-        ' count:      count ques\n'
-        ' check:      check data\n'
-        ' transform:  transform corpus\n'
         ' start:      start server\n'
         ' Ctr+C:      stop server\n'
         ' help:       display this help\n'
@@ -30,21 +27,17 @@ def show_help():
     print(core.common.show_help(user))
 
 
+def import_data():
+    func.import_data.import_data(db)
+
+
 def active(cmd):
     if cmd == 'help':
         show_help()
-    elif cmd == 'count':
-        func.count_ques.CountQues().do_count()
-    elif re.match('^check.*$', cmd):
-        data_paths = cmd.split(' ')[1:]
-        func.check_data.CheckData().do_check(data_paths)
-    elif re.match('^transform.*$', cmd):
-        data_paths = cmd.split(' ')[1:]
-        func.transform_corpus.TransformCorpus().do_transform(data_paths)
     elif cmd == 'start':
         serv.start()
     else:
-        print(core.response(user, cmd))
+        print(core.response(db, user, cmd))
 
 
 if __name__ == '__main__':
@@ -53,6 +46,8 @@ if __name__ == '__main__':
         cmd = ' '.join(sys.argv[1:])
         active(cmd)
         sys.exit(0)
+
+    import_data()
 
     while True:
         cmd = input('>> ')

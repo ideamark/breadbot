@@ -8,7 +8,7 @@ from breadbot.func import teach
 from breadbot.func import web
 
 
-def response(user, in_str):
+def response(db, user, in_str):
     in_str = common.init_input(in_str)
     res = ''
 
@@ -23,7 +23,7 @@ def response(user, in_str):
         res = web.show_homepage()
     elif re.search('[\u4e00-\u9fa5]', in_str):
         en_str = web.translate(in_str)
-        res = chat.Chat().response(user, en_str)
+        res = chat.Chat(db).response(user, en_str)
         res = web.translate(res)
 
     if common.is_super(user):
@@ -35,7 +35,7 @@ def response(user, in_str):
             res = web.corpus_search(content)
 
     if not res:
-        res = chat.Chat().response(user, in_str)
+        res = chat.Chat(db).response(user, in_str)
     memory.Memory(user).save_dialog(in_str, res)
     res = memory.Memory(user).check_longstr(res)
     return res

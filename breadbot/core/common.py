@@ -1,4 +1,5 @@
 from configobj import ConfigObj
+import redis
 import os
 import random
 import re
@@ -181,15 +182,22 @@ def expand_path(path_list=[]):
     return expand_path_list
 
 
-def get_yml_path_list(path_list=[]):
+def get_md_path_list(path_list=[]):
     if not path_list:
         path_list = Cfg().get('local', 'data_paths')
     path_list = expand_path(path_list)
-    yml_path_list = []
+    md_path_list = []
     for path in path_list:
         if not os.path.exists(path):
             continue
-        elif os.path.splitext(path)[-1] != '.yml':
+        elif os.path.splitext(path)[-1] != '.md':
             continue
-        yml_path_list.append(path)
-    return yml_path_list
+        else:
+            md_path_list.append(path)
+    return md_path_list
+
+
+def get_db():
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = Cfg().get('local', 'google_app_credentials')
+    db = redis.Redis(host='localhost', port=6379, db=0)
+    return db
