@@ -50,14 +50,18 @@ def simpleQA(db, lines):
                     break
 
 
+def knowledgeQA(db, lines):
+    simpleQA(db, lines)
+
+
 def parser(db, lines):
     engine = ''
     start = False
     content = []
     for line in lines:
-        if re.match('^\[\^_\^\]: # \(.*\).*$', line):
-            line = re.sub('^\[\^_\^\]: # \(', '', line)
-            line = re.sub('\).*$', '', line)
+        if re.match('^> *\[.*\].*$', line):
+            line = re.sub('^> *\[', '', line)
+            line = re.sub('\].*$', '', line)
             engine = line.split(' ')[0]
             status = line.split(' ')[1]
             if 'start' in status:
