@@ -1,7 +1,7 @@
 # Breadbot
 
 ## Overview
-Breadbot is a lightweight and powerful chatbot for knowledge management.
+Breadbot is a wiki based powerful chatbot.
 * Easy to deploy & use
 * Fast response
 * More than 1000,000 corpus

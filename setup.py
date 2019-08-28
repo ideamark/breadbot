@@ -26,7 +26,7 @@ def install():
     data_path = os.path.join(os.getcwd(), 'data')
     if not os.path.exists(data_path):
         Cfg().write('local', 'data_paths', data_path)
-        os.system('git clone https://github.com/ideamark/ideamark.github.io "data"')
+        os.system('git clone https://github.com/ideamark/ideamark.github.io data')
         os.system('chmod -R 777 data')
     print('Install success!')
 
