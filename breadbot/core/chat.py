@@ -22,7 +22,7 @@ class Chat(object):
         return ans
 
     def __search_ans(self, user, qus):
-        is_super = common.is_super(user)
+        # is_super = common.is_super(user)
         qus = re.sub(r'[^\w\s]', '', qus)
         qus = qus.lower()
         ans_type = self.db.type(qus)

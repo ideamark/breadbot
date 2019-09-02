@@ -39,7 +39,7 @@ def simpleQA(db, lines):
                 db.sadd(qus, *set(ans))
                 qus = ''
                 ans = ''
-            for line2 in lines[i+1:]:
+            for line2 in lines[i + 1:]:
                 if not line2:
                     continue
                 elif re.match('^## .*', line2):
@@ -70,7 +70,7 @@ def knowledgeQA(db, lines):
                 db.set(qus, ans)
                 qus = ''
                 ans = ''
-            for line2 in lines[i+1:]:
+            for line2 in lines[i + 1:]:
                 if not line2:
                     continue
                 elif re.match('^## .*', line2):
@@ -87,9 +87,9 @@ def parser(db, lines):
     start = False
     content = []
     for line in lines:
-        if re.match('^> *\[.*\].*$', line):
-            line = re.sub('^> *\[', '', line)
-            line = re.sub('\].*$', '', line)
+        if re.match(r'^> *\[.*\].*$', line):
+            line = re.sub(r'^> *\[', '', line)
+            line = re.sub(r'\].*$', '', line)
             engine = line.split(' ')[0]
             status = line.split(' ')[1]
             if 'start' in status:
