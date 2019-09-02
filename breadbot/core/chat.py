@@ -30,4 +30,6 @@ class Chat(object):
             ans = self.db.srandmember(qus, 1)[0]
         elif ans_type == 'string':
             ans = self.db.get(qus)
+        else:
+            ans = None
         return ans
