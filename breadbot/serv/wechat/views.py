@@ -9,6 +9,9 @@ from xml.etree import ElementTree as ET
 from breadbot import core
 
 
+db = core.common.get_db()
+
+
 class WeChat(View):
 
     @csrf_exempt
@@ -40,7 +43,7 @@ class WeChat(View):
             if '[Unsupported Message]' in content:
                 res = 'Error: unknow message'
             else:
-                res = core.response(from_user, content)
+                res = core.response(db, from_user, content)
         else:
             res = "Sorry, I can't chat by %s" % msg_type
         template = loader.get_template('wechat/text_message_template.xml')
