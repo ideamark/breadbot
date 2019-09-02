@@ -57,8 +57,6 @@ if __name__ == '__main__':
         active(cmd)
         sys.exit(0)
 
-    import_data()
-
     while True:
         cmd = input('>> ')
         if cmd == 'q' or cmd == 'exit':
