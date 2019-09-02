@@ -20,7 +20,7 @@ Breadbot works on Linux. Of cause u can let it work on other OS by modify the so
 * Download:
   * `git clone https://github.com/ideamark/breadbot`
 * Install:
-  * First, make sure you have installed python3, python3-pip, python3-dev, gcc.
+  * First, make sure you have installed python3, python3-pip, python3-dev, gcc, redis.
   * run setup command: `python3 setup.py install`
 * Uninstall:
   * `python3 setup.py uninstall`
@@ -35,6 +35,7 @@ Breadbot works on Linux. Of cause u can let it work on other OS by modify the so
 * Just watch the only single config file: [bread.cfg](etc/bread.cfg)
 
 ## Console
+* First you must launch Redis-server on localserver port 6379.
 * Type command `breadbot` to launch the local console.
 * Then u can test Breadbot. Type `help` for more info.
 

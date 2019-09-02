@@ -275,3 +275,8 @@
 2019-01-02:
 - V2.3.4
 - Fixed some installation bugs.
+
+2019-09-02:
+- V3.0.1
+- Introduced Redis database to improve reply speed
+- Improved Wiki data
