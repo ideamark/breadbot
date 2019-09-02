@@ -199,5 +199,5 @@ def get_md_path_list(path_list=[]):
 
 def get_db():
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = Cfg().get('local', 'google_app_credentials')
-    db = redis.Redis(host='localhost', port=6379, db=0)
+    db = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
     return db

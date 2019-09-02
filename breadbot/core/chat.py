@@ -25,7 +25,9 @@ class Chat(object):
         is_super = common.is_super(user)
         qus = re.sub(r'[^\w\s]', '', qus)
         qus = qus.lower()
-        ans = self.db.get(qus)
-        if type(ans) == bytes:
-            ans = bytes.decode(ans)
+        ans_type = self.db.type(qus)
+        if ans_type == 'set':
+            ans = self.db.srandmember(qus, 1)[0]
+        elif ans_type == 'string':
+            ans = self.db.get(qus)
         return ans

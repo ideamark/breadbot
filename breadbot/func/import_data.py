@@ -35,6 +35,38 @@ def simpleQA(db, lines):
             ans += line
             if i >= len(lines) - 1:
                 ans = re.sub('\n+$', '', ans)
+                ans = ans.split('\n')
+                db.sadd(qus, *set(ans))
+                qus = ''
+                ans = ''
+            for line2 in lines[i+1:]:
+                if not line2:
+                    continue
+                elif re.match('^## .*', line2):
+                    ans = re.sub('\n+$', '', ans)
+                    ans = ans.split('\n')
+                    db.sadd(qus, *set(ans))
+                    qus = ''
+                    ans = ''
+                else:
+                    break
+
+
+def knowledgeQA(db, lines):
+    qus = ''
+    ans = ''
+    for i, line in enumerate(lines):
+        if not line:
+            continue
+        elif not qus and re.match('^## .*', line):
+            qus = re.sub('^## +', '', line)
+            qus = re.sub(r'[^\w\s]', '', qus)
+            qus = re.sub(' *\n$', '', qus)
+            qus = qus.lower()
+        elif qus and line:
+            ans += line
+            if i >= len(lines) - 1:
+                ans = re.sub('\n+$', '', ans)
                 db.set(qus, ans)
                 qus = ''
                 ans = ''
@@ -48,10 +80,6 @@ def simpleQA(db, lines):
                     ans = ''
                 else:
                     break
-
-
-def knowledgeQA(db, lines):
-    simpleQA(db, lines)
 
 
 def parser(db, lines):
