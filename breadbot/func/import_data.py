@@ -108,12 +108,12 @@ def import_data(db):
         path_list = get_path_list()
 
         for path in path_list:
-            LOG.info('Read from %s' % path)
+            LOG.info('Import %s' % path)
             with open(path, 'r') as fp:
                 lines = fp.readlines()
                 parser(db, lines)
 
-        LOG.info('All Data Import Done')
+        LOG.info('All Data is Imported')
         return None
 
     except Exception as e:
