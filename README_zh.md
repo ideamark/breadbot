@@ -18,7 +18,7 @@
 * 下载：
   * `git clone https://gitee.com/ideamark/breadbot`
 * 安装：
-  * 首先，确保你已经安装了 python3, python3-pip, python3-dev, gcc.
+  * 首先，确保你已经安装了 python3, python3-pip, python3-dev, gcc, redis-server.
   * 执行安装命令：`python3 setup.py install`
 * 卸载：
   * `python3 setup.py uninstall`
@@ -33,7 +33,9 @@
 * 只需阅读唯一的配置文件 [bread.cfg](etc/bread.cfg) 即可一目了然。
 
 ## 终端
+* 首先需要在本地 6379 端口启动 Redis 数据库。
 * 输入命令 `breadbot` 可以启动小面包的终端。
+* 输入命令 `import` 导入语料数据。
 * 然后你就可以测试小面包了，输入`help` 查看更多信息。
 
 ## 超级用户
