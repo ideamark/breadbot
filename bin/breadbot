@@ -47,7 +47,7 @@ def active(cmd):
     elif cmd == 'count':
         count_data()
     else:
-        print(core.response(db, user, cmd))
+        print(core.chat.Chat(db).response(user, cmd))
 
 
 if __name__ == '__main__':

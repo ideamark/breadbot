@@ -43,7 +43,7 @@ class WeChat(View):
             if '[Unsupported Message]' in content:
                 res = 'Error: unknow message'
             else:
-                res = core.response(db, from_user, content)
+                res = core.chat.Chat(db).response(from_user, content)
         else:
             res = "Sorry, I can't chat by %s" % msg_type
         template = loader.get_template('wechat/text_message_template.xml')
