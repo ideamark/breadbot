@@ -23,7 +23,7 @@ class Teach(object):
         ans = self.split_sym.join(ans_list)
         que = common.init_input(que)
         ans = common.init_input(ans)
-        text = '\n## %s\n%s\n' % (que, ans)
+        text = '## %s\n%s\n\n' % (que, ans)
         f.write(text)
         f.close()
         return 'OK, I learned.'
