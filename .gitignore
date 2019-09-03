@@ -1,4 +1,9 @@
-data/teach.md
-.tox/
 *.swp
+.eggs/                                                                                                   
+AUTHORS                                                                                                  
+ChangeLog                                                                                                
+breadbot.egg-info/                                                                                       
+build/                                                                                                   
+data/ 
+.tox/
 __pycache__/
