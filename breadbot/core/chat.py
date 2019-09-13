@@ -49,13 +49,12 @@ class Chat(object):
             ans = common.show_help(user)
         elif re.match('^home$', qus):
             ans = web.show_homepage()
+        '''
         elif re.search('[\u4e00-\u9fa5]', qus):
-            ans = '中文暂不支持，请用英文'
-            '''
             en_str = web.translate(qus)
             ans = self.__response(user, en_str)
             ans = web.translate(ans)
-            '''
+        '''
 
         if common.is_super(user):
             if re.match('^teach .*$', qus):
