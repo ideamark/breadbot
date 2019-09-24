@@ -35,10 +35,10 @@ Breadbot works on Linux. Of cause u can let it work on other OS by modify the so
 * Just watch the only single config file: [bread.cfg](etc/bread.cfg)
 
 ## Console
-* First you must launch Redis-server on localserver port 6379.
-* Type command `breadbot` to launch the local console.
-* Type command `import` to import corpus data.
-* Then u can test Breadbot. Type `help` for more info.
+1. Type `redis-server` to launch Redis on port 6379.
+2. Type `breadbot` to launch the local console.
+3. Type `import` to import corpus data.
+4. Then u can test Breadbot. Type `help` for more info.
 
 ## Super user mode
 * Super user mode is set for developers.
