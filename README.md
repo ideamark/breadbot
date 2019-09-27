@@ -1,10 +1,11 @@
 # Breadbot
 
 ## Overview
-Breadbot is a powerful lightweight chatbot.
+Breadbot is a lightweight chatbot with powerful AI inside.
+* Opened both code and corpus
+* More than 1000,000 corpus
 * Very easy to deploy & use
 * Fast response
-* More than 1000,000 corpus
 * Support WeChat
 
 Visit the homepage [Breadbot.Fun](http://breadbot.fun) for more info.
