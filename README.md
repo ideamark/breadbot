@@ -16,17 +16,24 @@ Visit the homepage [Breadbot.Fun](http://breadbot.fun) for more info.
 * ![QR](QR.jpg)
 * Talk to Breadbot
 
-## Install
+## Quick Install
 Breadbot works on Linux. Of cause u can let it work on other OS by modify the source code.
 * Download:
   * `git clone https://github.com/ideamark/breadbot`
 * Install:
   * First, make sure you have installed python3, python3-pip, python3-dev, gcc, redis-server.
   * run setup command: `python3 setup.py install`
+  * The corpus will be downloaded during installation.
 * Uninstall:
   * `python3 setup.py uninstall`
 * Clean (not uninstall):
   * `python3 setup.py clean`
+
+## Let us start
+1. Type `redis-server` to launch Redis on port 6379.
+2. Type `breadbot` to launch the local console.
+3. Type `import` to import corpus data.
+4. Then u can test Breadbot. Type `help` for more info.
 
 ## Corpus
 * All the corpus of Breadbot is on [Breadbot.Fun](http://breadbot.fun), which is a website and also a git repo.
@@ -34,12 +41,6 @@ Breadbot works on Linux. Of cause u can let it work on other OS by modify the so
 
 ## Config
 * Just watch the only single config file: [bread.cfg](etc/bread.cfg)
-
-## Console
-1. Type `redis-server` to launch Redis on port 6379.
-2. Type `breadbot` to launch the local console.
-3. Type `import` to import corpus data.
-4. Then u can test Breadbot. Type `help` for more info.
 
 ## Super user mode
 * Super user mode is set for developers.

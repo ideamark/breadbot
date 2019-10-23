@@ -14,17 +14,24 @@
 * 微信扫描下方二维码开始和小面包聊天！
 * ![QR](QR.jpg)
 
-## 安装
+## 一键安装
 小面包工作于 Linux，当然，你也可以通过修改代码使其工作于 Windows.
 * 下载：
   * `git clone https://gitee.com/ideamark/breadbot`
 * 安装：
   * 首先，确保你已经安装了 python3, python3-pip, python3-dev, gcc, redis-server.
   * 执行安装命令：`python3 setup.py install`
+  * 安装过程中会下载语料
 * 卸载：
   * `python3 setup.py uninstall`
 * 清理 (不是卸载)：
   * `python3 setup.py clean`
+
+## 快速启动
+1. 输入命令 `redis-server` 在本地 6379 端口启动 Redis 数据库。
+2. 输入命令 `breadbot` 启动小面包终端。
+3. 输入命令 `import` 导入语料数据。
+4. 然后你就可以和小面包对话了，输入`help` 可以查看更多信息。
 
 ## 语料
 * 小面包的全部语料都在 [Breadbot.Fun](http://breadbot.fun) 上，这是一个网站，同时也是个 Git 仓库。
@@ -32,12 +39,6 @@
 
 ## 配置
 * 只需阅读唯一的配置文件 [bread.cfg](etc/bread.cfg) 即可一目了然。
-
-## 终端
-1. 输入命令 `redis-server` 在本地 6379 端口启动 Redis 数据库。
-2. 输入命令 `breadbot` 可以启动小面包的终端。
-3. 输入命令 `import` 导入语料数据。
-4. 然后你就可以测试小面包了，输入`help` 查看更多信息。
 
 ## 超级用户
 * 超级用户是为了方便开发者设置的。
@@ -59,3 +60,4 @@ response('localuser', 'hello')
 ## 更多
 * 作者：Mark Young (IdeaMark)
 * 邮箱：ideamark@qq.com
+* 欢迎捐赠，支持中国开源事业。
