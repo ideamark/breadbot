@@ -1,14 +1,11 @@
 # Breadbot
 
 ## Overview
-Breadbot is a new concept of chatterbot at the experimental stage. <br>
-The goal is to combine cloud note and AI technology to make knowledge management more efficient.
+Breadbot is a new chatterbot framwork at experimental stage which is aimed to simplify the development of chatterbot.
 
-* Open source code & corpus
-* Huge amount of corpus
-* Easy to deploy & use
-* Fast response
-* Support WeChat
+* Open source code & huge amount of corpus
+* Wiki based corpus, easy to read & write
+* Minimalist design. Easy to deploy. Fast response
 
 Visit the homepage [Breadbot.Fun](http://breadbot.fun) for more info.
 
