@@ -8,7 +8,7 @@ from . import common
 class Memory(object):
 
     def __init__(self, user):
-        self.max_words = 140
+        self.max_words = 800
         self.next_symble = '....'
         self.max_dialogs = 3
         self.user = user
