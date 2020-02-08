@@ -1,12 +1,18 @@
 #!/usr/bin/python3
 import os
 import sys
+import platform
 from setuptools import setup
 
 
-if os.geteuid():
-    args = [sys.executable] + sys.argv
-    os.execlp('sudo', 'sudo', *args)
+def check_sudo():
+    if os.geteuid():
+        args = [sys.executable] + sys.argv
+        os.execlp('sudo', 'sudo', *args)
+
+
+def check_system():
+    return platform.system()
 
 
 def install():
@@ -63,16 +69,26 @@ def clean():
     print('Clean up success!')
 
 
-if len(sys.argv) <= 1:
-    print('Please enter install, uninstall or clean')
-    sys.exit(1)
-elif sys.argv[1] == 'install':
-    install()
-    sys.exit(0)
-elif sys.argv[1] == 'uninstall':
-    uninstall()
-    clean()
-    sys.exit(0)
-elif sys.argv[1] == 'clean':
-    clean()
-    sys.exit(0)
+def linux_menu():
+    if len(sys.argv) <= 1:
+        print('Please enter install, uninstall or clean')
+        sys.exit(1)
+    elif sys.argv[1] == 'install':
+        install()
+        sys.exit(0)
+    elif sys.argv[1] == 'uninstall':
+        uninstall()
+        clean()
+        sys.exit(0)
+    elif sys.argv[1] == 'clean':
+        clean()
+        sys.exit(0)
+
+
+if __name__ == '__main__':
+    os_platform = check_system()
+    if os_platform == 'Windows':
+        print('Windows support is developing, will come soon.')
+    elif os_platform == 'Linux':
+        check_sudo()
+        linux_menu()
