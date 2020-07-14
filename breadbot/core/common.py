@@ -10,14 +10,15 @@ import time
 
 def show_help(user):
     text = \
-        'translate xxx (translate dialogs)\n' \
+        'translate <word>\n' \
         'home (show home page)\n' \
-        'next (turn to next page)\n'
+        'next (show next words)\n'
     if is_super(user):
         text += \
             '--------\n' \
-            'corpus xxx (search corpus)\n' \
-            'teach xxx (teach a dialogue)\n'
+            'corpus <dialog> (search corpus)\n' \
+            'teach Qus:Ans (teach a dialog)\n' \
+            'wiki (show wiki page)'
     return text
 
 
@@ -81,15 +82,8 @@ def is_super(user):
 
 def dont_know():
     not_list = [
-        "Well...",
         "Hmm...",
-        "Let's talk about sth. others",
-        "Let's change a topic",
-        "Sorry, I don't know",
-        "My IQ is not enough",
-        "I'm still under construction",
-        "You'd better in English",
-        "Let me see..."]
+        "Sorry, I don't know"]
     res = random.choice(not_list)
     return res
 

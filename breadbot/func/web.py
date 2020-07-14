@@ -4,7 +4,7 @@ import urllib.parse
 import urllib.request
 
 from breadbot.core import common
-from google.cloud import translate as google_trans
+#from google.cloud import translate as google_trans
 
 
 def baidu_search(keyword):
@@ -23,6 +23,7 @@ def corpus_search(keyword):
     return common.url_to_html(url)
 
 
+'''
 def translate(in_str):
     if not in_str:
         return
@@ -36,9 +37,15 @@ def translate(in_str):
         trans = trans_client.translate(
             in_str, target_language='en')
         return trans['translatedText']
+'''
 
 
 def show_homepage():
     url = 'http://breadbot.fun'
     name = 'Breadbot.Fun'
+    return common.url_to_html(url, name)
+
+def show_wiki():
+    url = 'http://cloud.breadbot.fun:8080/#!wiki/index.md'
+    name = 'Wiki'
     return common.url_to_html(url, name)

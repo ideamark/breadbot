@@ -5,8 +5,7 @@ import string
 
 from . import common
 from . import memory
-from breadbot.func import teach
-from breadbot.func import web
+from breadbot import func
 
 
 class Chat(object):
@@ -42,27 +41,10 @@ class Chat(object):
 
         if re.match('^next|n$', qus):
             ans = memory.Memory(user).get_longstr_mem()
-        elif re.match('^translate .*$', qus):
-            content = re.sub('^translate ', '', qus)
-            ans = web.translate(content)
         elif re.match('^help$', qus.lower()):
             ans = common.show_help(user)
-        elif re.match('^home$', qus):
-            ans = web.show_homepage()
-        '''
-        elif re.search('[\u4e00-\u9fa5]', qus):
-            en_str = web.translate(qus)
-            ans = self.__response(user, en_str)
-            ans = web.translate(ans)
-        '''
-
-        if common.is_super(user):
-            if re.match('^teach .*$', qus):
-                content = re.sub('^teach ', '', qus)
-                ans = teach.Teach().do_teach(user, content)
-            elif re.match('^corpus .*$', qus):
-                content = re.sub('^corpus ', '', qus)
-                ans = web.corpus_search(content)
+        else:
+            ans = func.response(user, qus)
 
         if not ans:
             ans = self.__response(user, qus)
