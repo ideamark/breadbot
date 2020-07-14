@@ -12,7 +12,8 @@ def show_help(user):
     text = \
         'translate <word>\n' \
         'home (show home page)\n' \
-        'next (show next words)\n'
+        'next (show next words)\n' \
+        'baidu <content> (search baidu)\n'
     if is_super(user):
         text += \
             '--------\n' \

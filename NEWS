@@ -280,3 +280,8 @@
 - V3.0.1
 - Introduced Redis database to improve reply speed
 - Improved Wiki data
+
+2020-07-14:
+- V3.0.3
+- Add stardict function.
+- refactor the func code.

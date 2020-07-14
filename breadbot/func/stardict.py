@@ -3,6 +3,8 @@ import sys
 import struct
 import re
 
+from . import web
+
 dict_path = os.path.dirname(os.path.abspath(__file__))
 
 def translate(word):
@@ -37,7 +39,7 @@ def translate(word):
         return word_dict
 
     except:
-        return 'Sorry, not found'
+        return web.search_baidu(word)
 
     finally:
         idx_file.close()

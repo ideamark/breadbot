@@ -32,7 +32,8 @@ class Chat(object):
         if not ans:
             ans = self.__search_ans(user, qus)
         if not ans:
-            ans = common.dont_know()
+            #ans = common.dont_know()
+            ans = func.web.search_baidu(qus)
         return ans
 
     def response(self, user, qus):
