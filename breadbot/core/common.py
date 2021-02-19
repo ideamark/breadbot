@@ -17,8 +17,9 @@ def show_help(user):
     if is_super(user):
         text += \
             '--------\n' \
+            'idea <dialog> (store an idea dialog)\n' \
+            'teach <qus:ans> (teach a dialog)\n' \
             'corpus <dialog> (search corpus)\n' \
-            'teach Qus:Ans (teach a dialog)\n' \
             'wiki (show wiki page)'
     return text
 
