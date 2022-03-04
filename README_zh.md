@@ -57,7 +57,7 @@ response('localuser', 'hello')
 * 然后，小面包就会连接到微信公众平台，你就可以通过微信和小面包聊天了。
 
 ## 更多
-* 作者：Mark Young (IdeaMark)
+* 作者：Mark Yang (IdeaMark)
 * 邮箱：ideamark@qq.com
 * 欢迎加入开发, 直接联系作者邮箱
 * 欢迎捐赠，支持中国开源事业

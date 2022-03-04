@@ -59,5 +59,5 @@ response('localuser', 'hello')
 * After that, Breadbot will connect to WeChat public platform and u can chat to it on WeChat.
 
 ## Seek more
-* Author: Mark Young (IdeaMark)
+* Author: Mark Yang (IdeaMark)
 * Email: ideamark@qq.com
