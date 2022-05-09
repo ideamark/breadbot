@@ -2,6 +2,7 @@ import re
 
 from breadbot.core import common
 from . import idea
+from . import import_data
 from . import stardict
 from . import teach
 from . import web
