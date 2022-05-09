@@ -1,6 +1,7 @@
 from configobj import ConfigObj
 import redis
 import os
+import platform
 import random
 import re
 import string
@@ -90,6 +91,14 @@ def dont_know():
     return res
 
 
+def get_home_dir():
+    os_platform = platform.system()
+    if os_platform == 'Windows':
+        return os.environ['USERPROFILE']
+    else:
+        return os.environ['HOME']
+
+
 class ChatLog(object):
     def __init__(self):
         self.log_dir = os.path.join(
@@ -137,7 +146,7 @@ class ConsoleLog(object):
 
 class Cfg(object):
     def __init__(self):
-        self.cfg = ConfigObj('/etc/bread.cfg')
+        self.cfg = ConfigObj(os.path.join(get_home_dir(), '.breadbot/etc/bread.cfg'))
 
     def get(self, ctype, value):
         res = self.cfg[ctype][value]

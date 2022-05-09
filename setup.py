@@ -6,18 +6,6 @@ from setuptools import setup
 import traceback
 
 
-def check_system():
-    return platform.system()
-
-
-def get_home_dir():
-    os_platform = check_system()
-    if os_platform == 'Windows':
-        return os.environ['USERPROFILE']
-    else:
-        return os.environ['HOME']
-
-
 def install():
     try:
         os.system('pip3 install -U pip')
@@ -26,11 +14,11 @@ def install():
             setup_requires=['pbr>=0.1'],
             pbr=True,)
 
-        from breadbot.core.common import Cfg
-        home_dir = get_home_dir()
-        log_path = Cfg().get('local', 'log_path').replace('~', home_dir)
-        mem_path = Cfg().get('local', 'mem_path').replace('~', home_dir)
-        data_path = Cfg().get('local', 'data_path').replace('~', home_dir)
+        from breadbot.core.common import Cfg, get_home_dir
+        os.system('sed "s/~/%s/" ./etc/bread.cfg')
+        log_path = Cfg().get('local', 'log_path')
+        mem_path = Cfg().get('local', 'mem_path')
+        data_path = Cfg().get('local', 'data_path')
         if not os.path.exists(log_path):
             os.makedirs(log_path)
         if not os.path.exists(mem_path):
@@ -44,9 +32,9 @@ def install():
 
 def uninstall():
     try:
-        home_dir = get_home_dir()
+        from breadbot.core.common import Cfg
         os.system('pip3 uninstall breadbot')
-        os.remove(os.path.join(home_dir, '.breadbot'))
+        os.remove(Cfg().get('local', 'home_path'))
         print('Uninstall Success')
     except Exception:
         print(traceback.format_exc())
@@ -90,7 +78,7 @@ def menu():
 
 
 if __name__ == '__main__':
-    os_platform = check_system()
+    os_platform = platform.system()
     if os_platform == 'Windows':
         print('Windows is not supported yet.')
     else:
