@@ -30,21 +30,21 @@ Breadbot works on Linux. Of cause u can let it work on other OS by modify the so
 
 ## Let us start
 1. Type `redis-server` to launch Redis on port 6379.
-2. Type `breadbot` to launch the local console.
+2. Type `~/.breadbot/bin/breadbot` to launch the local console.
 3. Type `import` to import corpus data.
 4. Then u can test Breadbot. Type `help` for more info.
 
 ## Corpus
 * All the corpus of Breadbot is on [Breadbot.Fun](http://breadbot.fun), which is a website and also a git repo.
-* The repo will be downloaded automatically when you setup Breadbot by `python3 setup.py install`.
+* The repo will be downloaded automatically when you setup Breadbot by `./install.sh`.
 
 ## Config
-* Just watch the only single config file: [bread.cfg](etc/bread.cfg)
+* Just watch the only single config file: [bread.cfg](lib/etc/bread.cfg)
 
 ## Super user mode
 * Super user mode is set for developers.
 * The local console is default set as super user.
-* If your WeChat ID is in [bread.cfg](etc/bread.cfg) super user list, u will get the super user functions.
+* If your WeChat ID is in [bread.cfg](lib/etc/bread.cfg) super user list, u will get the super user functions.
 
 ## Import to your project
 * Need root permission.
@@ -55,7 +55,7 @@ response('localuser', 'hello')
 
 ## Connect to WeChat
 * Config your WeChat public platform account on [mp.weixin.qq.com](https://mp.weixin.qq.com). Create the Token and enter your server URL.
-* Then back to local server. Run the command `breadbot start` to launch the server. Enter your Token and server IP.
+* Then back to local server. Run the command `~/.breadbot/bin/breadbot start` to launch the server. Enter your Token and server IP.
 * After that, Breadbot will connect to WeChat public platform and u can chat to it on WeChat.
 
 ## Seek more
