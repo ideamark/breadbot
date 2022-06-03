@@ -18,13 +18,13 @@
 * 下载：
   * `git clone https://gitee.com/ideamark/breadbot`
 * 安装：
-  * 首先，确保你已经安装了 python3, python3-pip, python3-dev, gcc, redis-server.
-  * 执行安装命令：`python3 setup.py install`
+  * 首先，确保你已经安装了 python3, python3-pip, gcc, redis-server.
+  * 执行安装命令：`./install.sh`
   * 安装过程中会下载语料
 * 卸载：
-  * `python3 setup.py uninstall`
-* 清理 (不是卸载)：
-  * `python3 setup.py clean`
+  * `./uninstall.sh`
+* 清理缓存文件 (不是卸载)：
+  * `./clean.sh`
 
 ## 快速启动
 1. 输入命令 `redis-server` 在本地 6379 端口启动 Redis 数据库。
