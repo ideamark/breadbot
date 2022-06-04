@@ -5,7 +5,7 @@ import string
 
 from . import common
 from . import memory
-from breadbot import func
+from breadbot import lib
 
 
 class Chat(object):
@@ -33,7 +33,7 @@ class Chat(object):
             ans = self.__search_ans(user, qus)
         if not ans:
             #ans = common.dont_know()
-            ans = func.web.search_baidu(qus)
+            ans = lib.web.search_baidu(qus)
         return ans
 
     def response(self, user, qus):
@@ -45,7 +45,7 @@ class Chat(object):
         elif re.match('^help$', qus.lower()):
             ans = common.show_help(user)
         else:
-            ans = func.response(user, qus)
+            ans = lib.response(user, qus)
 
         if not ans:
             ans = self.__response(user, qus)

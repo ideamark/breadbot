@@ -37,12 +37,12 @@
 * 当你运行安装命令 `./install.sh` 的时候，这些语料会被自动下载到本地。
 
 ## 配置
-* 只需阅读唯一的配置文件 [bread.cfg](lib/etc/bread.cfg) 即可一目了然。
+* 只需阅读唯一的配置文件 [bread.cfg](files/etc/bread.cfg) 即可一目了然。
 
 ## 超级用户
 * 超级用户是为了方便开发者设置的。
 * 本地终端已默认设置为超级用户。
-* 如果你的微信 ID 在 [bread.cfg](lib/etc/bread.cfg) 的超级用户列表里，你就能使用超级用户相关功能。
+* 如果你的微信 ID 在 [bread.cfg](files/etc/bread.cfg) 的超级用户列表里，你就能使用超级用户相关功能。
 
 ## 导入到你的工程
 * 需要 root 权限

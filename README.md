@@ -39,12 +39,12 @@ Breadbot works on Linux. Of cause u can let it work on other OS by modify the so
 * The repo will be downloaded automatically when you setup Breadbot by `./install.sh`.
 
 ## Config
-* Just watch the only single config file: [bread.cfg](lib/etc/bread.cfg)
+* Just watch the only single config file: [bread.cfg](files/etc/bread.cfg)
 
 ## Super user mode
 * Super user mode is set for developers.
 * The local console is default set as super user.
-* If your WeChat ID is in [bread.cfg](lib/etc/bread.cfg) super user list, u will get the super user functions.
+* If your WeChat ID is in [bread.cfg](files/etc/bread.cfg) super user list, u will get the super user functions.
 
 ## Import to your project
 * Need root permission.
